@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+.next/
+node_modules/
+.pnpm-store/
+dist/
+.open-next/
+.wrangler/
+tsconfig.tsbuildinfo
+*.log
