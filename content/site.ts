@@ -137,8 +137,8 @@ export const insights: Insight[] = [
 export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://example.com",
   brand: {
-    name: "Brand Name",
-    logoLabel: "Placeholder logo",
+    name: "aashishlabs",
+    logoLabel: "aashishlabs logo",
     tagline: "Premium digital growth studio"
   },
   contact: {
@@ -150,7 +150,7 @@ export const siteConfig = {
     }
   },
   seo: {
-    defaultTitle: "Brand Name - Digital Agency for Web, Apps, SEO and Performance Marketing",
+    defaultTitle: "aashishlabs — Web, Apps, SEO and Performance Marketing",
     defaultDescription:
       "A premium, mobile-first digital agency website for web development, app/PWA development, SEO and performance marketing."
   },
@@ -190,6 +190,6 @@ export const siteConfig = {
   },
   footer: {
     description:
-      "Placeholder agency description. Replace brand, proof, services, legal and contact details from the central content configuration."
+      "A digital growth studio building thoughtful websites, apps, search foundations and performance marketing systems."
   }
 } as const;

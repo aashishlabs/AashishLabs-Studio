@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/brand/brand-logo";
 import { siteConfig } from "@/content/site";
 
 export function Footer() {
@@ -6,7 +7,7 @@ export function Footer() {
     <footer className="border-t border-white/10 pb-24 pt-12 sm:pb-12">
       <div className="container grid gap-8 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
         <div>
-          <p className="font-display text-xl font-semibold">{siteConfig.brand.name}</p>
+          <BrandLogo markClassName="h-12 w-[2.1rem]" wordmarkClassName="text-2xl" />
           <p className="mt-3 max-w-md text-sm leading-6 text-muted-foreground">{siteConfig.footer.description}</p>
         </div>
         <div>
