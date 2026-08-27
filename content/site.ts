@@ -3,8 +3,9 @@ import type { Insight, Service, WorkItem } from "../types/content";
 export const services: Service[] = [
   {
     slug: "web-development",
-    title: "Web Development",
-    shortDescription: "Fast, high-conversion websites built for credibility, SEO and lead generation.",
+    title: "Web Design & Development",
+    shortDescription:
+      "Fast, credible and conversion-focused websites that communicate your value clearly and give your marketing a stronger foundation.",
     heroCopy:
       "Launch a polished marketing website that feels premium on mobile, loads quickly and turns visitor intent into qualified conversations.",
     outcomes: ["Clearer positioning", "Higher enquiry quality", "SEO-ready foundations"],
@@ -28,8 +29,9 @@ export const services: Service[] = [
   },
   {
     slug: "app-development",
-    title: "App/PWA Development",
-    shortDescription: "Lean product interfaces, portals and installable web apps for launch-stage teams.",
+    title: "Apps & Digital Products",
+    shortDescription:
+      "Thoughtful web applications, PWAs, portals and MVPs shaped around real user needs and clear business goals.",
     heroCopy:
       "Design and build app experiences that validate the workflow first, then scale into a stronger product platform.",
     outcomes: ["Sharper MVP scope", "Reusable product UI", "Lower launch friction"],
@@ -49,8 +51,9 @@ export const services: Service[] = [
   },
   {
     slug: "seo",
-    title: "SEO",
-    shortDescription: "Technical and content SEO foundations for search visibility and compounding demand.",
+    title: "Search Engine Optimisation",
+    shortDescription:
+      "Technical and content foundations that help search engines understand your business and the right customers discover it.",
     heroCopy:
       "Create a search-ready foundation across structure, metadata, performance, internal links and content planning.",
     outcomes: ["Better indexability", "Stronger search intent mapping", "Cleaner content architecture"],
@@ -71,7 +74,8 @@ export const services: Service[] = [
   {
     slug: "performance-marketing",
     title: "Performance Marketing",
-    shortDescription: "Campaign landing pages, tracking and paid acquisition systems for qualified leads.",
+    shortDescription:
+      "Focused campaigns, landing pages and measurement systems built to attract relevant audiences and improve acquisition decisions.",
     heroCopy:
       "Build the conversion paths and campaign measurement needed for Google Ads, Meta Ads and future paid channels.",
     outcomes: ["Campaign-ready landing pages", "Cleaner attribution", "Faster optimisation cycles"],
@@ -97,7 +101,7 @@ export const workItems: WorkItem[] = [
     title: "Local Services Growth System",
     projectType: "Concept Build",
     category: "Web + SEO + Paid",
-    summary: "A placeholder concept for a local business lead-generation website and campaign funnel.",
+    summary: "An internal concept exploring a clearer website, search foundation and campaign funnel for a local service business.",
     outcome: "Target outcome: clearer enquiry flow and campaign attribution.",
     metrics: ["Concept metric placeholder", "No fictional client result claimed"],
     seo: {
@@ -110,7 +114,7 @@ export const workItems: WorkItem[] = [
     title: "Founder Launch Platform",
     projectType: "Concept Build",
     category: "Website + PWA",
-    summary: "A placeholder concept for a startup launch site and lightweight product surface.",
+    summary: "An internal concept exploring a focused launch website and lightweight product experience for an early-stage founder.",
     outcome: "Target outcome: faster launch readiness and clearer product narrative.",
     metrics: ["Concept metric placeholder", "Replace with verified client evidence"],
     seo: {
@@ -139,7 +143,7 @@ export const siteConfig = {
   brand: {
     name: "aashishlabs",
     logoLabel: "aashishlabs logo",
-    tagline: "Premium digital growth studio"
+    tagline: "Strategy · Design · Technology · Growth"
   },
   contact: {
     email: "hello@example.com",
@@ -150,9 +154,9 @@ export const siteConfig = {
     }
   },
   seo: {
-    defaultTitle: "aashishlabs — Web, Apps, SEO and Performance Marketing",
+    defaultTitle: "aashishlabs — Digital Agency for Startups, SMEs and MSMEs in India",
     defaultDescription:
-      "A premium, mobile-first digital agency website for web development, app/PWA development, SEO and performance marketing."
+      "A full-service digital agency helping startups, SMEs and MSMEs across India build websites, digital products, search visibility and measurable growth systems."
   },
   navigation: {
     primary: [
@@ -165,31 +169,90 @@ export const siteConfig = {
   },
   home: {
     hero: {
-      title: "Build a sharper digital presence, then turn it into measurable growth.",
+      title: "Digital experiences built to earn trust, drive action and support growth.",
       description:
-        "Placeholder copy for a premium digital agency offering high-conversion websites, apps, SEO and performance marketing.",
-      primaryCta: "Start a Project",
-      secondaryCta: "Explore Services"
+        "AashishLabs partners with startups, SMEs and MSMEs across India to design and build high-performing websites, web applications and digital growth systems—from the first idea to launch and continuous improvement.",
+      primaryCta: "Discuss Your Project",
+      secondaryCta: "Explore Our Services",
+      preview: [
+        { title: "Strategy", description: "Business goals and customer priorities aligned." },
+        { title: "Experience", description: "Clear journeys and thoughtful interfaces." },
+        { title: "Technology", description: "Fast, reliable and adaptable foundations." },
+        { title: "Growth", description: "Search, conversion and measurement built in." }
+      ]
     },
-    trust: ["Launch-ready systems", "SEO foundations", "Paid campaign paths", "Mobile-first UX"],
+    trust: ["Strategy before screens", "Direct, accountable execution", "Search-ready by design", "Measured after launch"],
+    difference: {
+      title: "The build and the growth plan belong together.",
+      description:
+        "A polished website is not enough if nobody discovers it. More traffic is not enough if the experience fails to convert. AashishLabs brings product thinking and growth thinking into the same process, so every decision supports a clearer customer journey and a stronger business outcome.",
+      items: [
+        {
+          title: "Clear before clever",
+          description:
+            "We begin with your audience, offer and business priorities—not visual trends or unnecessary technology."
+        },
+        {
+          title: "Designed for action",
+          description:
+            "Every page, interaction and campaign path is shaped around what the customer should understand, trust or do next."
+        },
+        {
+          title: "Built to improve",
+          description:
+            "Analytics, search foundations and flexible technology make the experience easier to measure and evolve after launch."
+        }
+      ]
+    },
     outcomes: [
       {
-        title: "Credibility in seconds",
-        description: "A polished first impression that helps serious prospects trust the business quickly."
+        title: "Earn trust faster",
+        description:
+          "Present your business with the clarity, consistency and quality customers expect before starting a conversation."
       },
       {
-        title: "Qualified enquiry flow",
-        description: "Clear CTAs, contextual forms and direct contact routes on every primary journey."
+        title: "Turn attention into action",
+        description:
+          "Give visitors focused journeys, relevant proof and clear next steps instead of making them search for answers."
       },
       {
-        title: "Built to expand",
-        description: "Services, campaigns, work and insights are modeled for future content growth."
+        title: "Grow with better signals",
+        description:
+          "Use search, campaign and conversion data to understand what is working and make better decisions over time."
       }
     ],
-    process: ["Discover", "Design", "Build", "Launch", "Grow"]
+    process: [
+      {
+        title: "Discover",
+        description: "Understand your business, audience, offer, competitors and current digital friction."
+      },
+      {
+        title: "Design",
+        description: "Shape the message, customer journeys, interface direction and prototypes before the full build."
+      },
+      {
+        title: "Build",
+        description: "Develop a fast, accessible and adaptable experience with search and measurement foundations included."
+      },
+      {
+        title: "Launch",
+        description: "Test the complete journey, configure measurement and release with a clear quality checklist."
+      },
+      {
+        title: "Grow",
+        description: "Review real behaviour and improve through SEO, content, campaigns or product iterations."
+      }
+    ],
+    finalCta: {
+      title: "Have a digital challenge worth solving?",
+      description:
+        "Tell us what you are building, improving or trying to grow. We will help identify the clearest next step—whether that means a website, a digital product, stronger search foundations or a focused acquisition campaign.",
+      primaryCta: "Start a Conversation",
+      secondaryCta: "Connect on WhatsApp"
+    }
   },
   footer: {
     description:
-      "A digital growth studio building thoughtful websites, apps, search foundations and performance marketing systems."
+      "A full-service digital agency helping startups, SMEs and MSMEs across India build credible experiences, useful technology and stronger paths to growth."
   }
 } as const;
