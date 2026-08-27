@@ -5,7 +5,7 @@ import { normalizePhone } from "@/lib/lead/normalize";
 import { createSupabaseAdminClient } from "@/lib/supabase/server";
 import { leadSchema } from "@/lib/validation/lead";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 const rateLimit = new Map<string, { count: number; resetAt: number }>();
 

@@ -5,10 +5,8 @@ set "RUNTIME_DIR=C:\Users\Lenovo\.cache\codex-runtimes\codex-primary-runtime\dep
 if exist "%RUNTIME_DIR%\node\bin\node.exe" set "PATH=%RUNTIME_DIR%\node\bin;%RUNTIME_DIR%\bin;%PATH%"
 
 cd /d "%PROJECT_DIR%"
-echo Starting AashishLabs Studio at http://localhost:3000
+echo Starting AashishLabs Studio...
 echo Keep this window open while viewing the site.
-
-start "" "http://localhost:3000"
 
 where pnpm >nul 2>nul
 if errorlevel 1 (
@@ -17,5 +15,6 @@ if errorlevel 1 (
   exit /b 1
 )
 
+start "" /min powershell -NoProfile -WindowStyle Hidden -Command "Start-Sleep -Seconds 8; Start-Process 'http://localhost:3000'"
 call pnpm dev
 pause
