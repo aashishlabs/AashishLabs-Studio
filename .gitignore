@@ -7,5 +7,9 @@ node_modules/
 dist/
 .open-next/
 .wrangler/
+.dev.vars
+.vercel/
 tsconfig.tsbuildinfo
 *.log
+
+.vercel

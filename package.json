@@ -11,8 +11,8 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run --environment node",
-    "deploy:cloudflare": "opennextjs-cloudflare build && wrangler deploy",
-    "preview:cloudflare": "opennextjs-cloudflare build && wrangler dev"
+    "deploy:cloudflare": "opennextjs-cloudflare deploy -- --keep-vars",
+    "preview:cloudflare": "opennextjs-cloudflare preview"
   },
   "dependencies": {
     "@fontsource/poppins": "5.3.0",

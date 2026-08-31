@@ -139,16 +139,20 @@ export const insights: Insight[] = [
 ];
 
 export const siteConfig = {
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://example.com",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000"),
   brand: {
     name: "aashishlabs",
     logoLabel: "aashishlabs logo",
     tagline: "Strategy · Design · Technology · Growth"
   },
   contact: {
-    email: "hello@example.com",
-    phone: "+91 00000 00000",
-    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "910000000000",
+    email: "aashishlabs@gmail.com",
+    phone: "+91 84462 38633",
+    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "918446238633",
     get whatsappUrl() {
       return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent("I want to discuss a project.")}`;
     }
