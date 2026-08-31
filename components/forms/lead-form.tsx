@@ -3,17 +3,29 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
+import { TurnstileWidget } from "@/components/forms/turnstile-widget";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { services } from "@/content/site";
 import { extractUtm } from "@/lib/lead/normalize";
-import { budgetRanges, leadSchema, timelines, type LeadInput } from "@/lib/validation/lead";
+import {
+  budgetRanges,
+  leadSchema,
+  timelines,
+  type LeadInput,
+} from "@/lib/validation/lead";
 
 type LeadFormProps = {
   formId?: string;
@@ -24,6 +36,8 @@ export function LeadForm({ formId = "primary-lead-form" }: LeadFormProps) {
   const searchParams = useSearchParams();
   const [serverError, setServerError] = useState<string | null>(null);
   const [hasStarted, setHasStarted] = useState(false);
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   const defaultService = searchParams.get("service");
   const utm = useMemo(() => extractUtm(searchParams), [searchParams]);
@@ -33,7 +47,7 @@ export function LeadForm({ formId = "primary-lead-form" }: LeadFormProps) {
     control,
     handleSubmit,
     setValue,
-    formState: { errors, isSubmitting }
+    formState: { errors, isSubmitting },
   } = useForm<LeadInput>({
     resolver: zodResolver(leadSchema),
     defaultValues: {
@@ -47,8 +61,9 @@ export function LeadForm({ formId = "primary-lead-form" }: LeadFormProps) {
       message: "",
       consent: false,
       honeypot: "",
-      utm
-    }
+      turnstileToken: "",
+      utm,
+    },
   });
 
   useEffect(() => {
@@ -61,54 +76,107 @@ export function LeadForm({ formId = "primary-lead-form" }: LeadFormProps) {
     const response = await fetch("/api/leads", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values)
+      body: JSON.stringify(values),
     });
 
     if (!response.ok) {
-      const data = (await response.json().catch(() => null)) as { error?: string } | null;
-      setServerError(data?.error || "Something went wrong. Please retry or use WhatsApp.");
+      const data = (await response.json().catch(() => null)) as {
+        error?: string;
+      } | null;
+      setServerError(
+        data?.error || "Something went wrong. Please retry or use WhatsApp.",
+      );
+      window.dispatchEvent(
+        new CustomEvent("form_error", { detail: { formId, type: "server" } }),
+      );
+      if (turnstileSiteKey) setTurnstileResetKey((value) => value + 1);
       return;
     }
 
-    window.dispatchEvent(new CustomEvent("generate_lead", { detail: { formId } }));
+    window.dispatchEvent(
+      new CustomEvent("generate_lead", { detail: { formId } }),
+    );
     router.push("/thank-you");
   }
+
+  const handleTurnstileToken = useCallback(
+    (token: string) => {
+      setValue("turnstileToken", token, { shouldValidate: true });
+    },
+    [setValue],
+  );
 
   function markStarted() {
     if (!hasStarted) {
       setHasStarted(true);
-      window.dispatchEvent(new CustomEvent("form_start", { detail: { formId } }));
+      window.dispatchEvent(
+        new CustomEvent("form_start", { detail: { formId } }),
+      );
     }
   }
 
   return (
-    <form className="grid gap-5" onSubmit={handleSubmit(onSubmit)} onFocus={markStarted} noValidate>
+    <form
+      className="grid gap-5"
+      onSubmit={handleSubmit(onSubmit)}
+      onFocus={markStarted}
+      noValidate
+    >
       {serverError ? (
-        <div role="alert" className="rounded-md border border-destructive/40 bg-destructive/10 p-3 text-sm text-destructive">
+        <div
+          role="alert"
+          className="rounded-md border border-destructive/40 bg-destructive/10 p-3 text-sm text-destructive"
+        >
           {serverError}
         </div>
       ) : null}
-      <input className="hidden" tabIndex={-1} autoComplete="off" {...register("honeypot")} aria-hidden="true" />
+      <input
+        className="hidden"
+        tabIndex={-1}
+        autoComplete="off"
+        {...register("honeypot")}
+        aria-hidden="true"
+      />
       <div className="grid gap-2">
         <Label htmlFor="fullName">Full name</Label>
-        <Input id="fullName" autoComplete="name" {...register("fullName")} aria-invalid={!!errors.fullName} />
+        <Input
+          id="fullName"
+          autoComplete="name"
+          {...register("fullName")}
+          aria-invalid={!!errors.fullName}
+        />
         <FieldError message={errors.fullName?.message} />
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="grid gap-2">
           <Label htmlFor="businessName">Business name</Label>
-          <Input id="businessName" autoComplete="organization" {...register("businessName")} />
+          <Input
+            id="businessName"
+            autoComplete="organization"
+            {...register("businessName")}
+          />
           <FieldError message={errors.businessName?.message} />
         </div>
         <div className="grid gap-2">
           <Label htmlFor="phone">Phone</Label>
-          <Input id="phone" autoComplete="tel" {...register("phone")} aria-invalid={!!errors.phone} />
+          <Input
+            id="phone"
+            autoComplete="tel"
+            {...register("phone")}
+            aria-invalid={!!errors.phone}
+          />
           <FieldError message={errors.phone?.message} />
         </div>
       </div>
       <div className="grid gap-2">
         <Label htmlFor="email">Email</Label>
-        <Input id="email" type="email" autoComplete="email" {...register("email")} aria-invalid={!!errors.email} />
+        <Input
+          id="email"
+          type="email"
+          autoComplete="email"
+          {...register("email")}
+          aria-invalid={!!errors.email}
+        />
         <FieldError message={errors.email?.message} />
       </div>
       <Controller
@@ -121,13 +189,18 @@ export function LeadForm({ formId = "primary-lead-form" }: LeadFormProps) {
               {services.map((service) => {
                 const checked = field.value?.includes(service.slug);
                 return (
-                  <label key={service.slug} className="flex items-center gap-3 rounded-md border bg-background p-3 text-sm">
+                  <label
+                    key={service.slug}
+                    className="flex items-center gap-3 rounded-md border bg-background p-3 text-sm"
+                  >
                     <Checkbox
                       checked={checked}
                       onCheckedChange={(state) => {
                         const next = state
                           ? [...(field.value || []), service.slug]
-                          : (field.value || []).filter((item) => item !== service.slug);
+                          : (field.value || []).filter(
+                              (item) => item !== service.slug,
+                            );
                         field.onChange(next);
                       }}
                     />
@@ -186,7 +259,11 @@ export function LeadForm({ formId = "primary-lead-form" }: LeadFormProps) {
       </div>
       <div className="grid gap-2">
         <Label htmlFor="message">Project message</Label>
-        <Textarea id="message" {...register("message")} aria-invalid={!!errors.message} />
+        <Textarea
+          id="message"
+          {...register("message")}
+          aria-invalid={!!errors.message}
+        />
         <FieldError message={errors.message?.message} />
       </div>
       <Controller
@@ -195,10 +272,16 @@ export function LeadForm({ formId = "primary-lead-form" }: LeadFormProps) {
         render={({ field }) => (
           <div className="grid gap-2">
             <label className="flex items-start gap-3 text-sm leading-6 text-muted-foreground">
-              <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+              <Checkbox
+                checked={field.value}
+                onCheckedChange={field.onChange}
+              />
               <span>
                 I agree to be contacted about this enquiry and accept the{" "}
-                <Link href="/privacy-policy" className="text-primary underline-offset-4 hover:underline">
+                <Link
+                  href="/privacy-policy"
+                  className="text-primary underline-offset-4 hover:underline"
+                >
                   privacy policy
                 </Link>
                 .
@@ -208,6 +291,13 @@ export function LeadForm({ formId = "primary-lead-form" }: LeadFormProps) {
           </div>
         )}
       />
+      {turnstileSiteKey ? (
+        <TurnstileWidget
+          siteKey={turnstileSiteKey}
+          resetKey={turnstileResetKey}
+          onTokenChange={handleTurnstileToken}
+        />
+      ) : null}
       <Button type="submit" size="lg" disabled={isSubmitting}>
         {isSubmitting ? "Sending..." : "Submit enquiry"}
       </Button>

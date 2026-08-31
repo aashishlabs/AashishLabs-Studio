@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { sendLeadNotification } from "@/lib/email/resend";
 import { sha256Hash } from "@/lib/lead/hash";
 import { normalizePhone } from "@/lib/lead/normalize";
+import { verifyTurnstileToken } from "@/lib/security/turnstile";
 import { createSupabaseAdminClient } from "@/lib/supabase/server";
 import { leadSchema } from "@/lib/validation/lead";
 
@@ -10,33 +11,64 @@ export const runtime = "nodejs";
 const rateLimit = new Map<string, { count: number; resetAt: number }>();
 
 export async function POST(request: Request) {
-  const ip = request.headers.get("cf-connecting-ip") || request.headers.get("x-forwarded-for") || "unknown";
+  const ip =
+    request.headers.get("cf-connecting-ip") ||
+    request.headers.get("x-forwarded-for") ||
+    "unknown";
   const limit = checkRateLimit(ip);
   if (!limit.ok) {
-    return NextResponse.json({ error: "Too many attempts. Please retry later." }, { status: 429 });
+    return NextResponse.json(
+      { error: "Too many attempts. Please retry later." },
+      { status: 429 },
+    );
   }
 
   const body = await request.json().catch(() => null);
   const parsed = leadSchema.safeParse(body);
 
   if (!parsed.success) {
-    return NextResponse.json({ error: "Please check the highlighted fields." }, { status: 400 });
+    return NextResponse.json(
+      { error: "Please check the highlighted fields." },
+      { status: 400 },
+    );
   }
 
   const lead = parsed.data;
 
   if (lead.honeypot) {
-    return NextResponse.json({ success: true, leadId: "accepted" }, { status: 201 });
+    return NextResponse.json(
+      { success: true, leadId: "accepted" },
+      { status: 201 },
+    );
   }
 
   const turnstileEnabled = Boolean(process.env.TURNSTILE_SECRET_KEY);
   if (turnstileEnabled && !lead.turnstileToken) {
-    return NextResponse.json({ error: "Spam protection check failed." }, { status: 400 });
+    return NextResponse.json(
+      { error: "Spam protection check failed." },
+      { status: 400 },
+    );
+  }
+
+  if (turnstileEnabled && lead.turnstileToken) {
+    const verification = await verifyTurnstileToken(lead.turnstileToken, ip);
+    if (!verification.success) {
+      console.warn("Turnstile verification failed", {
+        errorCodes: verification.errorCodes,
+      });
+      return NextResponse.json(
+        { error: "Spam protection check failed. Please retry." },
+        { status: 400 },
+      );
+    }
   }
 
   const supabase = createSupabaseAdminClient();
   if (!supabase) {
-    return NextResponse.json({ error: "Lead storage is not configured yet." }, { status: 503 });
+    return NextResponse.json(
+      { error: "Lead storage is not configured yet." },
+      { status: 503 },
+    );
   }
 
   const ipHash = ip === "unknown" ? null : await sha256Hash(ip);
@@ -63,18 +95,25 @@ export async function POST(request: Request) {
     user_agent_hash: userAgentHash,
     ip_hash: ipHash,
     status: "new",
-    notification_status: "pending"
+    notification_status: "pending",
   };
 
-  const { data, error } = await supabase.from("lead").insert(insertPayload).select("id").single();
+  const { data, error } = await supabase
+    .from("lead")
+    .insert(insertPayload)
+    .select("id")
+    .single();
   if (error || !data?.id) {
     console.error("Supabase lead insert failed", {
       code: error?.code,
       message: error?.message,
       details: error?.details,
-      hint: error?.hint
+      hint: error?.hint,
     });
-    return NextResponse.json({ error: "Unable to save this enquiry right now." }, { status: 500 });
+    return NextResponse.json(
+      { error: "Unable to save this enquiry right now." },
+      { status: 500 },
+    );
   }
 
   let notificationStatus = "sent";
@@ -83,12 +122,16 @@ export async function POST(request: Request) {
     notificationStatus = notification.status === "skipped" ? "skipped" : "sent";
   } catch (error) {
     console.error("Lead notification failed", {
-      message: error instanceof Error ? error.message : "Unknown email delivery error"
+      message:
+        error instanceof Error ? error.message : "Unknown email delivery error",
     });
     notificationStatus = "failed";
   }
 
-  await supabase.from("lead").update({ notification_status: notificationStatus }).eq("id", data.id);
+  await supabase
+    .from("lead")
+    .update({ notification_status: notificationStatus })
+    .eq("id", data.id);
 
   return NextResponse.json({ success: true, leadId: data.id }, { status: 201 });
 }

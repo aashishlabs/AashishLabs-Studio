@@ -5,7 +5,8 @@ import { WorkPreview } from "@/components/sections/work-preview";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Selected work and labelled concept builds for the digital agency website."
+  description:
+    "Explore transparent AashishLabs studio concepts for websites, digital products, SEO and growth systems.",
 };
 
 export default function WorkPage() {
@@ -14,8 +15,8 @@ export default function WorkPage() {
       <main className="container py-20">
         <SectionHeading
           eyebrow="Work"
-          title="Selected concepts and future case studies"
-          description="Placeholders are intentionally labelled until verified client proof is available."
+          title="How we think through digital challenges"
+          description="These studio concepts demonstrate our approach without presenting unverified results as client work. Verified case studies will be added as the portfolio grows."
         />
         <div className="mt-10">
           <WorkPreview />

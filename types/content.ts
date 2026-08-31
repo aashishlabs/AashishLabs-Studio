@@ -33,6 +33,10 @@ export type Insight = {
   excerpt: string;
   category: string;
   readTime: string;
+  sections: Array<{
+    title: string;
+    paragraphs: string[];
+  }>;
   seo: SeoContent;
 };
 
