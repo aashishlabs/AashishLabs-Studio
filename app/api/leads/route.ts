@@ -68,6 +68,12 @@ export async function POST(request: Request) {
 
   const { data, error } = await supabase.from("lead").insert(insertPayload).select("id").single();
   if (error || !data?.id) {
+    console.error("Supabase lead insert failed", {
+      code: error?.code,
+      message: error?.message,
+      details: error?.details,
+      hint: error?.hint
+    });
     return NextResponse.json({ error: "Unable to save this enquiry right now." }, { status: 500 });
   }
 
