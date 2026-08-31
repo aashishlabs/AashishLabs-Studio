@@ -41,8 +41,7 @@ Required launch values:
 - `NEXT_PUBLIC_SITE_URL`
 - `NEXT_PUBLIC_WHATSAPP_NUMBER`
 - `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- `SUPABASE_SERVICE_ROLE_KEY`
+- `SUPABASE_SECRET_KEY`
 - `RESEND_API_KEY`
 - `LEAD_NOTIFICATION_TO`
 
@@ -62,7 +61,7 @@ Optional placeholders:
 1. Create a Supabase project.
 2. Run `supabase/migrations/0001_leads.sql` in the SQL editor or through the Supabase CLI.
 3. Confirm RLS is enabled on `public.lead`.
-4. Use the service-role key only as `SUPABASE_SERVICE_ROLE_KEY` in server environments.
+4. Use a Supabase secret key only as `SUPABASE_SECRET_KEY` in server environments.
 5. Public visitors should not have direct table read access.
 
 ## Resend Setup
