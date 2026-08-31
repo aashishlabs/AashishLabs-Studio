@@ -13,9 +13,10 @@ export async function sendLeadNotification(lead: LeadPayload, leadId: string) {
   const subject = `New project enquiry: ${lead.fullName}`;
   const serviceInterest = lead.serviceInterest.join(", ");
 
-  await resend.emails.send({
+  const { error } = await resend.emails.send({
     from: "Leads <onboarding@resend.dev>",
     to,
+    replyTo: lead.email,
     subject,
     text: [
       `Lead ID: ${leadId}`,
@@ -30,6 +31,10 @@ export async function sendLeadNotification(lead: LeadPayload, leadId: string) {
       lead.message
     ].join("\n")
   });
+
+  if (error) {
+    throw new Error(`Resend email failed: ${error.message}`);
+  }
 
   return { status: "sent" as const };
 }

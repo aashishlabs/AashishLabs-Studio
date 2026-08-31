@@ -81,7 +81,10 @@ export async function POST(request: Request) {
   try {
     const notification = await sendLeadNotification(lead, data.id);
     notificationStatus = notification.status === "skipped" ? "skipped" : "sent";
-  } catch {
+  } catch (error) {
+    console.error("Lead notification failed", {
+      message: error instanceof Error ? error.message : "Unknown email delivery error"
+    });
     notificationStatus = "failed";
   }
 
