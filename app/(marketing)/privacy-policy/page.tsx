@@ -39,10 +39,17 @@ export default function PrivacyPolicyPage() {
           <PolicySection title="Service providers and data location">
             We use trusted service providers including Vercel for website
             hosting, Supabase for enquiry storage and Resend for email
-            notifications. Analytics providers may be enabled to understand
-            aggregate website usage. These providers may process information in
-            countries outside India under their own security and privacy
-            commitments.
+            notifications. If you allow analytics, Google Analytics helps us
+            understand aggregate website usage, traffic sources and successful
+            enquiry journeys. Advertising storage and personalisation remain
+            disabled. These providers may process information in countries
+            outside India under their own security and privacy commitments.
+          </PolicySection>
+          <PolicySection title="Analytics choices">
+            Google Analytics remains disabled unless you select “Allow
+            analytics” in the website preference notice. Your choice is stored
+            in your browser. You can clear this site’s browser storage to reset
+            the choice and see the notice again.
           </PolicySection>
           <PolicySection title="Retention and security">
             Enquiry information is kept only as long as reasonably necessary to

@@ -11,16 +11,33 @@ export type AnalyticsEventName =
   | "service_view"
   | "scroll_depth";
 
-export type AnalyticsPayload = Record<string, string | number | boolean | undefined | string[]>;
+export type AnalyticsPayload = Record<
+  string,
+  string | number | boolean | undefined | string[]
+>;
 
 declare global {
   interface Window {
-    gtag?: (command: "event", eventName: string, payload?: AnalyticsPayload) => void;
-    clarity?: (command: string, eventName: string, payload?: AnalyticsPayload) => void;
+    gtag?: {
+      (command: "event", eventName: string, payload?: AnalyticsPayload): void;
+      (
+        command: "consent",
+        action: "default" | "update",
+        payload: Record<string, "granted" | "denied" | number>,
+      ): void;
+    };
+    clarity?: (
+      command: string,
+      eventName: string,
+      payload?: AnalyticsPayload,
+    ) => void;
   }
 }
 
-export function trackEvent(name: AnalyticsEventName, payload: AnalyticsPayload = {}) {
+export function trackEvent(
+  name: AnalyticsEventName,
+  payload: AnalyticsPayload = {},
+) {
   if (typeof window === "undefined") return;
   window.gtag?.("event", name, payload);
   window.clarity?.("event", name, payload);
