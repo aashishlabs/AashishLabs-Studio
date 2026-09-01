@@ -5,7 +5,7 @@ import { siteConfig } from "@/content/site";
 
 export function StudioIntroduction() {
   return (
-    <section className="container py-20">
+    <section className="container hidden py-20 md:block">
       <div className="grid gap-8 overflow-hidden rounded-lg border border-primary/20 bg-card/70 p-8 shadow-glow md:grid-cols-[0.8fr_1.2fr] md:p-12">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
