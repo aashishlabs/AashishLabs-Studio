@@ -1,10 +1,12 @@
 import { MainLayout } from "@/components/layout/main-layout";
 import { HomeHero } from "@/components/sections/home-hero";
 import { HomeCta } from "@/components/sections/home-cta";
+import { HomepageFaq } from "@/components/sections/homepage-faq";
 import { Outcomes } from "@/components/sections/outcomes";
 import { ProcessTimeline } from "@/components/sections/process-timeline";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { ServicesGrid } from "@/components/sections/services-grid";
+import { StudioIntroduction } from "@/components/sections/studio-introduction";
 import { TrustStrip } from "@/components/sections/trust-strip";
 import { WorkPreview } from "@/components/sections/work-preview";
 import { WhyAashishLabs } from "@/components/sections/why-aashishlabs";
@@ -26,6 +28,7 @@ export default function HomePage() {
           </div>
         </section>
         <WhyAashishLabs />
+        <StudioIntroduction />
         <section className="container py-20">
           <SectionHeading
             eyebrow="What changes"
@@ -39,8 +42,8 @@ export default function HomePage() {
         <section id="process" className="container py-20">
           <SectionHeading
             eyebrow="How we work"
-            title="A focused path from business challenge to measurable improvement."
-            description="A clear five-stage process keeps decisions connected to your audience, priorities and desired outcomes."
+            title="A clear path from idea to launch."
+            description="Every project is different, but the principles remain consistent: understand before building, validate important decisions early and launch with the foundations needed to learn."
           />
           <div className="mt-10">
             <ProcessTimeline />
@@ -54,6 +57,16 @@ export default function HomePage() {
           />
           <div className="mt-10">
             <WorkPreview />
+          </div>
+        </section>
+        <section className="container py-20">
+          <SectionHeading
+            eyebrow="Frequently asked questions"
+            title="A clearer start begins with better answers."
+            description="What growing businesses commonly want to know before beginning a digital project with AashishLabs."
+          />
+          <div className="mt-10 max-w-4xl">
+            <HomepageFaq />
           </div>
         </section>
         <HomeCta />

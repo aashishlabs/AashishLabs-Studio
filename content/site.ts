@@ -250,9 +250,9 @@ export const siteConfig = {
   home: {
     hero: {
       title:
-        "Digital experiences built to earn trust, drive action and support growth.",
+        "Start focused. Build what matters. Grow with evidence.",
       description:
-        "AashishLabs partners with startups, SMEs and MSMEs across India to design and build high-performing websites, web applications and digital growth systems—from the first idea to launch and continuous improvement.",
+        "AashishLabs helps startups, SMEs and MSMEs across India turn business ideas and digital challenges into clear, credible and launch-ready experiences.",
       primaryCta: "Discuss Your Project",
       secondaryCta: "Explore Our Services",
       preview: [
@@ -281,26 +281,41 @@ export const siteConfig = {
       "Measured after launch",
     ],
     difference: {
-      title: "The build and the growth plan belong together.",
+      title: "Practical digital solutions, shaped around your business.",
       description:
-        "A polished website is not enough if nobody discovers it. More traffic is not enough if the experience fails to convert. AashishLabs brings product thinking and growth thinking into the same process, so every decision supports a clearer customer journey and a stronger business outcome.",
+        "Growing businesses rarely need more complexity. They need the right priorities, dependable execution and a digital foundation that can improve over time. AashishLabs brings strategy, design, development and growth thinking into one connected process.",
       items: [
         {
-          title: "Clear before clever",
+          title: "Business before buzzwords",
           description:
-            "We begin with your audience, offer and business priorities—not visual trends or unnecessary technology.",
+            "We begin with your customers, goals and constraints. Technology and design choices follow what the business needs to achieve.",
         },
         {
-          title: "Designed for action",
+          title: "Start with what matters",
           description:
-            "Every page, interaction and campaign path is shaped around what the customer should understand, trust or do next.",
+            "We identify the smallest meaningful solution that can be launched, tested and expanded with greater confidence.",
         },
         {
-          title: "Built to improve",
+          title: "One connected approach",
           description:
-            "Analytics, search foundations and flexible technology make the experience easier to measure and evolve after launch.",
+            "Messaging, experience, development, search and measurement are planned together to create a consistent customer journey.",
+        },
+        {
+          title: "Clear and collaborative",
+          description:
+            "You remain involved at important stages, with clear priorities, visible progress and practical explanations throughout the project.",
         },
       ],
+    },
+    studio: {
+      title: "A digital studio for ambitious, growing businesses.",
+      description: [
+        "AashishLabs was created to make thoughtful digital execution more accessible to startups, SMEs and MSMEs in India.",
+        "Our initial focus is websites and digital products—the places where customers understand your business, evaluate your credibility and decide whether to take the next step. From there, we can support search visibility, performance marketing and continuous improvement when the business is ready.",
+        "We combine focused thinking with hands-on execution, keeping the process straightforward and every outcome connected to a real business objective.",
+      ],
+      principle: "Built for today. Ready for what comes next.",
+      cta: "Discuss Your Project",
     },
     outcomes: [
       {
@@ -323,33 +338,90 @@ export const siteConfig = {
       {
         title: "Discover",
         description:
-          "Understand your business, audience, offer, competitors and current digital friction.",
+          "We understand your business, audience, offer, competitors, current challenges and desired outcomes.",
+        outcome:
+          "A clearer problem statement, priorities and project direction.",
+      },
+      {
+        title: "Define",
+        description:
+          "We determine what should be built now, what can wait and how success should be measured.",
+        outcome:
+          "An agreed scope, customer journey, content direction and delivery plan.",
       },
       {
         title: "Design",
         description:
-          "Shape the message, customer journeys, interface direction and prototypes before the full build.",
+          "We structure the experience, create key screens and review important interactions before full development begins.",
+        outcome:
+          "Wireframes or visual concepts that make the solution tangible and easier to validate.",
       },
       {
-        title: "Build",
+        title: "Build & validate",
         description:
-          "Develop a fast, accessible and adaptable experience with search and measurement foundations included.",
+          "We develop the approved experience, connect essential services and test it across devices and user journeys.",
+        outcome:
+          "A responsive, accessible and search-ready solution prepared for real-world use.",
       },
       {
-        title: "Launch",
+        title: "Launch & improve",
         description:
-          "Test the complete journey, configure measurement and release with a clear quality checklist.",
+          "We complete final checks, configure measurement and release. After launch, real behaviour guides the next improvements.",
+        outcome:
+          "A reliable launch and a practical roadmap for what comes next.",
+      },
+    ],
+    faq: [
+      {
+        question: "Who does AashishLabs work with?",
+        answer:
+          "We primarily work with startups, SMEs and MSMEs in India that are launching something new, improving an existing digital presence or building a stronger path to growth.",
       },
       {
-        title: "Grow",
-        description:
-          "Review real behaviour and improve through SEO, content, campaigns or product iterations.",
+        question: "What can you help us build?",
+        answer:
+          "Our primary focus is business websites, landing pages, web applications and early-stage digital products. We can also support SEO foundations, analytics, conversion improvement and focused performance campaigns.",
+      },
+      {
+        question: "Do we need a complete project brief?",
+        answer:
+          "No. You can approach us with an idea, a business problem or an existing website that is not delivering results. The discovery stage helps turn that starting point into a clearer scope.",
+      },
+      {
+        question: "Can we begin with a smaller project?",
+        answer:
+          "Yes. For growing businesses, a focused first phase is often more practical than a large transformation. We can identify the most valuable starting point and create a foundation that can expand later.",
+      },
+      {
+        question: "How long does a project take?",
+        answer:
+          "The timeline depends on scope, complexity, content readiness and feedback cycles. After the initial discussion, we will provide a realistic delivery plan with clear milestones.",
+      },
+      {
+        question: "How much will the project cost?",
+        answer:
+          "Pricing is based on the work required rather than a generic package. Once the priorities and scope are understood, you will receive a transparent proposal outlining deliverables, timelines and costs.",
+      },
+      {
+        question: "Will we be involved during the project?",
+        answer:
+          "Yes. Important decisions are reviewed together at defined stages. This keeps the work aligned while avoiding unnecessary meetings and prolonged feedback cycles.",
+      },
+      {
+        question: "What happens after launch?",
+        answer:
+          "We can continue with maintenance, SEO, analytics reviews, conversion improvements, content or growth campaigns. You can also take over the project with a clear handover.",
+      },
+      {
+        question: "Will we own the final website or product?",
+        answer:
+          "Project ownership and handover terms will be clearly stated in the proposal. Unless a specific third-party licence has its own conditions, approved and paid-for deliverables will be handed over to the client.",
       },
     ],
     finalCta: {
-      title: "Have a digital challenge worth solving?",
+      title: "You do not need every answer before you begin.",
       description:
-        "Tell us what you are building, improving or trying to grow. We will help identify the clearest next step—whether that means a website, a digital product, stronger search foundations or a focused acquisition campaign.",
+        "Tell us what you want to launch, improve or understand. We will help identify the clearest next step—without pushing unnecessary features or services.",
       primaryCta: "Start a Conversation",
       secondaryCta: "Connect on WhatsApp",
     },

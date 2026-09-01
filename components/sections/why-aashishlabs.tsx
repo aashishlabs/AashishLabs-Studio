@@ -10,7 +10,7 @@ export function WhyAashishLabs() {
         title={siteConfig.home.difference.title}
         description={siteConfig.home.difference.description}
       />
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
+      <div className="mt-10 grid gap-4 md:grid-cols-2">
         {siteConfig.home.difference.items.map((item) => (
           <Card key={item.title} className="bg-card/70">
             <CardHeader>
