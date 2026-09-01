@@ -3,6 +3,7 @@ import "@fontsource/poppins/700.css";
 import { AnalyticsConsent } from "@/components/analytics/analytics-consent";
 import { AnalyticsEvents } from "@/components/analytics/analytics-events";
 import { AnalyticsScripts } from "@/components/analytics/analytics-scripts";
+import { GoogleConsentDefault } from "@/components/analytics/google-consent-default";
 import { siteConfig } from "@/content/site";
 import "./globals.css";
 
@@ -62,15 +63,18 @@ export const viewport: Viewport = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const hasGoogleAnalytics = Boolean(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID);
+
   return (
     <html lang="en">
+      <head>
+        <GoogleConsentDefault enabled={hasGoogleAnalytics} />
+      </head>
       <body>
         <AnalyticsScripts />
         <AnalyticsEvents />
         {children}
-        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ? (
-          <AnalyticsConsent />
-        ) : null}
+        {hasGoogleAnalytics ? <AnalyticsConsent /> : null}
       </body>
     </html>
   );
