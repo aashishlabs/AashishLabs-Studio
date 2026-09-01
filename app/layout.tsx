@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.brand.name}`,
   },
   description: siteConfig.seo.defaultDescription,
+  verification: {
+    google: "0iHkaI_SoEJhdOLU2WxICFGRSqrmmzgQUp2e3B2j4BY",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
