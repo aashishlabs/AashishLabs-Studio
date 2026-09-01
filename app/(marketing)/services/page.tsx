@@ -15,7 +15,7 @@ export default function ServicesPage() {
         <SectionHeading
           eyebrow="Services"
           title="Digital systems for launch and growth"
-          description="Each service template is content-configurable and ready for future CMS-backed publishing."
+          description="Start with the capability your business needs most. We can combine strategy, design, technology and growth support into a focused scope that fits your stage and priorities."
         />
         <div className="mt-10">
           <ServicesGrid />

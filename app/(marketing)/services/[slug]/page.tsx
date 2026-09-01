@@ -82,7 +82,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         </section>
         <section className="container grid gap-10 py-16 lg:grid-cols-2">
           <div>
-            <SectionHeading eyebrow="Included" title="Configurable delivery scope" />
+            <SectionHeading eyebrow="Included" title="A practical scope shaped around your goals" />
             <div className="mt-8 grid gap-3">
               {service.includes.map((item) => (
                 <div key={item} className="rounded-md border border-white/10 bg-card/70 p-4 text-sm font-medium">
@@ -109,7 +109,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               <div>
                 <h2 className="font-display text-3xl font-semibold">Ready to shape this into a lead engine?</h2>
                 <p className="mt-2 max-w-2xl text-primary-foreground/80">
-                  Placeholder CTA copy, configurable per service.
+                  Tell us where you are today and what you want to improve. We will help turn it into a clear, practical plan for launch and growth.
                 </p>
               </div>
               <Button asChild variant="secondary">
