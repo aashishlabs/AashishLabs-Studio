@@ -1,0 +1,14 @@
+Generated using the built-in image generation tool.
+Brand assumed from workspace name; services and palette from local website.
+
+Use case: ads-marketing.
+Create a polished first Instagram launch poster for AashishLabs Studio, a digital solutions studio for SMEs, MSMEs and fintechs. Portrait 4:5 composition, ideally 1080x1350. Premium editorial typography, exceptionally readable on mobile. Charcoal near-black background, off-white text, vivid teal accents, tiny warm amber accent. Generous margins and negative space. Sophisticated restrained design, no stock business people, no robots, no fake client logos, no invented statistics. Main headline very large, left aligned in upper middle. Lower middle features an elegant dimensional browser window and mobile web interface, abstract cards with no tiny illegible text, subtly connected by teal lines suggesting cohesive digital experiences. Keep illustration subordinate to headline. Brand is a simple typographic wordmark, do not invent an emblem.
+Exact visible text:
+"AashishLabs Studio"
+"YOUR NEXT CHAPTER."
+"BUILT DIGITAL."
+"Digital solutions for SMEs, MSMEs & fintechs."
+"Websites • Apps & PWAs"
+"SEO • Performance Marketing"
+"DM “GROW” to start a conversation"
+Use the headline YOUR NEXT CHAPTER. in off-white and BUILT DIGITAL. in teal. Place services neatly above a strong teal CTA strip near bottom. Text must be exact, clean, properly spelled. No other text, no website address, no Instagram handle, no watermark. Entire poster flat full bleed artwork, not photographed on a wall.

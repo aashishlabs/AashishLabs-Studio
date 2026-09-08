@@ -14,7 +14,7 @@ export function WhyAashishLabs() {
           title={siteConfig.home.difference.title}
           description={siteConfig.home.difference.description}
         />
-        <div className="mt-7 divide-y divide-white/10 overflow-hidden rounded-lg border border-white/10 bg-card/70">
+        <div className="mt-7 divide-y divide-[hsl(var(--subtle-border))] overflow-hidden rounded-lg border border-[hsl(var(--subtle-border))] bg-card/70">
           {siteConfig.home.difference.items.map((item) => (
             <details key={item.title} className="group px-4">
               <summary className="focus-ring flex cursor-pointer list-none items-center justify-between gap-4 rounded-sm py-4 font-display text-base font-semibold [&::-webkit-details-marker]:hidden">
@@ -33,7 +33,7 @@ export function WhyAashishLabs() {
             </span>
             <ChevronDown className="h-4 w-4 shrink-0 text-primary transition-transform group-open:rotate-180" aria-hidden="true" />
           </summary>
-          <div className="mt-4 space-y-3 border-t border-white/10 pt-4 text-sm leading-6 text-muted-foreground">
+          <div className="mt-4 space-y-3 border-t border-[hsl(var(--subtle-border))] pt-4 text-sm leading-6 text-muted-foreground">
             {siteConfig.home.studio.description.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}

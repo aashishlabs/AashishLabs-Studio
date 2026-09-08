@@ -10,7 +10,7 @@ import { siteConfig } from "@/content/site";
 export function HomepageFaq() {
   return (
     <>
-      <div className="rounded-lg border border-white/10 bg-card/60 px-4 md:hidden">
+      <div className="rounded-lg border border-[hsl(var(--subtle-border))] bg-card/60 px-4 md:hidden">
         <Accordion type="single" collapsible>
           {siteConfig.home.faq.slice(0, 4).map((item, index) => (
             <AccordionItem key={item.question} value={`question-${index + 1}`}>
@@ -43,7 +43,7 @@ export function HomepageFaq() {
         </details>
       </div>
 
-      <div className="hidden rounded-lg border border-white/10 bg-card/60 px-8 md:block">
+      <div className="hidden rounded-lg border border-[hsl(var(--subtle-border))] bg-card/60 px-8 md:block">
         <Accordion type="single" collapsible>
           {siteConfig.home.faq.map((item, index) => (
             <AccordionItem key={item.question} value={`question-${index + 1}`}>

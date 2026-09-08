@@ -5,6 +5,7 @@ import { AnalyticsEvents } from "@/components/analytics/analytics-events";
 import { AnalyticsScripts } from "@/components/analytics/analytics-scripts";
 import { GoogleConsentDefault } from "@/components/analytics/google-consent-default";
 import { siteConfig } from "@/content/site";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -69,15 +70,23 @@ export default function RootLayout({
   const hasGoogleAnalytics = Boolean(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID);
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <GoogleConsentDefault enabled={hasGoogleAnalytics} />
       </head>
       <body>
-        <AnalyticsScripts />
-        <AnalyticsEvents />
-        {children}
-        {hasGoogleAnalytics ? <AnalyticsConsent /> : null}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          storageKey="aashishlabs-theme"
+          disableTransitionOnChange
+        >
+          <AnalyticsScripts />
+          <AnalyticsEvents />
+          {children}
+          {hasGoogleAnalytics ? <AnalyticsConsent /> : null}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -20,7 +20,8 @@ export default function HomePage() {
         <section className="container py-12 md:py-20">
           <SectionHeading
             eyebrow="What we do"
-            title="One agency for building, launching and growing digitally."
+            title="Digital products that fuel progress. Your technology partner for growth."
+            
             description="Strategy, experience design, technology and marketing work better when they share the same direction. Our services take your business from idea or friction point to a focused digital solution."
           />
           <div className="mt-7 md:mt-10">

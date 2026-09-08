@@ -44,7 +44,7 @@ export function AnalyticsConsent() {
   return (
     <aside
       aria-label="Analytics preferences"
-      className="fixed inset-x-4 bottom-24 z-[60] mx-auto max-w-2xl rounded-xl border border-white/15 bg-[#0B1628]/95 p-5 shadow-2xl backdrop-blur-xl sm:bottom-5"
+      className="fixed inset-x-4 bottom-24 z-[60] mx-auto max-w-2xl rounded-xl border border-border bg-background/95 p-5 shadow-2xl backdrop-blur-xl sm:bottom-5"
     >
       <p className="font-display text-lg font-semibold text-foreground">
         Help us improve AashishLabs

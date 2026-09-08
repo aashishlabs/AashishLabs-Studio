@@ -1,0 +1,5 @@
+Tool: built-in image generation (edit).
+Input: first-post.png
+Output: first-post-digital.png
+
+Edit this Instagram poster for the approved brand AashishLabs Digital. Replace the top brand text AashishLabs Studio with a typographic wordmark: AashishLabs prominently, and Digital directly underneath in smaller teal lettering. Under this wordmark add the small readable tagline "Websites, apps & digital growth". Preserve all other exact wording, charcoal and teal palette, browser/mobile artwork, and premium typography. Recompose to a 4:5 portrait Instagram feed poster, with ample safe margins, reducing illustration height as needed so all text fits without cropping. Headline remains "YOUR NEXT CHAPTER." and "BUILT DIGITAL." Audience remains "Digital solutions for SMEs, MSMEs & fintechs." Services remain "Websites • Apps & PWAs" and "SEO • Performance Marketing". Bottom CTA remains "DM “GROW” to start a conversation". No additional claims, logos, handles or URLs. Return only finished flat artwork.

@@ -17,11 +17,11 @@ export function BrandLogo({ className, markClassName, wordmarkClassName, priorit
         width={32}
         height={42}
         priority={priority}
-        className={cn("h-10 w-[1.9rem] shrink-0", markClassName)}
+        className={cn("brand-symbol h-10 w-[1.9rem] shrink-0", markClassName)}
       />
       <span
         aria-hidden="true"
-        className={cn("brand-wordmark text-[1.45rem] text-white", wordmarkClassName)}
+        className={cn("brand-wordmark text-[1.45rem] text-foreground", wordmarkClassName)}
       >
         <span>aas</span>
         <span className="brand-ascender">h</span>

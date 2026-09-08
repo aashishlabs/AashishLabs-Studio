@@ -7,3 +7,6 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Canonical project location
+The user-confirmed project root is E:\Projects\AashishLabs\AashishLabs Studio. Use this directory for all project work and deliverables. The OneDrive copy on C drive is obsolete. Instagram brand: AashishLabs Digital. Preserve the existing website code and branding, including the tagline Strategy · Design · Technology · Growth, unless the user explicitly requests website changes.
