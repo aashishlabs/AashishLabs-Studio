@@ -1,0 +1,17 @@
+{
+  "preset": "mobile",
+  "version": "13.4.1",
+  "scores": {
+    "performance": 0.65,
+    "accessibility": 0.96,
+    "best-practices": 1,
+    "seo": 0.66
+  },
+  "metrics": {
+    "lcp": 3757.83245,
+    "fcp": 1085.83245,
+    "tbt": 1243.6117,
+    "cls": 0.0003475703060337502
+  },
+  "notes": "Report saved successfully; CLI then failed temporary Chrome profile cleanup on Windows. Local robots.txt intentionally blocks crawling."
+}

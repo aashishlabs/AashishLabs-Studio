@@ -5,7 +5,8 @@ import { ServicesGrid } from "@/components/sections/services-grid";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Explore launch services for web development, app/PWA development, SEO and performance marketing."
+  description:
+    "Explore launch services for web development, app/PWA development, SEO and performance marketing.",
 };
 
 export default function ServicesPage() {

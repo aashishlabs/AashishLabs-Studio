@@ -16,7 +16,10 @@ const SheetOverlay = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Overlay
     ref={ref}
-    className={cn("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm", className)}
+    className={cn(
+      "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm",
+      className,
+    )}
     {...props}
   />
 ));
@@ -32,7 +35,7 @@ const SheetContent = React.forwardRef<
       ref={ref}
       className={cn(
         "fixed inset-y-0 right-0 z-50 max-h-[100dvh] w-full max-w-sm overflow-y-auto overscroll-contain border-l bg-background p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-lg",
-        className
+        className,
       )}
       {...props}
     >
@@ -49,4 +52,11 @@ SheetContent.displayName = DialogPrimitive.Content.displayName;
 const SheetTitle = DialogPrimitive.Title;
 const SheetDescription = DialogPrimitive.Description;
 
-export { Sheet, SheetTrigger, SheetClose, SheetContent, SheetTitle, SheetDescription };
+export {
+  Sheet,
+  SheetTrigger,
+  SheetClose,
+  SheetContent,
+  SheetTitle,
+  SheetDescription,
+};

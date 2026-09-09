@@ -5,8 +5,8 @@ import { siteConfig } from "@/content/site";
 export function Footer() {
   return (
     <footer className="site-footer border-t border-[hsl(var(--subtle-border))] pb-24 pt-12 sm:pb-12">
-      <div className="container grid gap-8 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
-        <div>
+      <div className="container grid grid-cols-2 gap-6 md:grid-cols-[1.2fr_0.8fr_0.8fr] md:gap-8">
+        <div className="col-span-2 md:col-span-1">
           <BrandLogo
             markClassName="h-12 w-[2.1rem]"
             wordmarkClassName="text-2xl"
@@ -32,10 +32,16 @@ export function Footer() {
         <div>
           <p className="text-sm font-semibold">Legal</p>
           <div className="mt-3 grid gap-2 text-sm text-muted-foreground">
-            <Link href="/privacy-policy" className="focus-ring inline-flex min-h-11 items-center rounded-sm hover:text-foreground">
+            <Link
+              href="/privacy-policy"
+              className="focus-ring inline-flex min-h-11 items-center rounded-sm hover:text-foreground"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms-of-use" className="focus-ring inline-flex min-h-11 items-center rounded-sm hover:text-foreground">
+            <Link
+              href="/terms-of-use"
+              className="focus-ring inline-flex min-h-11 items-center rounded-sm hover:text-foreground"
+            >
               Terms of Use
             </Link>
           </div>

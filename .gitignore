@@ -13,3 +13,9 @@ tsconfig.tsbuildinfo
 *.log
 
 .vercel
+
+# Local visual audit artifacts; compact measurements and validation notes are tracked.
+output/v2-experience/**/*.png
+output/v2-experience/**/*.report.html
+output/v2-experience/**/*.report.json
+output/v2-experience/hero/

@@ -77,7 +77,8 @@ export const services: Service[] = [
   {
     slug: "seo",
     title: "Search Engine Optimisation",
-    homeBenefit: "Help the right customers discover your business through search.",
+    homeBenefit:
+      "Help the right customers discover your business through search.",
     shortDescription:
       "Technical and content foundations that help search engines understand your business and the right customers discover it.",
     heroCopy:
@@ -151,15 +152,25 @@ export const workItems: WorkItem[] = [
     projectType: "Internal Project",
     preview: "studio",
     category: "Studio website + enquiry journey",
-    summary: "Our own digital home: a working example of connected strategy, design and development.",
-    problem: "Make a growing studio’s capabilities easy to understand, explore and enquire about.",
-    solution: "A responsive website connecting service pages, project stories and a focused enquiry flow, with light and dark themes.",
-    outcome: "Built: a functional studio website with dedicated service pages and an enquiry flow. No conversion results claimed.",
-    metrics: ["Responsive layouts", "Light and dark themes", "Service and project routes", "Validated enquiry form"],
+    summary:
+      "Our own digital home: a working example of connected strategy, design and development.",
+    problem:
+      "Make a growing studio’s capabilities easy to understand, explore and enquire about.",
+    solution:
+      "A responsive website connecting service pages, project stories and a focused enquiry flow, with light and dark themes.",
+    outcome:
+      "Built: a functional studio website with dedicated service pages and an enquiry flow. No conversion results claimed.",
+    metrics: [
+      "Responsive layouts",
+      "Light and dark themes",
+      "Service and project routes",
+      "Validated enquiry form",
+    ],
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     seo: {
       title: "AashishLabs Studio — Internal Project",
-      description: "Explore the thinking behind our own studio website, its service discovery and enquiry experience.",
+      description:
+        "Explore the thinking behind our own studio website, its service discovery and enquiry experience.",
     },
   },
   {
@@ -167,8 +178,10 @@ export const workItems: WorkItem[] = [
     title: "Local Services Growth System",
     projectType: "Concept Build",
     preview: "local",
-    problem: "Explore how a local service business could connect search discovery, its website and campaign enquiries.",
-    solution: "A proposed journey from a clear service offer to a focused enquiry, with measurement planned across the funnel.",
+    problem:
+      "Explore how a local service business could connect search discovery, its website and campaign enquiries.",
+    solution:
+      "A proposed journey from a clear service offer to a focused enquiry, with measurement planned across the funnel.",
     category: "Web + SEO + Paid",
     summary:
       "An internal concept exploring a clearer website, search foundation and campaign funnel for a local service business.",
@@ -185,8 +198,10 @@ export const workItems: WorkItem[] = [
     title: "Founder Launch Platform",
     projectType: "Concept Build",
     preview: "founder",
-    problem: "Explore how an early-stage founder could explain a product clearly without an oversized first release.",
-    solution: "A focused launch narrative paired with a lightweight product workflow and a defined MVP scope.",
+    problem:
+      "Explore how an early-stage founder could explain a product clearly without an oversized first release.",
+    solution:
+      "A focused launch narrative paired with a lightweight product workflow and a defined MVP scope.",
     category: "Website + PWA",
     summary:
       "An internal concept exploring a focused launch website and lightweight product experience for an early-stage founder.",
@@ -276,11 +291,10 @@ export const siteConfig = {
   },
   home: {
     hero: {
-      title:
-        "Websites & digital products.",
+      title: "Websites & digital products.",
       supportingTitle: "Built to move you forward.",
       description:
-        "We help startups, SMEs and MSMEs turn ambitious ideas into clear, credible digital experiences—with strategy, design and growth built in.",
+        "Websites, products and growth foundations for startups, SMEs and MSMEs. Clear strategy. Thoughtful execution.",
       primaryCta: "Discuss Your Project",
       secondaryCta: "Explore the Work",
       preview: [
@@ -447,9 +461,9 @@ export const siteConfig = {
       },
     ],
     finalCta: {
-      title: "You do not need every answer before you begin.",
+      title: "Let’s build your next step.",
       description:
-        "Tell us what you want to launch, improve or understand. We will help identify the clearest next step—without pushing unnecessary features or services.",
+        "Tell us what you want to launch or improve. We’ll help you find a focused starting point.",
       primaryCta: "Start a Conversation",
       secondaryCta: "Connect on WhatsApp",
     },

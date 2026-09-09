@@ -37,8 +37,16 @@ body {
   font-family: var(--font-sans, "Segoe UI", Arial, sans-serif);
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, hsl(var(--primary) / 0.16), transparent 28rem),
-    radial-gradient(circle at 85% 15%, hsl(var(--accent) / 0.1), transparent 24rem),
+    radial-gradient(
+      circle at top left,
+      hsl(var(--primary) / 0.16),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      hsl(var(--accent) / 0.1),
+      transparent 24rem
+    ),
     hsl(var(--background));
   color: hsl(var(--foreground));
   text-rendering: optimizeLegibility;
@@ -78,7 +86,9 @@ body {
 }
 
 /* The existing palette remains the default dark appearance. */
-:root { --subtle-border: 0 0% 100% / 0.1; }
+:root {
+  --subtle-border: 0 0% 100% / 0.1;
+}
 html.light {
   color-scheme: light;
   --background: 220 33% 98%;
@@ -97,16 +107,22 @@ html.light {
   --ring: 238 62% 48%;
   --subtle-border: 225 22% 82%;
 }
-html.dark { color-scheme: dark; }
+html.dark {
+  color-scheme: dark;
+}
 .light .brand-symbol {
-  background: #0B1628;
+  background: #0b1628;
   border-radius: 0.25rem;
   padding: 0.15rem;
 }
 
 /* Leave anchor targets clear of the sticky header and keep focus reachable. */
-html { scroll-padding-top: 7rem; }
-:where(section[id], #main-content) { scroll-margin-top: 1rem; }
+html {
+  scroll-padding-top: 7rem;
+}
+:where(section[id], #main-content) {
+  scroll-margin-top: 1rem;
+}
 .skip-link {
   position: fixed;
   top: 0.75rem;
@@ -118,12 +134,26 @@ html { scroll-padding-top: 7rem; }
   color: hsl(var(--background));
   transform: translateY(-200%);
 }
-.skip-link:focus { transform: translateY(0); }
-.mobile-action-bar { padding-bottom: max(0.75rem, env(safe-area-inset-bottom)); }
+.skip-link:focus {
+  transform: translateY(0);
+}
+.mobile-action-bar {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
 @media (max-width: 639px) {
-  .site-footer { padding-bottom: calc(6rem + env(safe-area-inset-bottom)); }
-  html { scroll-padding-bottom: calc(6rem + env(safe-area-inset-bottom)); }
+  .homepage > section.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .site-footer {
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+  }
+  html {
+    scroll-padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto !important; }
+  html {
+    scroll-behavior: auto !important;
+  }
 }

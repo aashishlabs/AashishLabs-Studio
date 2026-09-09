@@ -10,14 +10,35 @@ export function HomeHero() {
     <section className={styles.hero} aria-labelledby="hero-title">
       <div className={`container ${styles.heroGrid}`}>
         <div className={styles.copy}>
-          <p className={styles.eyebrow}><span aria-hidden="true" />{siteConfig.brand.tagline}</p>
-          <h1 id="hero-title" className={styles.title}>{siteConfig.home.hero.title}<br /><span>{siteConfig.home.hero.supportingTitle}</span></h1>
-          <p className={styles.description}>{siteConfig.home.hero.description}</p>
+          <p className={styles.eyebrow}>
+            <span aria-hidden="true" />
+            {siteConfig.brand.tagline}
+          </p>
+          <h1 id="hero-title" className={styles.title}>
+            {siteConfig.home.hero.title}
+            <br />
+            <span>{siteConfig.home.hero.supportingTitle}</span>
+          </h1>
+          <p className={styles.description}>
+            {siteConfig.home.hero.description}
+          </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg"><Link href="/contact">{siteConfig.home.hero.primaryCta}<ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" /></Link></Button>
-            <Button asChild size="lg" variant="outline"><Link href="#work">{siteConfig.home.hero.secondaryCta}<ArrowDown className="ml-2 h-4 w-4" aria-hidden="true" /></Link></Button>
+            <Button asChild size="lg">
+              <Link href="/contact">
+                {siteConfig.home.hero.primaryCta}
+                <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="#work">
+                {siteConfig.home.hero.secondaryCta}
+                <ArrowDown className="ml-2 h-4 w-4" aria-hidden="true" />
+              </Link>
+            </Button>
           </div>
-          <p className="mt-5 text-xs leading-5 text-muted-foreground">Independent studio in India. Built for ambitious businesses.</p>
+          <p className="mt-5 text-xs leading-5 text-muted-foreground">
+            Independent studio in India. Built for ambitious businesses.
+          </p>
         </div>
         <HeroPreview />
       </div>
