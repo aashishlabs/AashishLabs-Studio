@@ -171,3 +171,48 @@ html {
     scroll-behavior: auto !important;
   }
 }
+
+/* Small, nonessential feedback; existing focus rings and touch targets stay intact. */
+.service-link {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+.homepage summary,
+.homepage [role="tab"] {
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+.homepage details[open] > summary {
+  background-color: hsl(var(--primary) / 0.04);
+}
+.homepage summary:active {
+  background-color: hsl(var(--primary) / 0.1);
+}
+.service-link:active {
+  border-color: hsl(var(--primary) / 0.65);
+}
+@media (hover: hover) and (pointer: fine) {
+  .homepage summary:hover {
+    background-color: hsl(var(--primary) / 0.06);
+  }
+  .homepage [role="tab"][aria-selected="false"]:hover {
+    background-color: hsl(var(--primary) / 0.1);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .homepage [role="tab"]:active {
+    transform: translateY(1px);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .service-link:hover {
+      transform: translateY(-2px);
+    }
+    .service-link:active {
+      transform: translateY(0);
+    }
+  }
+}
