@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <MainLayout>
-      <main className="container py-20">
+      <main className="container py-12 md:py-16">
         <SectionHeading
           as="h1"
           eyebrow="Work"

@@ -264,7 +264,7 @@ export const siteConfig = {
   brand: {
     name: "aashishlabs",
     logoLabel: "aashishlabs logo",
-    tagline: "Strategy · Design · Technology · Growth",
+    tagline: "Strategy · Design · Experience · Technology · Growth",
   },
   contact: {
     email: "aashishlabs@gmail.com",
@@ -291,10 +291,10 @@ export const siteConfig = {
   },
   home: {
     hero: {
-      title: "Websites & digital products.",
-      supportingTitle: "Built to move you forward.",
+      title: "Digital experiences & products.",
+      supportingTitle: "Built to move your business forward.",
       description:
-        "Websites, products and growth foundations for startups, SMEs and MSMEs. Clear strategy. Thoughtful execution.",
+        "AashishLabs helps startups, SMEs and MSMEs turn business ideas and digital challenges into clear, credible and launch-ready experiences.",
       primaryCta: "Discuss Your Project",
       secondaryCta: "Explore the Work",
       preview: [

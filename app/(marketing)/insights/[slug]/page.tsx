@@ -29,7 +29,7 @@ export default async function InsightDetailPage({
 
   return (
     <MainLayout>
-      <article className="container max-w-3xl py-20">
+      <article className="container max-w-3xl py-12 md:py-16">
         <p className="text-sm font-semibold text-primary">
           {insight.category} · {insight.readTime}
         </p>

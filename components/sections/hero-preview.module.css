@@ -423,7 +423,7 @@
 }
 @media (min-width: 640px) {
   .heroGrid {
-    padding-top: 4.5rem;
+    padding-top: 3.5rem;
   }
   .stage {
     width: 100%;
@@ -457,7 +457,7 @@
   .heroGrid {
     grid-template-columns: 1.05fr 1fr;
     gap: 3rem;
-    padding-top: 5rem;
+    padding-top: 3.5rem;
     padding-bottom: 4rem;
     min-height: 650px;
   }
