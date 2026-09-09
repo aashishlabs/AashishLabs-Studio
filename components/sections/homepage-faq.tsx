@@ -12,7 +12,7 @@ function Question({ item }: { item: FaqItem }) {
           aria-hidden="true"
         />
       </summary>
-      <p className="pb-5 text-sm leading-6 text-muted-foreground">
+      <p className="pb-5 text-[0.9375rem] leading-6 text-muted-foreground">
         {item.answer}
       </p>
     </details>

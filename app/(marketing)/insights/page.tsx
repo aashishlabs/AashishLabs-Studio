@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function InsightsPage() {
   return (
     <MainLayout>
-      <main className="container py-12 md:py-16">
+      <main className="container page-section">
         <SectionHeading
           as="h1"
           eyebrow="Insights"

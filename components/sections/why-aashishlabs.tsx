@@ -4,7 +4,7 @@ import { siteConfig } from "@/content/site";
 
 export function WhyAashishLabs() {
   return (
-    <section id="studio" className="container py-12 md:py-16">
+    <section id="studio" className="container page-section">
       <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div>
           <SectionHeading
@@ -12,7 +12,7 @@ export function WhyAashishLabs() {
             title="One team. A connected approach."
             description="Strategy, design, technology and growth work together—so every decision has a business purpose."
           />
-          <p className="mt-5 text-sm font-medium text-accent">
+          <p className="mt-5 text-[0.9375rem] font-medium text-accent">
             {siteConfig.home.studio.principle}
           </p>
         </div>
@@ -26,7 +26,7 @@ export function WhyAashishLabs() {
                   aria-hidden="true"
                 />
               </summary>
-              <p className="pb-5 text-sm leading-6 text-muted-foreground">
+              <p className="pb-5 text-[0.9375rem] leading-6 text-muted-foreground">
                 {item.description}
               </p>
             </details>
@@ -39,7 +39,7 @@ export function WhyAashishLabs() {
                 aria-hidden="true"
               />
             </summary>
-            <div className="space-y-4 pb-5 text-sm leading-6 text-muted-foreground">
+            <div className="space-y-4 pb-5 text-[0.9375rem] leading-6 text-muted-foreground">
               {siteConfig.home.studio.description.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}

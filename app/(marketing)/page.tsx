@@ -15,7 +15,7 @@ export default function HomePage() {
       <main className="homepage">
         <HomeHero />
         <TrustStrip />
-        <section id="work" className="container py-12 md:py-16">
+        <section id="work" className="container page-section">
           <SectionHeading
             eyebrow="Selected work"
             title="See the thinking. Explore the build."
@@ -25,7 +25,7 @@ export default function HomePage() {
             <WorkPreview featured />
           </div>
         </section>
-        <section id="services" className="container py-12 md:py-16">
+        <section id="services" className="container page-section">
           <SectionHeading
             eyebrow="What we build"
             title="Your next step, built with purpose."
@@ -36,7 +36,7 @@ export default function HomePage() {
           </div>
         </section>
         <WhyAashishLabs />
-        <section id="process" className="container py-12 md:py-16">
+        <section id="process" className="container page-section">
           <SectionHeading
             eyebrow="How we work"
             title="Clear steps. Shared direction."
@@ -48,7 +48,7 @@ export default function HomePage() {
         </section>
         <section
           id="faq"
-          className="container grid gap-7 py-12 md:py-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16"
+          className="container page-section grid gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16"
         >
           <SectionHeading
             eyebrow="A few good questions"

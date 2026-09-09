@@ -31,7 +31,7 @@ export function WorkPreview({ featured = false }: { featured?: boolean }) {
                   aria-hidden="true"
                 />
               </h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+              <p className="mt-3 text-[0.9375rem] leading-6 text-muted-foreground">
                 {item.summary}
               </p>
               <p className="mt-4 text-sm font-semibold text-primary">

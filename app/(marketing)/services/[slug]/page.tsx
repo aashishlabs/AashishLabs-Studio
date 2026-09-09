@@ -50,7 +50,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     <MainLayout>
       <JsonLd data={jsonLd} />
       <main>
-        <section className="container py-12 md:py-16">
+        <section className="container page-section">
           <Link href="/services" className="text-sm font-semibold text-primary">
             Services
           </Link>
@@ -67,7 +67,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             </Button>
           </div>
         </section>
-        <section className="container py-12 md:py-16">
+        <section className="container page-section">
           <SectionHeading eyebrow="Outcomes" title="What this should improve" />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {service.outcomes.map((outcome) => (
@@ -80,7 +80,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             ))}
           </div>
         </section>
-        <section className="container grid gap-10 py-12 md:py-16 lg:grid-cols-2">
+        <section className="container page-section grid gap-10 lg:grid-cols-2">
           <div>
             <SectionHeading eyebrow="Included" title="A practical scope shaped around your goals" />
             <div className="mt-8 grid gap-3">
@@ -103,7 +103,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             </Accordion>
           </div>
         </section>
-        <section className="container py-12 md:py-16">
+        <section className="container page-section">
           <Card className="bg-primary text-primary-foreground">
             <CardContent className="flex flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between">
               <div>

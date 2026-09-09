@@ -22,7 +22,7 @@ export function SectionHeading({
         {title}
       </Heading>
       {description ? (
-        <p className="mt-3 text-sm leading-6 text-muted-foreground md:mt-4 md:text-lg md:leading-7">
+        <p className="mt-3 text-[0.9375rem] leading-6 text-muted-foreground md:mt-4 md:text-lg md:leading-7">
           {description}
         </p>
       ) : null}

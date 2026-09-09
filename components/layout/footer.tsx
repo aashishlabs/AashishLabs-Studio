@@ -8,13 +8,13 @@ export function Footer() {
       <div className="container grid grid-cols-2 gap-6 md:grid-cols-[1.2fr_0.8fr_0.8fr] md:gap-8">
         <div className="col-span-2 md:col-span-1">
           <BrandLogo />
-          <p className="mt-3 max-w-md text-sm leading-6 text-muted-foreground">
+          <p className="mt-3 max-w-md text-[0.9375rem] leading-6 text-muted-foreground">
             {siteConfig.footer.description}
           </p>
         </div>
         <div>
           <p className="text-sm font-semibold">Explore</p>
-          <div className="mt-3 grid gap-2 text-sm text-muted-foreground">
+          <div className="mt-3 grid gap-2 text-[0.9375rem] text-muted-foreground">
             {siteConfig.navigation.primary.map((item) => (
               <Link
                 key={item.href}
@@ -28,7 +28,7 @@ export function Footer() {
         </div>
         <div>
           <p className="text-sm font-semibold">Legal</p>
-          <div className="mt-3 grid gap-2 text-sm text-muted-foreground">
+          <div className="mt-3 grid gap-2 text-[0.9375rem] text-muted-foreground">
             <Link
               href="/privacy-policy"
               className="focus-ring inline-flex min-h-11 items-center rounded-sm hover:text-foreground"
@@ -45,7 +45,7 @@ export function Footer() {
         </div>
       </div>
       <div className="container mt-10">
-        <p className="border-t border-[hsl(var(--subtle-border))] pt-6 text-center text-sm tracking-wide text-muted-foreground">
+        <p className="border-t border-[hsl(var(--subtle-border))] pt-6 text-center text-[0.9375rem] tracking-wide text-muted-foreground">
           Built with{" "}
           <span role="img" aria-label="love">
             ❤️

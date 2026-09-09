@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <MainLayout>
-      <main className="container max-w-3xl py-12 md:py-16">
+      <main className="container page-section max-w-3xl">
         <h1 className="font-display text-5xl font-semibold">Terms of Use</h1>
         <p className="mt-4 text-sm text-muted-foreground">
           Effective date: 1 September 2026

@@ -36,7 +36,7 @@ export function HomeHero() {
               </Link>
             </Button>
           </div>
-          <p className="mt-5 text-xs leading-5 text-muted-foreground">
+          <p className="mt-5 text-sm leading-6 text-muted-foreground">
             Independent digital partner in India. Built for ambitious
             businesses.
           </p>

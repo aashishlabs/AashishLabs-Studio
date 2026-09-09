@@ -42,9 +42,9 @@ export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
             }}
             onClick={() => setActive(index)}
             onKeyDown={(event) => navigate(event, index)}
-            className={`focus-ring relative flex min-h-16 flex-col items-center justify-center gap-2 rounded-md px-0.5 py-2 text-[0.6875rem] font-semibold transition-colors sm:text-sm ${index === active ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-secondary hover:text-foreground"}`}
+            className={`focus-ring relative flex min-h-16 flex-col items-center justify-center gap-2 rounded-md px-0.5 py-2 text-xs font-semibold transition-colors sm:text-sm ${index === active ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-secondary hover:text-foreground"}`}
           >
-            <span className="text-[0.625rem] font-normal tracking-widest">
+            <span className="text-xs font-normal tracking-widest">
               0{index + 1}
             </span>
             {step.title}
@@ -66,7 +66,7 @@ export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
               <p className="text-xs font-semibold uppercase tracking-widest text-primary">
                 {step.title}
               </p>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+              <p className="mt-3 text-[0.9375rem] leading-6 text-muted-foreground">
                 {step.description}
               </p>
             </div>
@@ -74,7 +74,7 @@ export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
               <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                 What you leave with
               </p>
-              <p className="mt-3 text-sm leading-6">{step.outcome}</p>
+              <p className="mt-3 text-[0.9375rem] leading-6">{step.outcome}</p>
             </div>
           </div>
         </div>

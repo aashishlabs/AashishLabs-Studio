@@ -29,7 +29,7 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
   const concept = item.projectType === "Concept Build";
   return (
     <MainLayout>
-      <main className="container py-12 md:py-16">
+      <main className="container page-section">
         <Link
           href="/work"
           className="focus-ring inline-flex min-h-11 items-center gap-2 rounded-sm text-sm text-muted-foreground"

@@ -5,7 +5,7 @@ import { siteConfig } from "@/content/site";
 
 export function HomeCta() {
   return (
-    <section id="contact" className="container py-12 md:py-16">
+    <section id="contact" className="container page-section">
       <div className="overflow-hidden rounded-lg border border-primary/25 bg-card/80 p-6 shadow-glow md:p-12">
         <div className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary md:text-sm">

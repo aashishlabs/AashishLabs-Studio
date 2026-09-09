@@ -40,7 +40,7 @@ export function ServicesGrid() {
             <h3 className="font-display text-base font-semibold leading-snug sm:mt-5 sm:text-lg">
               {service.title}
             </h3>
-            <p className="col-start-2 mb-3 mt-2 text-sm leading-6 text-muted-foreground sm:mb-5 sm:mt-3">
+            <p className="col-start-2 mb-3 mt-2 text-[0.9375rem] leading-6 text-muted-foreground sm:mb-5 sm:mt-3">
               {service.homeBenefit}
             </p>
             <span className="col-start-2 mt-auto text-sm font-semibold text-primary">
