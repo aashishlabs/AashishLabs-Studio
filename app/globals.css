@@ -113,7 +113,8 @@ html.dark {
 .light .brand-symbol {
   background: #0b1628;
   border-radius: 0.25rem;
-  padding: 0.15rem;
+  /* Both themes use the same cropped SVG; padding would shrink its painted mark. */
+  padding: 0;
 }
 
 /* Leave anchor targets clear of the sticky header and keep focus reachable. */

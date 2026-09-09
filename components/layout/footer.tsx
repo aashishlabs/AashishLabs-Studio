@@ -7,10 +7,7 @@ export function Footer() {
     <footer className="site-footer border-t border-[hsl(var(--subtle-border))] pb-24 pt-12 sm:pb-12">
       <div className="container grid grid-cols-2 gap-6 md:grid-cols-[1.2fr_0.8fr_0.8fr] md:gap-8">
         <div className="col-span-2 md:col-span-1">
-          <BrandLogo
-            markClassName="h-12 w-[2.1rem]"
-            wordmarkClassName="text-2xl"
-          />
+          <BrandLogo />
           <p className="mt-3 max-w-md text-sm leading-6 text-muted-foreground">
             {siteConfig.footer.description}
           </p>
