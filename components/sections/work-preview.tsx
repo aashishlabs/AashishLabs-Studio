@@ -2,20 +2,21 @@ import Link from "next/link";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { workItems } from "@/content/site";
 import { ProjectPreview } from "@/components/sections/project-preview";
+import styles from "./work-preview.module.css";
 
 export function WorkPreview({ featured = false }: { featured?: boolean }) {
   const items = featured ? workItems.slice(0, 2) : workItems;
   return (
     <div>
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className={`grid gap-5 md:grid-cols-2 ${styles.grid}`}>
         {items.map((item) => (
           <Link
             key={item.slug}
             href={`/work/${item.slug}`}
-            className="focus-ring project-link group overflow-hidden rounded-xl border border-border bg-card/50 transition-colors hover:border-primary/50"
+            className={`focus-ring project-link group overflow-hidden rounded-xl border border-border bg-card/50 transition-colors hover:border-primary/50 ${styles.card}`}
           >
             <ProjectPreview variant={item.preview} />
-            <div className="p-5 md:p-6">
+            <div className={`p-5 md:p-6 ${styles.content}`}>
               <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs">
                 <span
                   className={`rounded-full px-2.5 py-1 font-semibold ${item.projectType === "Concept Build" ? "bg-accent/10 text-accent" : "bg-primary/10 text-primary"}`}
@@ -34,7 +35,9 @@ export function WorkPreview({ featured = false }: { featured?: boolean }) {
               <p className="mt-3 text-[0.9375rem] leading-6 text-muted-foreground">
                 {item.summary}
               </p>
-              <p className="mt-4 text-sm font-semibold text-primary">
+              <p
+                className={`mt-4 text-sm font-semibold text-primary ${styles.cta}`}
+              >
                 {item.projectType === "Concept Build"
                   ? "Explore the concept"
                   : "View case study"}

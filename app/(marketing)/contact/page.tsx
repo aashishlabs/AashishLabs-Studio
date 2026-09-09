@@ -27,19 +27,19 @@ export default function ContactPage() {
             <div className="mt-8 grid gap-3 text-sm text-muted-foreground">
               <a
                 href={siteConfig.contact.whatsappUrl}
-                className="hover:text-foreground"
+                className="focus-ring flex min-h-11 items-center rounded-sm hover:text-foreground"
               >
                 WhatsApp: {siteConfig.contact.phone}
               </a>
               <a
                 href={`mailto:${siteConfig.contact.email}`}
-                className="hover:text-foreground"
+                className="focus-ring flex min-h-11 items-center rounded-sm hover:text-foreground"
               >
                 Email: {siteConfig.contact.email}
               </a>
               <a
                 href={`tel:${siteConfig.contact.phone}`}
-                className="hover:text-foreground"
+                className="focus-ring flex min-h-11 items-center rounded-sm hover:text-foreground"
               >
                 Call: {siteConfig.contact.phone}
               </a>

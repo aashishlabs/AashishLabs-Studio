@@ -9,8 +9,16 @@
   pointer-events: none;
   inset: 0;
   background:
-    radial-gradient(ellipse at 72% 38%, hsl(var(--primary) / 0.09), transparent 32%),
-    radial-gradient(circle at 64% 30%, hsl(var(--accent) / 0.035), transparent 14%);
+    radial-gradient(
+      ellipse at 72% 38%,
+      hsl(var(--primary) / 0.09),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 64% 30%,
+      hsl(var(--accent) / 0.035),
+      transparent 14%
+    );
 }
 .heroGrid {
   position: relative;
@@ -73,6 +81,18 @@
   max-width: 32rem;
   font-size: 1.0625rem;
   line-height: 1.7;
+  color: hsl(var(--muted-foreground));
+}
+.heroActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+.trustNote {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
   color: hsl(var(--muted-foreground));
 }
 .stage {
@@ -436,6 +456,9 @@
   line-height: 1.5;
 }
 @media (min-width: 640px) {
+  .heroActions {
+    flex-direction: row;
+  }
   .heroGrid {
     padding-top: 3.5rem;
   }
@@ -455,16 +478,169 @@
   }
 }
 @media (max-width: 639px) {
+  .hero::before {
+    background:
+      radial-gradient(
+        ellipse at 86% 60%,
+        hsl(var(--primary) / 0.09),
+        transparent 28%
+      ),
+      radial-gradient(
+        circle at 74% 52%,
+        hsl(var(--accent) / 0.03),
+        transparent 13%
+      );
+  }
   .heroGrid {
-    gap: 1.5rem;
-    padding-top: 2.5rem;
-    padding-bottom: 2rem;
+    gap: 1.25rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+  }
+  .eyebrow {
+    align-items: flex-start;
+    font-size: 0.6875rem;
+    line-height: 1.55;
+    letter-spacing: 0.085em;
   }
   .title {
-    font-size: 2rem;
+    margin-top: 0.9rem;
+    font-size: clamp(2.05rem, 9.6vw, 2.55rem);
+    line-height: 1.04;
+    letter-spacing: -0.05em;
   }
   .description {
-    line-height: 1.65;
+    margin-top: 1rem;
+    font-size: 0.975rem;
+    line-height: 1.58;
+  }
+  .heroActions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+  }
+  .heroActions > * {
+    min-width: 0;
+    padding-inline: 0.75rem;
+    font-size: 0.8125rem;
+  }
+  .trustNote {
+    margin-top: 0.8rem;
+    font-size: 0.8125rem;
+    line-height: 1.35rem;
+  }
+  .stageLabel {
+    margin: 0 0.15rem 0.6rem;
+    font-size: 0.625rem;
+    letter-spacing: 0.09em;
+  }
+  .browser {
+    border-radius: 0.8rem;
+    box-shadow: 0 16px 44px -28px hsl(var(--primary) / 0.48);
+  }
+  .chrome {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.625rem;
+  }
+  .chrome > svg {
+    display: none;
+  }
+  .switcher {
+    gap: 0.25rem;
+    padding: 0.4rem 0.5rem;
+  }
+  .switcher button {
+    min-height: 40px;
+    font-size: 0.8125rem;
+  }
+  .canvas {
+    min-height: 205px;
+    padding: 0.9rem;
+  }
+  .demoHeader {
+    font-size: 0.6875rem;
+  }
+  .demoHeader > span:last-child {
+    font-size: 0.5rem;
+  }
+  .website {
+    grid-template-columns: 1.12fr 0.88fr;
+    min-height: 170px;
+  }
+  .overline {
+    font-size: 0.5rem;
+  }
+  .demoTitle {
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+  }
+  .demoCopy {
+    margin-top: 0.55rem;
+    font-size: 0.6875rem;
+    line-height: 1.45;
+  }
+  .mockCta {
+    margin-top: 0.65rem;
+    padding: 0.45rem 0.5rem;
+    font-size: 0.5rem;
+  }
+  .composition {
+    height: 145px;
+  }
+  .tileFront {
+    padding: 0.75rem;
+  }
+  .tileFront > span {
+    font-size: 0.75rem;
+  }
+  .smallTag {
+    display: none;
+  }
+  .product,
+  .growth {
+    min-height: 170px;
+    padding-top: 0.8rem;
+  }
+  .board,
+  .journey {
+    gap: 0.3rem;
+    margin-top: 0.7rem;
+  }
+  .columnLabel {
+    font-size: 0.48rem;
+  }
+  .taskCard {
+    padding: 0.5rem;
+  }
+  .taskCard strong {
+    margin-top: 0.35rem;
+    font-size: 0.56rem;
+  }
+  .taskCard small {
+    margin-top: 0.4rem;
+  }
+  .journey > div {
+    padding: 0.55rem;
+  }
+  .feedback {
+    font-size: 0.5rem;
+  }
+  .browserFooter {
+    display: none;
+  }
+  .annotation {
+    min-height: 2.75rem;
+    margin-top: 0.65rem;
+  }
+  .annotation svg {
+    display: none;
+  }
+  .annotation strong {
+    font-size: 0.8125rem;
+  }
+  .annotation p > span {
+    margin-top: 0.15rem;
+    font-size: 0.75rem;
   }
 }
 @media (min-width: 1024px) {

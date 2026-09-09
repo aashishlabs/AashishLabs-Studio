@@ -4,7 +4,7 @@ import { siteConfig } from "@/content/site";
 
 export function Footer() {
   return (
-    <footer className="site-footer border-t border-[hsl(var(--subtle-border))] pb-24 pt-12 sm:pb-12">
+    <footer className="site-footer border-t border-[hsl(var(--subtle-border))] pb-10 pt-10 sm:pb-12 sm:pt-12">
       <div className="container grid grid-cols-2 gap-6 md:grid-cols-[1.2fr_0.8fr_0.8fr] md:gap-8">
         <div className="col-span-2 md:col-span-1">
           <BrandLogo />

@@ -176,11 +176,12 @@
 }
 @media (max-width: 479px) {
   .preview {
-    height: 170px;
+    height: 238px;
     padding: 1rem 1rem 0;
   }
   .window {
-    min-height: 210px;
+    min-height: 242px;
+    transform: translateY(2px);
   }
   .studioPage,
   .localPage,
@@ -188,12 +189,23 @@
     padding: 0.8rem;
   }
   .art {
-    min-height: 100px;
+    min-height: 118px;
     padding: 0.7rem;
   }
   .studioContent,
   .localContent {
     gap: 0.6rem;
+  }
+
+  .studioContent p,
+  .localContent p,
+  .founderPage > p {
+    font-size: 1.35rem;
+  }
+
+  .line,
+  .localContent > div > span {
+    font-size: 0.62rem;
   }
 }
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
