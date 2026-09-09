@@ -488,8 +488,9 @@
       transform: translateY(0);
     }
   }
-  .canvas > div:not(:first-child) {
-    animation: view-enter 0.25s ease-out;
+  .canvas,
+  .supportMessage {
+    animation: view-enter 0.22s ease-out;
   }
   @keyframes view-enter {
     from {

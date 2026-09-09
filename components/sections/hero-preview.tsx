@@ -20,18 +20,24 @@ const views = [
   {
     id: "website",
     label: "Website",
+    heading: "Your next idea",
+    context: "WEBSITE EXPERIENCE",
     caption: "A clear story. An obvious next step.",
     detail: "Turn first impressions into meaningful conversations.",
   },
   {
     id: "product",
     label: "Product",
+    heading: "Your workspace",
+    context: "PRODUCT EXPERIENCE",
     caption: "Less friction. More flow.",
     detail: "Make everyday tasks feel simple and connected.",
   },
   {
     id: "growth",
     label: "Growth",
+    heading: "Your customer journey",
+    context: "GROWTH EXPERIENCE",
     caption: "Every touchpoint, connected.",
     detail: "Build a path from discovery to enquiry and learning.",
   },
@@ -52,7 +58,12 @@ export function HeroPreview() {
         <span className="flex items-center gap-2">
           <Layers size={14} aria-hidden="true" /> FROM IDEA TO EXPERIENCE
         </span>
-        <span>01 — 03</span>
+        <span
+          data-demo-index
+          aria-label={`View ${selected + 1} of ${views.length}`}
+        >
+          0{selected + 1} — 0{views.length}
+        </span>
       </div>
       <motion.div
         ref={surface}
@@ -82,7 +93,7 @@ export function HeroPreview() {
             <i />
           </div>
           <span>
-            <LockKeyhole size={10} /> aashishlabs / experience
+            <LockKeyhole size={10} /> aashishlabs / {view.id}
           </span>
           <ArrowUpRight size={13} />
         </div>
@@ -104,12 +115,17 @@ export function HeroPreview() {
             </button>
           ))}
         </div>
-        <div id="experience-demo" className={styles.canvas}>
+        <div
+          id="experience-demo"
+          key={view.id}
+          data-view={view.id}
+          className={styles.canvas}
+        >
           <div className={styles.demoHeader}>
             <span>
-              <span className={styles.miniMark} /> Your next idea
+              <span className={styles.miniMark} /> {view.heading}
             </span>
-            <span>EXPERIENCE STUDY</span>
+            <span>{view.context}</span>
           </div>
           {view.id === "website" && (
             <div className={styles.website}>
@@ -221,9 +237,14 @@ export function HeroPreview() {
           <span>Designed &amp; built by AashishLabs</span>
         </div>
       </motion.div>
-      <div className={styles.annotation}>
+      <div
+        className={styles.annotation}
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
         <MousePointer2 size={15} aria-hidden="true" />
-        <p>
+        <p key={view.id} className={styles.supportMessage}>
           <strong>{view.caption}</strong>
           <span>{view.detail}</span>
         </p>
