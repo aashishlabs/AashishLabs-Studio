@@ -250,11 +250,12 @@ export const siteConfig = {
   home: {
     hero: {
       title:
-        "Start focused. Build what matters. Grow with evidence.",
+        "Websites & digital products.",
+      supportingTitle: "Built to move you forward.",
       description:
-        "AashishLabs helps startups, SMEs and MSMEs across India turn business ideas and digital challenges into clear, credible and launch-ready experiences.",
+        "We help startups, SMEs and MSMEs turn ambitious ideas into clear, credible digital experiences—with strategy, design and growth built in.",
       primaryCta: "Discuss Your Project",
-      secondaryCta: "Explore Our Services",
+      secondaryCta: "Explore the Work",
       preview: [
         {
           title: "Strategy",
