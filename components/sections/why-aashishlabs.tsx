@@ -9,7 +9,7 @@ export function WhyAashishLabs() {
         <div>
           <SectionHeading
             eyebrow="Why AashishLabs"
-            title="One studio. A connected approach."
+            title="One team. A connected approach."
             description="Strategy, design, technology and growth work together—so every decision has a business purpose."
           />
           <p className="mt-5 text-sm font-medium text-accent">
@@ -33,7 +33,7 @@ export function WhyAashishLabs() {
           ))}
           <details className="group">
             <summary className="focus-ring flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-sm py-4 text-base font-semibold [&::-webkit-details-marker]:hidden">
-              More about the studio
+              More about AashishLabs
               <ChevronDown
                 className="h-4 w-4 shrink-0 text-primary transition-transform group-open:rotate-180"
                 aria-hidden="true"

@@ -37,7 +37,8 @@ export function HomeHero() {
             </Button>
           </div>
           <p className="mt-5 text-xs leading-5 text-muted-foreground">
-            Independent studio in India. Built for ambitious businesses.
+            Independent digital partner in India. Built for ambitious
+            businesses.
           </p>
         </div>
         <HeroPreview />

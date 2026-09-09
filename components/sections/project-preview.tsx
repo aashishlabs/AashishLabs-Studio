@@ -10,7 +10,7 @@ export function ProjectPreview({ variant }: { variant: WorkItem["preview"] }) {
           <span>● ● ●</span>
           <span>
             {variant === "studio"
-              ? "aashishlabs / studio"
+              ? "aashishlabs / experience"
               : "Interface study · concept"}
           </span>
           <ArrowUpRight size={12} />

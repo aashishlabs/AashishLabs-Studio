@@ -72,7 +72,7 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
             <p className="bg-card p-3 text-xs leading-5 text-muted-foreground">
               {concept
                 ? "Illustrative interface study. This is a concept, not a client delivery or measured result."
-                : "Illustrative preview of our own studio website. Explore the working experience from the home page."}
+                : "Illustrative preview of our own website. Explore the working experience from the home page."}
             </p>
           </div>
         </div>

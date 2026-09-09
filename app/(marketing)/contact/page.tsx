@@ -8,7 +8,7 @@ import { siteConfig } from "@/content/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a project enquiry or contact the agency through direct channels.",
+    "Start a project enquiry or contact AashishLabs through direct channels.",
 };
 
 export default function ContactPage() {

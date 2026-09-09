@@ -148,18 +148,18 @@ export const services: Service[] = [
 export const workItems: WorkItem[] = [
   {
     slug: "aashishlabs-studio",
-    title: "AashishLabs Studio",
+    title: "AashishLabs",
     projectType: "Internal Project",
     preview: "studio",
-    category: "Studio website + enquiry journey",
+    category: "AashishLabs website + enquiry journey",
     summary:
       "Our own digital home: a working example of connected strategy, design and development.",
     problem:
-      "Make a growing studio’s capabilities easy to understand, explore and enquire about.",
+      "Make AashishLabs’ capabilities easy to understand, explore and enquire about.",
     solution:
       "A responsive website connecting service pages, project stories and a focused enquiry flow, with light and dark themes.",
     outcome:
-      "Built: a functional studio website with dedicated service pages and an enquiry flow. No conversion results claimed.",
+      "Built: a functional website with dedicated service pages and an enquiry flow. No conversion results claimed.",
     metrics: [
       "Responsive layouts",
       "Light and dark themes",
@@ -168,9 +168,9 @@ export const workItems: WorkItem[] = [
     ],
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     seo: {
-      title: "AashishLabs Studio — Internal Project",
+      title: "AashishLabs — Internal Project",
       description:
-        "Explore the thinking behind our own studio website, its service discovery and enquiry experience.",
+        "Explore the thinking behind our own website, its service discovery and enquiry experience.",
     },
   },
   {
@@ -190,7 +190,7 @@ export const workItems: WorkItem[] = [
     seo: {
       title: "Local Services Growth System",
       description:
-        "A transparent studio concept for connecting a local-services website, SEO foundation and campaign funnel.",
+        "A transparent concept for connecting a local-services website, SEO foundation and campaign funnel.",
     },
   },
   {
@@ -211,7 +211,7 @@ export const workItems: WorkItem[] = [
     seo: {
       title: "Founder Launch Platform",
       description:
-        "A transparent studio concept for a focused founder website and lightweight digital product experience.",
+        "A transparent concept for a focused founder website and lightweight digital product experience.",
     },
   },
 ];
@@ -276,9 +276,9 @@ export const siteConfig = {
   },
   seo: {
     defaultTitle:
-      "aashishlabs — Digital Agency for Startups, SMEs and MSMEs in India",
+      "aashishlabs — Digital Product & Growth Partner for Startups, SMEs and MSMEs in India",
     defaultDescription:
-      "A full-service digital agency helping startups, SMEs and MSMEs across India build websites, digital products, search visibility and measurable growth systems.",
+      "A digital product & growth partner helping startups, SMEs and MSMEs across India build websites, digital products, search visibility and measurable growth systems.",
   },
   navigation: {
     primary: [
@@ -350,7 +350,8 @@ export const siteConfig = {
       ],
     },
     studio: {
-      title: "A digital studio for ambitious, growing businesses.",
+      title:
+        "A digital product & growth partner for ambitious, growing businesses.",
       description: [
         "AashishLabs was created to make thoughtful digital execution more accessible to startups, SMEs and MSMEs in India.",
         "Our initial focus is websites and digital products—the places where customers understand your business, evaluate your credibility and decide whether to take the next step. From there, we can support search visibility, performance marketing and continuous improvement when the business is ready.",
@@ -470,6 +471,6 @@ export const siteConfig = {
   },
   footer: {
     description:
-      "A full-service digital agency helping startups, SMEs and MSMEs across India build credible experiences, useful technology and stronger paths to growth.",
+      "A digital product & growth partner helping startups, SMEs and MSMEs across India build credible experiences, useful technology and stronger paths to growth.",
   },
 } as const;
