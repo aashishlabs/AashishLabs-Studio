@@ -124,6 +124,19 @@ html {
 :where(section[id], #main-content) {
   scroll-margin-top: 1rem;
 }
+/* Keep the V2 rhythm, with less space between adjacent homepage sections. */
+@media (min-width: 640px) {
+  .homepage > section.container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+.homepage > #services {
+  padding-bottom: 1.5rem;
+}
+.homepage > #studio {
+  padding-top: 1.5rem;
+}
 .skip-link {
   position: fixed;
   top: 0.75rem;
@@ -143,8 +156,8 @@ html {
 }
 @media (max-width: 639px) {
   .homepage > section.container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
   }
   .site-footer {
     padding-bottom: calc(6rem + env(safe-area-inset-bottom));
