@@ -3,14 +3,13 @@ import { ArrowRight, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/content/site";
 import { HeroPreview } from "@/components/sections/hero-preview";
-import { HeroBrandForm } from "@/components/sections/hero-brand-form";
 import styles from "./hero-preview.module.css";
 
 export function HomeHero() {
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
       <div className={`container ${styles.heroGrid}`}>
-        <HeroBrandForm>
+        <div className={styles.copy}>
           <p className={styles.eyebrow}>
             <span aria-hidden="true" />
             {siteConfig.brand.tagline}
@@ -44,7 +43,7 @@ export function HomeHero() {
             Independent digital partner in India. Built for ambitious
             businesses.
           </p>
-        </HeroBrandForm>
+        </div>
         <HeroPreview />
       </div>
     </section>
