@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 :root {
+  --section-space: 2.5rem;
+  --homepage-section-space: 1.75rem;
   --font-sans: "Inter", "Segoe UI", Arial, sans-serif;
   --font-display: "Inter Tight", "Segoe UI", Arial, sans-serif;
   --background: 218 57% 10%;
@@ -34,10 +36,19 @@ html {
 }
 
 body {
+  font-family: var(--font-sans, "Segoe UI", Arial, sans-serif);
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, hsl(var(--primary) / 0.16), transparent 28rem),
-    radial-gradient(circle at 85% 15%, hsl(var(--accent) / 0.1), transparent 24rem),
+    radial-gradient(
+      circle at top left,
+      hsl(var(--primary) / 0.16),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      hsl(var(--accent) / 0.1),
+      transparent 24rem
+    ),
     hsl(var(--background));
   color: hsl(var(--foreground));
   text-rendering: optimizeLegibility;
@@ -77,7 +88,9 @@ body {
 }
 
 /* The existing palette remains the default dark appearance. */
-:root { --subtle-border: 0 0% 100% / 0.1; }
+:root {
+  --subtle-border: 0 0% 100% / 0.1;
+}
 html.light {
   color-scheme: light;
   --background: 220 33% 98%;
@@ -96,9 +109,107 @@ html.light {
   --ring: 238 62% 48%;
   --subtle-border: 225 22% 82%;
 }
-html.dark { color-scheme: dark; }
+html.dark {
+  color-scheme: dark;
+}
 .light .brand-symbol {
-  background: #0B1628;
+  background: #0b1628;
   border-radius: 0.25rem;
-  padding: 0.15rem;
+  /* Both themes use the same cropped SVG; padding would shrink its painted mark. */
+  padding: 0;
+}
+
+/* Leave anchor targets clear of the sticky header and keep focus reachable. */
+html {
+  scroll-padding-top: 7rem;
+}
+:where(section[id], #main-content) {
+  scroll-margin-top: 1rem;
+}
+.page-section {
+  padding-block: var(--section-space);
+}
+.homepage > section.container {
+  padding-block: var(--homepage-section-space);
+}
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+  background: hsl(var(--foreground));
+  color: hsl(var(--background));
+  transform: translateY(-200%);
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+.mobile-action-bar {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+@media (max-width: 639px) {
+  .site-footer {
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+  }
+  html {
+    scroll-padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+  }
+}
+@media (min-width: 640px) {
+  :root {
+    --section-space: 3rem;
+    --homepage-section-space: 2.75rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Small, nonessential feedback; existing focus rings and touch targets stay intact. */
+.service-link {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+.homepage summary,
+.homepage [role="tab"] {
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+.homepage details[open] > summary {
+  background-color: hsl(var(--primary) / 0.04);
+}
+.homepage summary:active {
+  background-color: hsl(var(--primary) / 0.1);
+}
+.service-link:active {
+  border-color: hsl(var(--primary) / 0.65);
+}
+@media (hover: hover) and (pointer: fine) {
+  .homepage summary:hover {
+    background-color: hsl(var(--primary) / 0.06);
+  }
+  .homepage [role="tab"][aria-selected="false"]:hover {
+    background-color: hsl(var(--primary) / 0.1);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .homepage [role="tab"]:active {
+    transform: translateY(1px);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .service-link:hover {
+      transform: translateY(-2px);
+    }
+    .service-link:active {
+      transform: translateY(0);
+    }
+  }
 }

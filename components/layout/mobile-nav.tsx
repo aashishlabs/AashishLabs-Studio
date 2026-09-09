@@ -27,11 +27,11 @@ export function MobileNav() {
         </Button>
       </SheetTrigger>
       <SheetContent>
-        <SheetTitle>{siteConfig.brand.name}</SheetTitle>
+        <SheetTitle className="pr-12">{siteConfig.brand.name}</SheetTitle>
         <SheetDescription className="mt-2 text-sm text-muted-foreground">
           {siteConfig.brand.tagline}
         </SheetDescription>
-        <nav className="mt-8 grid gap-2">
+        <nav aria-label="Mobile navigation" className="mt-8 grid gap-2">
           {siteConfig.navigation.primary.map((item) => (
             <SheetClose asChild key={item.href}>
               <Link

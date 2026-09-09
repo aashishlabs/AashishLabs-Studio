@@ -4,7 +4,11 @@ import { siteConfig } from "@/content/site";
 
 export function MobileActionBar() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[hsl(var(--subtle-border))] bg-background/92 px-3 py-3 backdrop-blur-xl sm:hidden">
+    <div
+      aria-label="Quick contact"
+      role="region"
+      className="mobile-action-bar fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 px-3 py-3 backdrop-blur-xl sm:hidden"
+    >
       <div className="mx-auto grid max-w-sm grid-cols-2 gap-2">
         <Link
           href="/contact"

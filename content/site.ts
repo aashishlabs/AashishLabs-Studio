@@ -4,6 +4,7 @@ export const services: Service[] = [
   {
     slug: "web-development",
     title: "Web Design & Development",
+    homeBenefit: "A fast, credible website that turns interest into enquiries.",
     shortDescription:
       "Fast, credible and conversion-focused websites that communicate your value clearly and give your marketing a stronger foundation.",
     heroCopy:
@@ -42,6 +43,7 @@ export const services: Service[] = [
   {
     slug: "app-development",
     title: "Apps & Digital Products",
+    homeBenefit: "Useful portals, PWAs and MVPs built around real workflows.",
     shortDescription:
       "Thoughtful web applications, PWAs, portals and MVPs shaped around real user needs and clear business goals.",
     heroCopy:
@@ -75,6 +77,8 @@ export const services: Service[] = [
   {
     slug: "seo",
     title: "Search Engine Optimisation",
+    homeBenefit:
+      "Help the right customers discover your business through search.",
     shortDescription:
       "Technical and content foundations that help search engines understand your business and the right customers discover it.",
     heroCopy:
@@ -108,6 +112,7 @@ export const services: Service[] = [
   {
     slug: "performance-marketing",
     title: "Performance Marketing",
+    homeBenefit: "Connect campaigns, landing pages and meaningful measurement.",
     shortDescription:
       "Focused campaigns, landing pages and measurement systems built to attract relevant audiences and improve acquisition decisions.",
     heroCopy:
@@ -142,9 +147,41 @@ export const services: Service[] = [
 
 export const workItems: WorkItem[] = [
   {
+    slug: "aashishlabs-studio",
+    title: "AashishLabs",
+    projectType: "Internal Project",
+    preview: "studio",
+    category: "AashishLabs website + enquiry journey",
+    summary:
+      "Our own digital home: a working example of connected strategy, design and development.",
+    problem:
+      "Make AashishLabs’ capabilities easy to understand, explore and enquire about.",
+    solution:
+      "A responsive website connecting service pages, project stories and a focused enquiry flow, with light and dark themes.",
+    outcome:
+      "Built: a functional website with dedicated service pages and an enquiry flow. No conversion results claimed.",
+    metrics: [
+      "Responsive layouts",
+      "Light and dark themes",
+      "Service and project routes",
+      "Validated enquiry form",
+    ],
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    seo: {
+      title: "AashishLabs — Internal Project",
+      description:
+        "Explore the thinking behind our own website, its service discovery and enquiry experience.",
+    },
+  },
+  {
     slug: "local-services-growth-system",
     title: "Local Services Growth System",
     projectType: "Concept Build",
+    preview: "local",
+    problem:
+      "Explore how a local service business could connect search discovery, its website and campaign enquiries.",
+    solution:
+      "A proposed journey from a clear service offer to a focused enquiry, with measurement planned across the funnel.",
     category: "Web + SEO + Paid",
     summary:
       "An internal concept exploring a clearer website, search foundation and campaign funnel for a local service business.",
@@ -153,13 +190,18 @@ export const workItems: WorkItem[] = [
     seo: {
       title: "Local Services Growth System",
       description:
-        "A transparent studio concept for connecting a local-services website, SEO foundation and campaign funnel.",
+        "A transparent concept for connecting a local-services website, SEO foundation and campaign funnel.",
     },
   },
   {
     slug: "founder-launch-platform",
     title: "Founder Launch Platform",
     projectType: "Concept Build",
+    preview: "founder",
+    problem:
+      "Explore how an early-stage founder could explain a product clearly without an oversized first release.",
+    solution:
+      "A focused launch narrative paired with a lightweight product workflow and a defined MVP scope.",
     category: "Website + PWA",
     summary:
       "An internal concept exploring a focused launch website and lightweight product experience for an early-stage founder.",
@@ -169,7 +211,7 @@ export const workItems: WorkItem[] = [
     seo: {
       title: "Founder Launch Platform",
       description:
-        "A transparent studio concept for a focused founder website and lightweight digital product experience.",
+        "A transparent concept for a focused founder website and lightweight digital product experience.",
     },
   },
 ];
@@ -222,7 +264,7 @@ export const siteConfig = {
   brand: {
     name: "aashishlabs",
     logoLabel: "aashishlabs logo",
-    tagline: "Strategy · Design · Technology · Growth",
+    tagline: "Strategy · Design · Experience · Technology · Growth",
   },
   contact: {
     email: "aashishlabs@gmail.com",
@@ -234,9 +276,9 @@ export const siteConfig = {
   },
   seo: {
     defaultTitle:
-      "aashishlabs — Digital Agency for Startups, SMEs and MSMEs in India",
+      "aashishlabs — Digital Product & Growth Partner for Startups, SMEs and MSMEs in India",
     defaultDescription:
-      "A full-service digital agency helping startups, SMEs and MSMEs across India build websites, digital products, search visibility and measurable growth systems.",
+      "A digital product & growth partner helping startups, SMEs and MSMEs across India build websites, digital products, search visibility and measurable growth systems.",
   },
   navigation: {
     primary: [
@@ -249,12 +291,12 @@ export const siteConfig = {
   },
   home: {
     hero: {
-      title:
-        "Start focused. Build what matters. Grow with evidence.",
+      title: "Digital experiences & products.",
+      supportingTitle: "Built to move your business forward.",
       description:
-        "AashishLabs helps startups, SMEs and MSMEs across India turn business ideas and digital challenges into clear, credible and launch-ready experiences.",
+        "AashishLabs helps startups, SMEs and MSMEs turn business ideas and digital challenges into clear, credible and launch-ready experiences.",
       primaryCta: "Discuss Your Project",
-      secondaryCta: "Explore Our Services",
+      secondaryCta: "Explore the Work",
       preview: [
         {
           title: "Strategy",
@@ -308,7 +350,8 @@ export const siteConfig = {
       ],
     },
     studio: {
-      title: "A digital studio for ambitious, growing businesses.",
+      title:
+        "A digital product & growth partner for ambitious, growing businesses.",
       description: [
         "AashishLabs was created to make thoughtful digital execution more accessible to startups, SMEs and MSMEs in India.",
         "Our initial focus is websites and digital products—the places where customers understand your business, evaluate your credibility and decide whether to take the next step. From there, we can support search visibility, performance marketing and continuous improvement when the business is ready.",
@@ -338,16 +381,9 @@ export const siteConfig = {
       {
         title: "Discover",
         description:
-          "We understand your business, audience, offer, competitors, current challenges and desired outcomes.",
+          "Understand your business, customers and constraints. Agree what matters now, what can wait and how success will be measured.",
         outcome:
-          "A clearer problem statement, priorities and project direction.",
-      },
-      {
-        title: "Define",
-        description:
-          "We determine what should be built now, what can wait and how success should be measured.",
-        outcome:
-          "An agreed scope, customer journey, content direction and delivery plan.",
+          "A clear problem statement, agreed scope, priorities and delivery plan.",
       },
       {
         title: "Design",
@@ -357,18 +393,25 @@ export const siteConfig = {
           "Wireframes or visual concepts that make the solution tangible and easier to validate.",
       },
       {
-        title: "Build & validate",
+        title: "Build",
         description:
           "We develop the approved experience, connect essential services and test it across devices and user journeys.",
         outcome:
           "A responsive, accessible and search-ready solution prepared for real-world use.",
       },
       {
-        title: "Launch & improve",
+        title: "Launch",
         description:
-          "We complete final checks, configure measurement and release. After launch, real behaviour guides the next improvements.",
+          "Complete final checks, configure measurement and release with a clear handover.",
         outcome:
-          "A reliable launch and a practical roadmap for what comes next.",
+          "A reliable release, ownership handover and the foundations to measure what happens next.",
+      },
+      {
+        title: "Grow",
+        description:
+          "Use real behaviour to guide improvements to content, search, conversion and the product experience.",
+        outcome:
+          "A practical improvement roadmap, with ongoing support shaped around your needs.",
       },
     ],
     faq: [
@@ -419,15 +462,15 @@ export const siteConfig = {
       },
     ],
     finalCta: {
-      title: "You do not need every answer before you begin.",
+      title: "Let’s build your next step.",
       description:
-        "Tell us what you want to launch, improve or understand. We will help identify the clearest next step—without pushing unnecessary features or services.",
+        "Tell us what you want to launch or improve. We’ll help you find a focused starting point.",
       primaryCta: "Start a Conversation",
       secondaryCta: "Connect on WhatsApp",
     },
   },
   footer: {
     description:
-      "A full-service digital agency helping startups, SMEs and MSMEs across India build credible experiences, useful technology and stronger paths to growth.",
+      "A digital product & growth partner helping startups, SMEs and MSMEs across India build credible experiences, useful technology and stronger paths to growth.",
   },
 } as const;

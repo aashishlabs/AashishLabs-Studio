@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ThankYouPage() {
   return (
     <MainLayout>
-      <main className="container flex min-h-[70vh] flex-col justify-center py-20">
+      <main className="container page-section flex min-h-[70vh] flex-col justify-center">
         <h1 className="font-display text-5xl font-semibold md:text-7xl">
           Thanks. Your enquiry is in.
         </h1>

@@ -8,13 +8,13 @@ import { siteConfig } from "@/content/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a project enquiry or contact the agency through direct channels.",
+    "Start a project enquiry or contact AashishLabs through direct channels.",
 };
 
 export default function ContactPage() {
   return (
     <MainLayout>
-      <main className="container py-20">
+      <main className="container page-section">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h1 className="font-display text-5xl font-semibold md:text-7xl">

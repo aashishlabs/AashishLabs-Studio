@@ -2,11 +2,9 @@ import { MainLayout } from "@/components/layout/main-layout";
 import { HomeHero } from "@/components/sections/home-hero";
 import { HomeCta } from "@/components/sections/home-cta";
 import { HomepageFaq } from "@/components/sections/homepage-faq";
-import { Outcomes } from "@/components/sections/outcomes";
 import { ProcessTimeline } from "@/components/sections/process-timeline";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { ServicesGrid } from "@/components/sections/services-grid";
-import { StudioIntroduction } from "@/components/sections/studio-introduction";
 import { TrustStrip } from "@/components/sections/trust-strip";
 import { WorkPreview } from "@/components/sections/work-preview";
 import { WhyAashishLabs } from "@/components/sections/why-aashishlabs";
@@ -14,61 +12,50 @@ import { WhyAashishLabs } from "@/components/sections/why-aashishlabs";
 export default function HomePage() {
   return (
     <MainLayout>
-      <main>
+      <main className="homepage">
         <HomeHero />
         <TrustStrip />
-        <section className="container py-12 md:py-20">
+        <section id="work" className="container page-section">
           <SectionHeading
-            eyebrow="What we do"
-            title="Digital products that fuel progress. Your technology partner for growth."
-            
-            description="Strategy, experience design, technology and marketing work better when they share the same direction. Our services take your business from idea or friction point to a focused digital solution."
+            eyebrow="Selected work"
+            title="See the thinking. Explore the build."
+            description="Working projects and clearly labelled concepts, with the thinking behind each."
           />
-          <div className="mt-7 md:mt-10">
+          <div className="mt-7 md:mt-9">
+            <WorkPreview featured />
+          </div>
+        </section>
+        <section id="services" className="container page-section">
+          <SectionHeading
+            eyebrow="What we build"
+            title="Your next step, built with purpose."
+            description="Websites, digital products, search and campaigns. Start with what your business needs now."
+          />
+          <div className="mt-7 md:mt-9">
             <ServicesGrid />
           </div>
         </section>
         <WhyAashishLabs />
-        <StudioIntroduction />
-        <section className="container py-12 md:py-20">
-          <SectionHeading
-            eyebrow="What changes"
-            title="Not just a polished launch. A stronger digital business system."
-            description="Every engagement is shaped around clearer customer journeys, meaningful action and better information for future decisions."
-          />
-          <div className="mt-7 md:mt-10">
-            <Outcomes />
-          </div>
-        </section>
-        <section id="process" className="container py-12 md:py-20">
+        <section id="process" className="container page-section">
           <SectionHeading
             eyebrow="How we work"
-            title="A clear path from idea to launch."
-            description="Every project is different, but the principles remain consistent: understand before building, validate important decisions early and launch with the foundations needed to learn."
+            title="Clear steps. Shared direction."
+            description="From the first conversation to what comes after launch. Explore each step."
           />
-          <div className="mt-7 md:mt-10">
+          <div className="mt-7 md:mt-9">
             <ProcessTimeline />
           </div>
         </section>
-        <section className="container py-12 md:py-20">
+        <section
+          id="faq"
+          className="container page-section grid gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16"
+        >
           <SectionHeading
-            eyebrow="Selected builds"
-            title="Ideas made tangible through strategy, design and technology."
-            description="A selection of internal concepts demonstrating how we approach practical business challenges. Client work and verified results will be added as publishing permissions become available."
+            eyebrow="A few good questions"
+            title="Start with clarity."
+            description="Scope, timelines, ownership and what happens next."
           />
-          <div className="mt-7 md:mt-10">
-            <WorkPreview />
-          </div>
-        </section>
-        <section className="container py-12 md:py-20">
-          <SectionHeading
-            eyebrow="Frequently asked questions"
-            title="A clearer start begins with better answers."
-            description="What growing businesses commonly want to know before beginning a digital project with AashishLabs."
-          />
-          <div className="mt-7 max-w-4xl md:mt-10">
-            <HomepageFaq />
-          </div>
+          <HomepageFaq />
         </section>
         <HomeCta />
       </main>

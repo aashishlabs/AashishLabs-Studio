@@ -7,6 +7,7 @@ export type Service = {
   slug: string;
   title: string;
   shortDescription: string;
+  homeBenefit: string;
   heroCopy: string;
   outcomes: string[];
   includes: string[];
@@ -19,7 +20,11 @@ export type Service = {
 export type WorkItem = {
   slug: string;
   title: string;
-  projectType: "Concept Build" | "Client Project";
+  projectType: "Concept Build" | "Internal Project" | "Client Project";
+  preview: "studio" | "local" | "founder";
+  problem: string;
+  solution: string;
+  technologies?: string[];
   category: string;
   summary: string;
   outcome: string;

@@ -16,11 +16,7 @@ export function Header() {
           className="focus-ring shrink-0 rounded-sm"
           aria-label={`${siteConfig.brand.name} home`}
         >
-          <BrandLogo
-            priority
-            wordmarkClassName="text-[1.45rem] lg:text-[1.65rem]"
-            markClassName="lg:h-11 lg:w-[2.1rem]"
-          />
+          <BrandLogo priority />
         </Link>
         <DesktopNav />
         <div className="ml-auto flex shrink-0 items-center gap-2 lg:ml-0 lg:gap-4">

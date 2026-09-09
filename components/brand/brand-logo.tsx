@@ -8,20 +8,35 @@ type BrandLogoProps = {
   priority?: boolean;
 };
 
-export function BrandLogo({ className, markClassName, wordmarkClassName, priority = false }: BrandLogoProps) {
+export function BrandLogo({
+  className,
+  markClassName,
+  wordmarkClassName,
+  priority = false,
+}: BrandLogoProps) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)} aria-label="aashishlabs">
+    <span
+      role="img"
+      className={cn("inline-flex items-center gap-2.5", className)}
+      aria-label="aashishlabs"
+    >
       <Image
         src="/brand/aashishlabs-mark-dark.svg"
         alt=""
         width={32}
         height={42}
         priority={priority}
-        className={cn("brand-symbol h-10 w-[1.9rem] shrink-0", markClassName)}
+        className={cn(
+          "brand-symbol h-10 w-[1.9rem] shrink-0 lg:h-11 lg:w-[2.1rem]",
+          markClassName,
+        )}
       />
       <span
         aria-hidden="true"
-        className={cn("brand-wordmark text-[1.45rem] text-foreground", wordmarkClassName)}
+        className={cn(
+          "brand-wordmark text-[1.45rem] text-foreground lg:text-[1.65rem]",
+          wordmarkClassName,
+        )}
       >
         <span>aas</span>
         <span className="brand-ascender">h</span>

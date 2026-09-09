@@ -9,7 +9,7 @@ export function StudioIntroduction() {
       <div className="grid gap-8 overflow-hidden rounded-lg border border-primary/20 bg-card/70 p-8 shadow-glow md:grid-cols-[0.8fr_1.2fr] md:p-12">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-            The studio
+            AashishLabs
           </p>
           <h2 className="mt-4 font-display text-3xl font-semibold leading-tight md:text-5xl">
             {siteConfig.home.studio.title}

@@ -1,62 +1,46 @@
 import { ChevronDown } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { siteConfig } from "@/content/site";
+import type { FaqItem } from "@/types/content";
+
+function Question({ item }: { item: FaqItem }) {
+  return (
+    <details className="group border-b border-border">
+      <summary className="focus-ring flex min-h-14 cursor-pointer list-none items-center justify-between gap-5 rounded-sm py-4 text-sm font-semibold md:text-base [&::-webkit-details-marker]:hidden">
+        {item.question}
+        <ChevronDown
+          className="h-4 w-4 shrink-0 text-primary transition-transform group-open:rotate-180"
+          aria-hidden="true"
+        />
+      </summary>
+      <p className="pb-5 text-[0.9375rem] leading-6 text-muted-foreground">
+        {item.answer}
+      </p>
+    </details>
+  );
+}
 
 export function HomepageFaq() {
+  const visible = siteConfig.home.faq.slice(0, 3);
+  const more = siteConfig.home.faq.slice(3);
   return (
-    <>
-      <div className="rounded-lg border border-[hsl(var(--subtle-border))] bg-card/60 px-4 md:hidden">
-        <Accordion type="single" collapsible>
-          {siteConfig.home.faq.slice(0, 4).map((item, index) => (
-            <AccordionItem key={item.question} value={`question-${index + 1}`}>
-              <AccordionTrigger className="py-4 text-sm">
-                {item.question}
-              </AccordionTrigger>
-              <AccordionContent className="pb-4 text-sm leading-6">
-                {item.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-        <details className="group border-b">
-          <summary className="focus-ring flex cursor-pointer list-none items-center justify-between rounded-sm py-4 text-sm font-semibold text-primary [&::-webkit-details-marker]:hidden">
-            View {siteConfig.home.faq.length - 4} more questions
-            <ChevronDown className="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
+    <div className="border-t border-border">
+      {visible.map((item) => (
+        <Question key={item.question} item={item} />
+      ))}
+      {more.length > 0 && (
+        <details className="group/more">
+          <summary className="focus-ring flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-sm py-4 text-sm font-semibold text-primary [&::-webkit-details-marker]:hidden">
+            More questions ({more.length})
+            <ChevronDown
+              className="h-4 w-4 shrink-0 transition-transform group-open/more:rotate-180"
+              aria-hidden="true"
+            />
           </summary>
-          <Accordion type="single" collapsible>
-            {siteConfig.home.faq.slice(4).map((item, index) => (
-              <AccordionItem key={item.question} value={`more-question-${index + 1}`}>
-                <AccordionTrigger className="py-4 text-sm">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 text-sm leading-6">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </details>
-      </div>
-
-      <div className="hidden rounded-lg border border-[hsl(var(--subtle-border))] bg-card/60 px-8 md:block">
-        <Accordion type="single" collapsible>
-          {siteConfig.home.faq.map((item, index) => (
-            <AccordionItem key={item.question} value={`question-${index + 1}`}>
-              <AccordionTrigger className="py-5 text-lg">
-                {item.question}
-              </AccordionTrigger>
-              <AccordionContent className="max-w-3xl pb-5 text-base leading-7">
-                {item.answer}
-              </AccordionContent>
-            </AccordionItem>
+          {more.map((item) => (
+            <Question key={item.question} item={item} />
           ))}
-        </Accordion>
-      </div>
-    </>
+        </details>
+      )}
+    </div>
   );
 }

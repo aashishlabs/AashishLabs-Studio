@@ -1,69 +1,61 @@
-import Link from "next/link";
-import { ArrowRight, ChevronDown } from "lucide-react";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { siteConfig } from "@/content/site";
 
 export function WhyAashishLabs() {
   return (
-    <>
-      <section className="container py-12 md:hidden">
-        <SectionHeading
-          eyebrow="Why AashishLabs"
-          title={siteConfig.home.difference.title}
-          description={siteConfig.home.difference.description}
-        />
-        <div className="mt-7 divide-y divide-[hsl(var(--subtle-border))] overflow-hidden rounded-lg border border-[hsl(var(--subtle-border))] bg-card/70">
+    <section id="studio" className="container page-section">
+      <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div>
+          <SectionHeading
+            eyebrow="Why AashishLabs"
+            title="One team. A connected approach."
+            description="Strategy, design, technology and growth work together—so every decision has a business purpose."
+          />
+          <p className="mt-5 text-[0.9375rem] font-medium text-accent">
+            {siteConfig.home.studio.principle}
+          </p>
+        </div>
+        <div className="divide-y divide-border border-y border-border">
           {siteConfig.home.difference.items.map((item) => (
-            <details key={item.title} className="group px-4">
-              <summary className="focus-ring flex cursor-pointer list-none items-center justify-between gap-4 rounded-sm py-4 font-display text-base font-semibold [&::-webkit-details-marker]:hidden">
+            <details key={item.title} className="group">
+              <summary className="focus-ring flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-sm py-4 text-base font-semibold [&::-webkit-details-marker]:hidden">
                 {item.title}
-                <ChevronDown className="h-4 w-4 shrink-0 text-primary transition-transform group-open:rotate-180" aria-hidden="true" />
+                <ChevronDown
+                  className="h-4 w-4 shrink-0 text-primary transition-transform group-open:rotate-180"
+                  aria-hidden="true"
+                />
               </summary>
-              <p className="pb-4 text-sm leading-6 text-muted-foreground">{item.description}</p>
+              <p className="pb-5 text-[0.9375rem] leading-6 text-muted-foreground">
+                {item.description}
+              </p>
             </details>
           ))}
+          <details className="group">
+            <summary className="focus-ring flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-sm py-4 text-base font-semibold [&::-webkit-details-marker]:hidden">
+              More about AashishLabs
+              <ChevronDown
+                className="h-4 w-4 shrink-0 text-primary transition-transform group-open:rotate-180"
+                aria-hidden="true"
+              />
+            </summary>
+            <div className="space-y-4 pb-5 text-[0.9375rem] leading-6 text-muted-foreground">
+              {siteConfig.home.studio.description.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              <p>{siteConfig.home.difference.description}</p>
+              <ul className="space-y-3 border-t border-border pt-4">
+                {siteConfig.home.outcomes.map((item) => (
+                  <li key={item.title}>
+                    <strong className="text-foreground">{item.title}. </strong>
+                    {item.description}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </details>
         </div>
-        <details className="group mt-3 rounded-lg border border-primary/20 bg-card/70 p-4 shadow-glow">
-          <summary className="focus-ring flex cursor-pointer list-none items-center justify-between gap-4 rounded-sm [&::-webkit-details-marker]:hidden">
-            <span>
-              <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-primary">The studio</span>
-              <span className="mt-1 block font-display text-lg font-semibold">{siteConfig.home.studio.principle}</span>
-            </span>
-            <ChevronDown className="h-4 w-4 shrink-0 text-primary transition-transform group-open:rotate-180" aria-hidden="true" />
-          </summary>
-          <div className="mt-4 space-y-3 border-t border-[hsl(var(--subtle-border))] pt-4 text-sm leading-6 text-muted-foreground">
-            {siteConfig.home.studio.description.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-          <Button asChild size="sm" className="mt-5">
-            <Link href="/contact">
-              {siteConfig.home.studio.cta}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </details>
-      </section>
-
-      <section className="container hidden py-20 md:block">
-        <SectionHeading
-          eyebrow="Why AashishLabs"
-          title={siteConfig.home.difference.title}
-          description={siteConfig.home.difference.description}
-        />
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
-          {siteConfig.home.difference.items.map((item) => (
-            <Card key={item.title} className="bg-card/70">
-              <CardHeader>
-                <CardTitle className="text-xl">{item.title}</CardTitle>
-                <CardDescription>{item.description}</CardDescription>
-              </CardHeader>
-            </Card>
-          ))}
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

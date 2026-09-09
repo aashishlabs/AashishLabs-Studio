@@ -1,0 +1,210 @@
+[
+  {
+    "width": 320,
+    "theme": "dark",
+    "status": "passed",
+    "checks": [
+      "section order",
+      "hero controls",
+      "service benefits",
+      "project visibility",
+      "process keyboard",
+      "all FAQ answers",
+      "navigation and focus",
+      "skip link",
+      "anchor offset",
+      "no overflow",
+      "no page errors"
+    ]
+  },
+  {
+    "width": 320,
+    "theme": "light",
+    "status": "passed",
+    "checks": [
+      "section order",
+      "hero controls",
+      "service benefits",
+      "project visibility",
+      "process keyboard",
+      "all FAQ answers",
+      "navigation and focus",
+      "skip link",
+      "anchor offset",
+      "no overflow",
+      "no page errors"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "status": "passed",
+    "checks": [
+      "section order",
+      "hero controls",
+      "service benefits",
+      "project visibility",
+      "process keyboard",
+      "all FAQ answers",
+      "navigation and focus",
+      "skip link",
+      "anchor offset",
+      "no overflow",
+      "no page errors"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "status": "passed",
+    "checks": [
+      "section order",
+      "hero controls",
+      "service benefits",
+      "project visibility",
+      "process keyboard",
+      "all FAQ answers",
+      "navigation and focus",
+      "skip link",
+      "anchor offset",
+      "no overflow",
+      "no page errors"
+    ]
+  },
+  {
+    "width": 820,
+    "theme": "dark",
+    "status": "passed",
+    "checks": [
+      "section order",
+      "hero controls",
+      "service benefits",
+      "project visibility",
+      "process keyboard",
+      "all FAQ answers",
+      "navigation and focus",
+      "skip link",
+      "anchor offset",
+      "no overflow",
+      "no page errors"
+    ]
+  },
+  {
+    "width": 820,
+    "theme": "light",
+    "status": "passed",
+    "checks": [
+      "section order",
+      "hero controls",
+      "service benefits",
+      "project visibility",
+      "process keyboard",
+      "all FAQ answers",
+      "navigation and focus",
+      "skip link",
+      "anchor offset",
+      "no overflow",
+      "no page errors"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "status": "passed",
+    "checks": [
+      "section order",
+      "hero controls",
+      "service benefits",
+      "project visibility",
+      "process keyboard",
+      "all FAQ answers",
+      "navigation and focus",
+      "skip link",
+      "anchor offset",
+      "no overflow",
+      "no page errors"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "status": "passed",
+    "checks": [
+      "section order",
+      "hero controls",
+      "service benefits",
+      "project visibility",
+      "process keyboard",
+      "all FAQ answers",
+      "navigation and focus",
+      "skip link",
+      "anchor offset",
+      "no overflow",
+      "no page errors"
+    ]
+  },
+  {
+    "mode": "reduced-motion",
+    "status": "passed"
+  },
+  {
+    "mode": "javascript-disabled",
+    "status": "passed"
+  },
+  {
+    "route": "/services",
+    "status": "passed"
+  },
+  {
+    "route": "/services/web-development",
+    "status": "passed"
+  },
+  {
+    "route": "/services/app-development",
+    "status": "passed"
+  },
+  {
+    "route": "/services/seo",
+    "status": "passed"
+  },
+  {
+    "route": "/services/performance-marketing",
+    "status": "passed"
+  },
+  {
+    "route": "/work",
+    "status": "passed"
+  },
+  {
+    "route": "/work/aashishlabs-studio",
+    "status": "passed"
+  },
+  {
+    "route": "/work/local-services-growth-system",
+    "status": "passed"
+  },
+  {
+    "route": "/work/founder-launch-platform",
+    "status": "passed"
+  },
+  {
+    "route": "/contact",
+    "status": "passed"
+  },
+  {
+    "route": "/insights",
+    "status": "passed"
+  },
+  {
+    "route": "/insights/website-before-ads",
+    "status": "passed"
+  },
+  {
+    "route": "/privacy-policy",
+    "status": "passed"
+  },
+  {
+    "route": "/terms-of-use",
+    "status": "passed"
+  }
+]
