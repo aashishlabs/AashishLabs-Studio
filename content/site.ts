@@ -4,6 +4,7 @@ export const services: Service[] = [
   {
     slug: "web-development",
     title: "Web Design & Development",
+    homeBenefit: "A fast, credible website that turns interest into enquiries.",
     shortDescription:
       "Fast, credible and conversion-focused websites that communicate your value clearly and give your marketing a stronger foundation.",
     heroCopy:
@@ -42,6 +43,7 @@ export const services: Service[] = [
   {
     slug: "app-development",
     title: "Apps & Digital Products",
+    homeBenefit: "Useful portals, PWAs and MVPs built around real workflows.",
     shortDescription:
       "Thoughtful web applications, PWAs, portals and MVPs shaped around real user needs and clear business goals.",
     heroCopy:
@@ -75,6 +77,7 @@ export const services: Service[] = [
   {
     slug: "seo",
     title: "Search Engine Optimisation",
+    homeBenefit: "Help the right customers discover your business through search.",
     shortDescription:
       "Technical and content foundations that help search engines understand your business and the right customers discover it.",
     heroCopy:
@@ -108,6 +111,7 @@ export const services: Service[] = [
   {
     slug: "performance-marketing",
     title: "Performance Marketing",
+    homeBenefit: "Connect campaigns, landing pages and meaningful measurement.",
     shortDescription:
       "Focused campaigns, landing pages and measurement systems built to attract relevant audiences and improve acquisition decisions.",
     heroCopy:
@@ -362,16 +366,9 @@ export const siteConfig = {
       {
         title: "Discover",
         description:
-          "We understand your business, audience, offer, competitors, current challenges and desired outcomes.",
+          "Understand your business, customers and constraints. Agree what matters now, what can wait and how success will be measured.",
         outcome:
-          "A clearer problem statement, priorities and project direction.",
-      },
-      {
-        title: "Define",
-        description:
-          "We determine what should be built now, what can wait and how success should be measured.",
-        outcome:
-          "An agreed scope, customer journey, content direction and delivery plan.",
+          "A clear problem statement, agreed scope, priorities and delivery plan.",
       },
       {
         title: "Design",
@@ -381,18 +378,25 @@ export const siteConfig = {
           "Wireframes or visual concepts that make the solution tangible and easier to validate.",
       },
       {
-        title: "Build & validate",
+        title: "Build",
         description:
           "We develop the approved experience, connect essential services and test it across devices and user journeys.",
         outcome:
           "A responsive, accessible and search-ready solution prepared for real-world use.",
       },
       {
-        title: "Launch & improve",
+        title: "Launch",
         description:
-          "We complete final checks, configure measurement and release. After launch, real behaviour guides the next improvements.",
+          "Complete final checks, configure measurement and release with a clear handover.",
         outcome:
-          "A reliable launch and a practical roadmap for what comes next.",
+          "A reliable release, ownership handover and the foundations to measure what happens next.",
+      },
+      {
+        title: "Grow",
+        description:
+          "Use real behaviour to guide improvements to content, search, conversion and the product experience.",
+        outcome:
+          "A practical improvement roadmap, with ongoing support shaped around your needs.",
       },
     ],
     faq: [

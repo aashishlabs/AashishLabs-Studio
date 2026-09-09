@@ -7,6 +7,7 @@ export type Service = {
   slug: string;
   title: string;
   shortDescription: string;
+  homeBenefit: string;
   heroCopy: string;
   outcomes: string[];
   includes: string[];
