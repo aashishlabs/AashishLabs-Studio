@@ -22,8 +22,8 @@ export function HeroBrandForm({ children }: PropsWithChildren) {
 
     if (frameRef.current) cancelAnimationFrame(frameRef.current);
     frameRef.current = requestAnimationFrame(() => {
-      copyRef.current?.style.setProperty("--brand-form-x", `${x * 10}px`);
-      copyRef.current?.style.setProperty("--brand-form-y", `${y * 8}px`);
+      copyRef.current?.style.setProperty("--brand-form-x", `${x * 5}px`);
+      copyRef.current?.style.setProperty("--brand-form-y", `${y * 4}px`);
     });
   }
 

@@ -16,9 +16,12 @@ export function HomeHero() {
             {siteConfig.brand.tagline}
           </p>
           <h1 id="hero-title" className={styles.title}>
-            {siteConfig.home.hero.title}
+            <span className={styles.titleGradient}>Digital experiences</span>{" "}
+            &amp; products.
             <br />
-            <span>{siteConfig.home.hero.supportingTitle}</span>
+            <span className={styles.supportingTitle}>
+              {siteConfig.home.hero.supportingTitle}
+            </span>
           </h1>
           <p className={styles.description}>
             {siteConfig.home.hero.description}
