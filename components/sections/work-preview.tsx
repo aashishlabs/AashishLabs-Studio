@@ -1,29 +1,29 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { workItems } from "@/content/site";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ProjectPreview } from "@/components/sections/project-preview";
 
-export function WorkPreview() {
+export function WorkPreview({ featured = false }: { featured?: boolean }) {
+  const items = featured ? workItems.slice(0, 2) : workItems;
   return (
-    <div className="grid gap-4 md:grid-cols-2">
-      {workItems.map((item, index) => (
-        <Link key={item.slug} href={`/work/${item.slug}`} className={`focus-ring rounded-lg ${index > 0 ? "hidden md:block" : ""}`}>
-          <Card className="h-full bg-card/70 transition hover:border-primary/50">
-            <CardHeader className="p-5 md:p-6">
-              <div className="mb-2 w-fit rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold text-accent md:mb-3">
-                {item.projectType}
+    <div>
+      <div className="grid gap-5 md:grid-cols-2">
+        {items.map(item => (
+          <Link key={item.slug} href={`/work/${item.slug}`} className="focus-ring project-link group overflow-hidden rounded-xl border border-border bg-card/50 transition-colors hover:border-primary/50">
+            <ProjectPreview variant={item.preview} />
+            <div className="p-5 md:p-6">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs">
+                <span className={`rounded-full px-2.5 py-1 font-semibold ${item.projectType === "Concept Build" ? "bg-accent/10 text-accent" : "bg-primary/10 text-primary"}`}>{item.projectType}</span>
+                <span className="text-muted-foreground">{item.category}</span>
               </div>
-              <CardTitle>{item.title}</CardTitle>
-              <CardDescription>{item.summary}</CardDescription>
-            </CardHeader>
-            <CardContent className="px-5 pb-5 text-sm text-muted-foreground md:px-6 md:pb-6">{item.outcome}</CardContent>
-          </Card>
-        </Link>
-      ))}
-      <Link href="/work" className="focus-ring inline-flex items-center justify-center rounded-md py-2 text-sm font-semibold text-primary md:hidden">
-        View all builds
-        <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-      </Link>
+              <h3 className="mt-4 flex items-start justify-between gap-4 font-display text-xl font-semibold md:text-2xl">{item.title}<ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-primary transition-transform group-hover:translate-x-0.5 motion-reduce:transform-none" aria-hidden="true" /></h3>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">{item.summary}</p>
+              <p className="mt-4 text-sm font-semibold text-primary">{item.projectType === "Concept Build" ? "Explore the concept" : "View case study"}<span className="sr-only">: {item.title}</span></p>
+            </div>
+          </Link>
+        ))}
+      </div>
+      {featured && <Link href="/work" className="focus-ring mt-5 inline-flex min-h-11 items-center gap-2 rounded-sm text-sm font-semibold text-primary">Explore all work<ArrowRight size={16} aria-hidden="true" /></Link>}
     </div>
   );
 }

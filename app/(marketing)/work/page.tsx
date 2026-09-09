@@ -6,7 +6,7 @@ import { WorkPreview } from "@/components/sections/work-preview";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Explore transparent AashishLabs studio concepts for websites, digital products, SEO and growth systems.",
+    "Explore AashishLabs internal projects and clearly labelled concepts for websites, digital products and growth systems.",
 };
 
 export default function WorkPage() {
@@ -16,7 +16,7 @@ export default function WorkPage() {
         <SectionHeading
           eyebrow="Work"
           title="How we think through digital challenges"
-          description="These studio concepts demonstrate our approach without presenting unverified results as client work. Verified case studies will be added as the portfolio grows."
+          description="Internal projects are our own working builds. Concept builds are explorations with intended outcomes. Client projects will be labelled separately when work is available to publish."
         />
         <div className="mt-10">
           <WorkPreview />

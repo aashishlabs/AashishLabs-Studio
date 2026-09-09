@@ -17,8 +17,8 @@ export default function HomePage() {
         <TrustStrip />
         <section id="work" className="container py-12 md:py-16">
           <SectionHeading eyebrow="Selected work" title="See the thinking. Explore the build."
-            description="Studio concepts exploring real business challenges. Clearly labelled, with intended outcomes rather than unverified results." />
-          <div className="mt-7 md:mt-9"><WorkPreview /></div>
+            description="Our own studio website and openly labelled concepts. Explore what’s built, what’s proposed and the thinking behind each." />
+          <div className="mt-7 md:mt-9"><WorkPreview featured /></div>
         </section>
         <section id="services" className="container py-12 md:py-16">
           <SectionHeading eyebrow="What we build" title="Your next step, built with purpose."

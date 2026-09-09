@@ -142,9 +142,29 @@ export const services: Service[] = [
 
 export const workItems: WorkItem[] = [
   {
+    slug: "aashishlabs-studio",
+    title: "AashishLabs Studio",
+    projectType: "Internal Project",
+    preview: "studio",
+    category: "Studio website + enquiry journey",
+    summary: "Our own digital home: a working example of connected strategy, design and development.",
+    problem: "Make a growing studio’s capabilities easy to understand, explore and enquire about.",
+    solution: "A responsive website connecting service pages, project stories and a focused enquiry flow, with light and dark themes.",
+    outcome: "Built: a functional studio website with dedicated service pages and an enquiry flow. No conversion results claimed.",
+    metrics: ["Responsive layouts", "Light and dark themes", "Service and project routes", "Validated enquiry form"],
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    seo: {
+      title: "AashishLabs Studio — Internal Project",
+      description: "Explore the thinking behind our own studio website, its service discovery and enquiry experience.",
+    },
+  },
+  {
     slug: "local-services-growth-system",
     title: "Local Services Growth System",
     projectType: "Concept Build",
+    preview: "local",
+    problem: "Explore how a local service business could connect search discovery, its website and campaign enquiries.",
+    solution: "A proposed journey from a clear service offer to a focused enquiry, with measurement planned across the funnel.",
     category: "Web + SEO + Paid",
     summary:
       "An internal concept exploring a clearer website, search foundation and campaign funnel for a local service business.",
@@ -160,6 +180,9 @@ export const workItems: WorkItem[] = [
     slug: "founder-launch-platform",
     title: "Founder Launch Platform",
     projectType: "Concept Build",
+    preview: "founder",
+    problem: "Explore how an early-stage founder could explain a product clearly without an oversized first release.",
+    solution: "A focused launch narrative paired with a lightweight product workflow and a defined MVP scope.",
     category: "Website + PWA",
     summary:
       "An internal concept exploring a focused launch website and lightweight product experience for an early-stage founder.",
