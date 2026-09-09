@@ -10,7 +10,7 @@ type BrandLogoProps = {
 
 export function BrandLogo({ className, markClassName, wordmarkClassName, priority = false }: BrandLogoProps) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)} aria-label="aashishlabs">
+    <span role="img" className={cn("inline-flex items-center gap-2.5", className)} aria-label="aashishlabs">
       <Image
         src="/brand/aashishlabs-mark-dark.svg"
         alt=""

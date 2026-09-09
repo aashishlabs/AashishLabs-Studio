@@ -34,6 +34,7 @@ html {
 }
 
 body {
+  font-family: var(--font-sans, "Segoe UI", Arial, sans-serif);
   min-height: 100vh;
   background:
     radial-gradient(circle at top left, hsl(var(--primary) / 0.16), transparent 28rem),
@@ -101,4 +102,28 @@ html.dark { color-scheme: dark; }
   background: #0B1628;
   border-radius: 0.25rem;
   padding: 0.15rem;
+}
+
+/* Leave anchor targets clear of the sticky header and keep focus reachable. */
+html { scroll-padding-top: 7rem; }
+:where(section[id], #main-content) { scroll-margin-top: 1rem; }
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+  background: hsl(var(--foreground));
+  color: hsl(var(--background));
+  transform: translateY(-200%);
+}
+.skip-link:focus { transform: translateY(0); }
+.mobile-action-bar { padding-bottom: max(0.75rem, env(safe-area-inset-bottom)); }
+@media (max-width: 639px) {
+  .site-footer { padding-bottom: calc(6rem + env(safe-area-inset-bottom)); }
+  html { scroll-padding-bottom: calc(6rem + env(safe-area-inset-bottom)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
 }

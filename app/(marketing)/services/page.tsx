@@ -13,6 +13,7 @@ export default function ServicesPage() {
     <MainLayout>
       <main className="container py-20">
         <SectionHeading
+          as="h1"
           eyebrow="Services"
           title="Digital systems for launch and growth"
           description="Start with the capability your business needs most. We can combine strategy, design, technology and growth support into a focused scope that fits your stage and priorities."

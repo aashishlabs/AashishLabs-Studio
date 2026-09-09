@@ -14,6 +14,7 @@ export default function WorkPage() {
     <MainLayout>
       <main className="container py-20">
         <SectionHeading
+          as="h1"
           eyebrow="Work"
           title="How we think through digital challenges"
           description="Internal projects are our own working builds. Concept builds are explorations with intended outcomes. Client projects will be labelled separately when work is available to publish."

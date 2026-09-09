@@ -31,13 +31,13 @@ const SheetContent = React.forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed inset-y-0 right-0 z-50 w-full max-w-sm border-l bg-background p-6 shadow-lg",
+        "fixed inset-y-0 right-0 z-50 max-h-[100dvh] w-full max-w-sm overflow-y-auto overscroll-contain border-l bg-background p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-lg",
         className
       )}
       {...props}
     >
       {children}
-      <DialogPrimitive.Close className="focus-ring absolute right-4 top-4 rounded-sm opacity-80 transition hover:opacity-100">
+      <DialogPrimitive.Close className="focus-ring absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-md opacity-80 transition hover:opacity-100">
         <X className="h-5 w-5" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
