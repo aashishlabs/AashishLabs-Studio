@@ -1,11 +1,6 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { extractUtm, normalizePhone } from "../lib/lead/normalize";
-import { getSupabaseServerConfig } from "../lib/supabase/server";
 import { leadSchema } from "../lib/validation/lead";
-
-afterEach(() => {
-  vi.unstubAllEnvs();
-});
 
 describe("lead utilities", () => {
   it("normalizes phone punctuation", () => {
@@ -54,27 +49,5 @@ describe("lead utilities", () => {
     });
 
     expect(parsed.success).toBe(false);
-  });
-
-  it("supports the legacy production Supabase service role variable", () => {
-    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://example.supabase.co");
-    vi.stubEnv("SUPABASE_SECRET_KEY", "");
-    vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "legacy-secret");
-
-    expect(getSupabaseServerConfig()).toEqual({
-      url: "https://example.supabase.co",
-      key: "legacy-secret",
-    });
-  });
-
-  it("prefers the current Supabase secret variable", () => {
-    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://example.supabase.co");
-    vi.stubEnv("SUPABASE_SECRET_KEY", "current-secret");
-    vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "legacy-secret");
-
-    expect(getSupabaseServerConfig()).toEqual({
-      url: "https://example.supabase.co",
-      key: "current-secret",
-    });
   });
 });

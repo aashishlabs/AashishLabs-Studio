@@ -37,21 +37,7 @@ beforeEach(() => {
   vi.clearAllMocks();
   vi.stubEnv("TURNSTILE_SECRET_KEY", "");
 
-  mocks.createSupabaseAdminClient.mockReturnValue({
-    from: vi.fn(() => ({
-      insert: vi.fn(() => ({
-        select: vi.fn(() => ({
-          single: vi.fn().mockResolvedValue({
-            data: { id: "lead-123" },
-            error: null,
-          }),
-        })),
-      })),
-      update: vi.fn(() => ({
-        eq: vi.fn().mockResolvedValue({ error: null }),
-      })),
-    })),
-  });
+  mocks.createSupabaseAdminClient.mockReturnValue(createSupabaseMock());
 });
 
 describe("lead notification response", () => {
@@ -62,6 +48,27 @@ describe("lead notification response", () => {
     const body = await response.json();
 
     expect(response.status).toBe(503);
+    expect(body.error).toContain("cannot submit your enquiry");
+    expect(mocks.sendLeadNotification).not.toHaveBeenCalled();
+  });
+
+  it("returns a user-safe error when Supabase cannot be reached", async () => {
+    mocks.createSupabaseAdminClient.mockReturnValue(
+      createSupabaseMock({
+        data: null,
+        error: {
+          code: "",
+          message: "TypeError: fetch failed",
+          details: "getaddrinfo ENOTFOUND project.supabase.co",
+          hint: "",
+        },
+      }),
+    );
+
+    const response = await POST(createLeadRequest());
+    const body = await response.json();
+
+    expect(response.status).toBe(500);
     expect(body.error).toContain("cannot submit your enquiry");
     expect(mocks.sendLeadNotification).not.toHaveBeenCalled();
   });
@@ -117,4 +124,29 @@ function createLeadRequest() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(validLead),
   });
+}
+
+function createSupabaseMock(
+  insertResult = {
+    data: { id: "lead-123" } as { id: string } | null,
+    error: null as {
+      code: string;
+      message: string;
+      details: string;
+      hint: string;
+    } | null,
+  },
+) {
+  return {
+    from: vi.fn(() => ({
+      insert: vi.fn(() => ({
+        select: vi.fn(() => ({
+          single: vi.fn().mockResolvedValue(insertResult),
+        })),
+      })),
+      update: vi.fn(() => ({
+        eq: vi.fn().mockResolvedValue({ error: null }),
+      })),
+    })),
+  };
 }

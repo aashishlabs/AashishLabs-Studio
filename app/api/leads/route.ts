@@ -117,7 +117,10 @@ export async function POST(request: Request) {
       hint: error?.hint,
     });
     return NextResponse.json(
-      { error: "Unable to save this enquiry right now." },
+      {
+        error:
+          "We cannot submit your enquiry right now. Please retry shortly or use WhatsApp.",
+      },
       { status: 500 },
     );
   }
