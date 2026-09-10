@@ -26,13 +26,17 @@ export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
   }
   return (
     <div className="process-shell rounded-xl border border-border bg-card/40 p-2 sm:p-4 md:p-6">
-      <div className="sm:hidden" aria-label="Project process">
+      <div
+        className="process-mobile min-[769px]:hidden"
+        aria-label="Project process"
+      >
         {steps.map((step, index) => {
           const isActive = index === active;
           return (
             <div
               key={step.title}
-              className="border-b border-border last:border-b-0"
+              className="process-step"
+              data-complete={index < active}
             >
               <button
                 type="button"
@@ -43,7 +47,7 @@ export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
                 className="focus-ring process-trigger flex min-h-16 w-full items-center gap-4 rounded-lg px-3 py-3 text-left"
               >
                 <span
-                  className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-semibold tracking-wider ${isActive ? "border-primary bg-primary text-primary-foreground" : "border-border bg-background/60 text-muted-foreground"}`}
+                  className={`process-number flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-semibold tracking-wider ${isActive ? "border-primary bg-primary text-primary-foreground" : "border-border bg-background text-muted-foreground"}`}
                 >
                   0{index + 1}
                 </span>
@@ -68,7 +72,7 @@ export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
                       duration: reducedMotion ? 0 : 0.28,
                       ease: [0.22, 1, 0.36, 1],
                     }}
-                    className="overflow-hidden"
+                    className="process-panel overflow-hidden"
                   >
                     <div className="px-3 pb-5 pl-16">
                       <p className="text-[0.9375rem] leading-6 text-muted-foreground">
@@ -94,7 +98,7 @@ export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
       <div
         role="tablist"
         aria-label="Project process"
-        className="relative hidden grid-cols-5 gap-1 border-b border-border pb-5 sm:grid md:gap-4"
+        className="relative hidden grid-cols-5 gap-1 border-b border-border pb-5 min-[769px]:grid md:gap-4"
       >
         {steps.map((step, index) => (
           <button
@@ -119,7 +123,7 @@ export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
           </button>
         ))}
       </div>
-      <div className="hidden sm:block">
+      <div className="hidden min-[769px]:block">
         {steps.map((step, index) => (
           <div
             key={step.title}

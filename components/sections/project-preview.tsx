@@ -2,9 +2,18 @@ import { ArrowUpRight, Layers } from "lucide-react";
 import type { WorkItem } from "@/types/content";
 import styles from "./project-preview.module.css";
 
-export function ProjectPreview({ variant }: { variant: WorkItem["preview"] }) {
+export function ProjectPreview({
+  variant,
+  compact = false,
+}: {
+  variant: WorkItem["preview"];
+  compact?: boolean;
+}) {
   return (
-    <div className={`${styles.preview} ${styles[variant]}`} aria-hidden="true">
+    <div
+      className={`${styles.preview} ${styles[variant]} ${compact ? styles.compact : ""}`}
+      aria-hidden="true"
+    >
       <div className={styles.window}>
         <div className={styles.chrome}>
           <span>● ● ●</span>

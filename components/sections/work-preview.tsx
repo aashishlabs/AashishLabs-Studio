@@ -2,13 +2,17 @@ import Link from "next/link";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { workItems } from "@/content/site";
 import { ProjectPreview } from "@/components/sections/project-preview";
+import { MobileWorkCarousel } from "@/components/sections/mobile-work-carousel";
 import styles from "./work-preview.module.css";
 
 export function WorkPreview({ featured = false }: { featured?: boolean }) {
   const items = featured ? workItems.slice(0, 2) : workItems;
   return (
     <div>
-      <div className={`grid gap-5 md:grid-cols-2 ${styles.grid}`}>
+      <MobileWorkCarousel items={items} />
+      <div
+        className={`hidden gap-5 min-[769px]:grid min-[769px]:grid-cols-2 ${styles.grid}`}
+      >
         {items.map((item) => (
           <Link
             key={item.slug}

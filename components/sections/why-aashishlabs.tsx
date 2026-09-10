@@ -16,11 +16,14 @@ export function WhyAashishLabs() {
             {siteConfig.home.studio.principle}
           </p>
         </div>
-        <div className="divide-y divide-border border-y border-border">
-          {siteConfig.home.difference.items.map((item) => (
-            <details key={item.title} className="group">
-              <summary className="focus-ring flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-sm py-4 text-base font-semibold [&::-webkit-details-marker]:hidden">
-                {item.title}
+        <div className="why-list divide-y divide-border border-y border-border">
+          {siteConfig.home.difference.items.map((item, index) => (
+            <details key={item.title} className="why-item group">
+              <summary className="focus-ring why-summary flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-sm py-4 text-base font-semibold [&::-webkit-details-marker]:hidden">
+                <span className="why-index" aria-hidden="true">
+                  0{index + 1}
+                </span>
+                <span>{item.title}</span>
                 <ChevronDown
                   className="h-4 w-4 shrink-0 text-primary transition-transform group-open:rotate-180"
                   aria-hidden="true"
@@ -31,9 +34,12 @@ export function WhyAashishLabs() {
               </p>
             </details>
           ))}
-          <details className="group">
-            <summary className="focus-ring flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-sm py-4 text-base font-semibold [&::-webkit-details-marker]:hidden">
-              More about AashishLabs
+          <details className="why-item group">
+            <summary className="focus-ring why-summary flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-sm py-4 text-base font-semibold [&::-webkit-details-marker]:hidden">
+              <span className="why-index" aria-hidden="true">
+                05
+              </span>
+              <span>More about AashishLabs</span>
               <ChevronDown
                 className="h-4 w-4 shrink-0 text-primary transition-transform group-open:rotate-180"
                 aria-hidden="true"

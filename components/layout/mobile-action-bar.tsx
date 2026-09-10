@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { MessageCircle } from "lucide-react";
-import { siteConfig } from "@/content/site";
+import { ArrowUpRight } from "lucide-react";
 
 export function MobileActionBar() {
   const pathname = usePathname();
@@ -16,31 +15,48 @@ export function MobileActionBar() {
   useEffect(() => {
     if (pathname === "/contact") return;
 
-    let cancelled = false;
+    const mobile = window.matchMedia("(max-width: 768px)");
     const guards = Array.from(
       document.querySelectorAll<HTMLElement>(
         "[data-mobile-action-guard], .site-footer",
       ),
     );
-    const intersecting = new Set<Element>();
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (cancelled) return;
-        for (const entry of entries) {
-          if (entry.isIntersecting) intersecting.add(entry.target);
-          else intersecting.delete(entry.target);
-        }
-        setVisibility({
-          pathname,
-          visible: intersecting.size === 0,
-        });
-      },
-      { rootMargin: "0px 0px -72px", threshold: 0.01 },
-    );
+    let frame = 0;
+    const update = () => {
+      const nearGuard = guards.some((guard) => {
+        const rect = guard.getBoundingClientRect();
+        return rect.bottom > 80 && rect.top < window.innerHeight + 96;
+      });
+      const focused = document.activeElement;
+      const editing =
+        focused instanceof HTMLElement &&
+        focused.matches("input, textarea, select, [contenteditable=true]");
+      const visible =
+        mobile.matches && window.scrollY > 240 && !nearGuard && !editing;
+      setVisibility((previous) =>
+        previous.pathname === pathname && previous.visible === visible
+          ? previous
+          : { pathname, visible },
+      );
+    };
+    const schedule = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
+    const observer = new IntersectionObserver(schedule, { rootMargin: "96px" });
     guards.forEach((guard) => observer.observe(guard));
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    document.addEventListener("focusin", schedule);
+    document.addEventListener("focusout", schedule);
+    schedule();
     return () => {
-      cancelled = true;
+      cancelAnimationFrame(frame);
       observer.disconnect();
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      document.removeEventListener("focusin", schedule);
+      document.removeEventListener("focusout", schedule);
     };
   }, [pathname]);
 
@@ -55,22 +71,16 @@ export function MobileActionBar() {
     <div
       aria-label="Quick contact"
       role="region"
-      className="mobile-action-bar fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/92 px-3 py-2.5 shadow-[0_-12px_35px_-24px_hsl(var(--foreground)/0.45)] backdrop-blur-xl sm:hidden"
+      className="mobile-action-bar pointer-events-none fixed inset-x-0 bottom-0 z-40 px-3 min-[769px]:hidden"
     >
-      <div className="mx-auto grid max-w-sm grid-cols-[1.15fr_0.85fr] gap-2">
+      <div className="mx-auto flex max-w-sm justify-center">
         <Link
           href="/contact"
-          className="focus-ring mobile-action flex min-h-11 items-center justify-center rounded-lg bg-primary px-3 text-sm font-semibold text-primary-foreground"
+          className="focus-ring mobile-action-cta pointer-events-auto inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-primary/35 bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-[0_14px_40px_-18px_hsl(var(--primary))] backdrop-blur-xl"
         >
           Start a Project
+          <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
         </Link>
-        <a
-          href={siteConfig.contact.whatsappUrl}
-          className="focus-ring mobile-action flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border bg-secondary px-3 text-sm font-semibold text-secondary-foreground"
-        >
-          <MessageCircle className="h-4 w-4" aria-hidden="true" />
-          WhatsApp
-        </a>
       </div>
     </div>
   );

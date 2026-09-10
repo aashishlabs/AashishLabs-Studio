@@ -49,8 +49,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   return (
     <MainLayout>
       <JsonLd data={jsonLd} />
-      <main>
-        <section className="container page-section">
+      <main className="service-detail">
+        <section className="container page-section" data-mobile-action-guard>
           <Link href="/services" className="text-sm font-semibold text-primary">
             Services
           </Link>
@@ -103,7 +103,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             </Accordion>
           </div>
         </section>
-        <section className="container page-section">
+        <section className="container page-section" data-mobile-action-guard>
           <Card className="bg-primary text-primary-foreground">
             <CardContent className="flex flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between">
               <div>

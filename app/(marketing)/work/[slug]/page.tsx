@@ -29,7 +29,7 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
   const concept = item.projectType === "Concept Build";
   return (
     <MainLayout>
-      <main className="container page-section">
+      <main className="container page-section work-detail">
         <Link
           href="/work"
           className="focus-ring inline-flex min-h-11 items-center gap-2 rounded-sm text-sm text-muted-foreground"
@@ -112,7 +112,7 @@ export default async function WorkDetailPage({ params }: WorkDetailProps) {
             </ul>
           </section>
         </div>
-        <div className="mt-12 rounded-xl border border-border bg-card/60 p-6 md:flex md:items-center md:justify-between md:gap-6">
+        <div data-mobile-action-guard className="mt-12 rounded-xl border border-border bg-card/60 p-6 md:flex md:items-center md:justify-between md:gap-6">
           <p className="font-display text-xl font-semibold">
             Have a similar challenge in mind?
           </p>

@@ -12,6 +12,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { siteConfig } from "@/content/site";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 export function MobileNav() {
   return (
@@ -26,11 +27,14 @@ export function MobileNav() {
           <Menu className="h-5 w-5" />
         </Button>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className="mobile-navigation-sheet">
         <SheetTitle className="pr-12">{siteConfig.brand.name}</SheetTitle>
         <SheetDescription className="mt-2 text-sm text-muted-foreground">
           {siteConfig.brand.tagline}
         </SheetDescription>
+        <div className="mobile-menu-theme">
+          <ThemeToggle />
+        </div>
         <nav aria-label="Mobile navigation" className="mt-8 grid gap-2">
           {siteConfig.navigation.primary.map((item) => (
             <SheetClose asChild key={item.href}>

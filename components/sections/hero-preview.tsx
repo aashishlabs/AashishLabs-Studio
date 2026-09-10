@@ -53,52 +53,18 @@ export function HeroPreview() {
   const springY = useSpring(y, { stiffness: 160, damping: 24 });
   const view = views[selected];
   return (
-    <div className={styles.stage}>
-      <div className={styles.stageLabel}>
-        <span className="flex items-center gap-2">
-          <Layers size={14} aria-hidden="true" /> FROM IDEA TO EXPERIENCE
-        </span>
-        <span
-          data-demo-index
-          aria-label={`View ${selected + 1} of ${views.length}`}
-        >
-          0{selected + 1} — 0{views.length}
-        </span>
-      </div>
-      <motion.div
-        ref={surface}
-        className={styles.browser}
-        style={{ x: reduced ? 0 : springX, y: reduced ? 0 : springY }}
-        onPointerMove={(event) => {
-          if (
-            reduced ||
-            event.pointerType !== "mouse" ||
-            !window.matchMedia("(hover: hover) and (pointer: fine)").matches
-          )
-            return;
-          const bounds = surface.current?.getBoundingClientRect();
-          if (!bounds) return;
-          x.set(((event.clientX - bounds.left) / bounds.width - 0.5) * 5);
-          y.set(((event.clientY - bounds.top) / bounds.height - 0.5) * 5);
-        }}
-        onPointerLeave={() => {
-          x.set(0);
-          y.set(0);
-        }}
-      >
-        <div className={styles.chrome} aria-hidden="true">
-          <div className={styles.dots}>
-            <i />
-            <i />
-            <i />
-          </div>
+    <>
+      <div className={styles.mobileStage}>
+        <div className={styles.mobileStageTop}>
           <span>
-            <LockKeyhole size={10} /> aashishlabs / {view.id}
+            <Layers size={13} aria-hidden="true" /> INTERACTIVE PREVIEW
           </span>
-          <ArrowUpRight size={13} />
+          <span aria-label={`View ${selected + 1} of ${views.length}`}>
+            0{selected + 1} / 0{views.length}
+          </span>
         </div>
         <div
-          className={styles.switcher}
+          className={styles.mobileSwitcher}
           role="group"
           aria-label="Choose a demo view"
         >
@@ -107,7 +73,7 @@ export function HeroPreview() {
               key={item.id}
               type="button"
               aria-pressed={selected === index}
-              aria-controls="experience-demo"
+              aria-controls="experience-demo-mobile"
               onClick={() => setSelected(index)}
               className="focus-ring"
             >
@@ -116,139 +82,226 @@ export function HeroPreview() {
           ))}
         </div>
         <div
-          id="experience-demo"
-          key={view.id}
+          id="experience-demo-mobile"
+          key={`mobile-${view.id}`}
           data-view={view.id}
-          className={styles.canvas}
+          className={styles.mobileExperience}
+          role="status"
+          aria-live="polite"
         >
-          <div className={styles.demoHeader}>
-            <span>
-              <span className={styles.miniMark} /> {view.heading}
-            </span>
+          <div>
             <span>{view.context}</span>
+            <strong>{view.caption}</strong>
+            <p>{view.detail}</p>
           </div>
-          {view.id === "website" && (
-            <div className={styles.website}>
-              <div>
-                <span className={styles.overline}>
-                  A BETTER FIRST IMPRESSION
-                </span>
-                <p className={styles.demoTitle}>
-                  Make room
-                  <br />
-                  for what’s next<span>.</span>
-                </p>
-                <p className={styles.demoCopy}>
-                  A considered digital home for an ambitious idea.
-                </p>
-                <span className={styles.mockCta}>
-                  Let’s build something <ArrowUpRight size={13} />
-                </span>
-              </div>
-              <div className={styles.composition} aria-hidden="true">
-                <div className={styles.orbit} />
-                <div className={styles.tileBack} />
-                <div className={styles.tileFront}>
-                  <Layers size={32} strokeWidth={1} />
-                  <span>
-                    Clarity
-                    <br />
-                    by design.
-                  </span>
-                  <i />
-                </div>
-                <span className={styles.smallTag}>
-                  <Check size={11} /> Thoughtfully connected
-                </span>
-              </div>
-            </div>
-          )}
-          {view.id === "product" && (
-            <div className={styles.product}>
-              <div className={styles.productHeading}>
-                <p className={styles.demoTitle}>
-                  A little more
-                  <br />
-                  headspace<span>.</span>
-                </p>
-                <span className={styles.overline}>PROJECT WORKSPACE</span>
-              </div>
-              <div className={styles.board}>
-                {[
-                  {
-                    name: "Discover",
-                    task: "Map the opportunity",
-                    tag: "Direction",
-                  },
-                  {
-                    name: "In progress",
-                    task: "Shape the experience",
-                    tag: "Design",
-                  },
-                  {
-                    name: "Ready",
-                    task: "Review the prototype",
-                    tag: "Feedback",
-                  },
-                ].map((column, index) => (
-                  <div key={column.name}>
-                    <p className={styles.columnLabel}>
-                      <i />
-                      {column.name}
-                    </p>
-                    <div className={styles.taskCard}>
-                      <span>0{index + 1}</span>
-                      <strong>{column.task}</strong>
-                      <small>{column.tag}</small>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-          {view.id === "growth" && (
-            <div className={styles.growth}>
-              <span className={styles.overline}>DESIGNED TO KEEP LEARNING</span>
-              <p className={styles.demoTitle}>
-                A journey.
-                <br />
-                Not a dead end<span>.</span>
-              </p>
-              <div className={styles.journey}>
-                {["Discover", "Explore", "Enquire"].map((label, index) => (
-                  <div key={label}>
-                    <span>0{index + 1}</span>
-                    <strong>{label}</strong>
-                    <ArrowUpRight size={15} aria-hidden="true" />
-                  </div>
-                ))}
-              </div>
-              <p className={styles.feedback}>
-                <span aria-hidden="true">↳</span> Learn from behaviour. Refine
-                the experience.
-              </p>
-            </div>
-          )}
+          <div className={styles.mobileSignal} aria-hidden="true">
+            <i />
+            <i />
+            <i />
+            <span>{view.heading}</span>
+          </div>
         </div>
-        <div className={styles.browserFooter}>
-          <span>
-            <span /> Interactive concept
-          </span>
-          <span>Designed &amp; built by AashishLabs</span>
-        </div>
-      </motion.div>
-      <div
-        className={styles.annotation}
-        role="status"
-        aria-live="polite"
-        aria-atomic="true"
-      >
-        <MousePointer2 size={15} aria-hidden="true" />
-        <p key={view.id} className={styles.supportMessage}>
-          <strong>{view.caption}</strong>
-          <span>{view.detail}</span>
-        </p>
       </div>
-    </div>
+
+      <div className={styles.stage}>
+        <div className={styles.stageLabel}>
+          <span className="flex items-center gap-2">
+            <Layers size={14} aria-hidden="true" /> FROM IDEA TO EXPERIENCE
+          </span>
+          <span
+            data-demo-index
+            aria-label={`View ${selected + 1} of ${views.length}`}
+          >
+            0{selected + 1} — 0{views.length}
+          </span>
+        </div>
+        <motion.div
+          ref={surface}
+          className={styles.browser}
+          style={{ x: reduced ? 0 : springX, y: reduced ? 0 : springY }}
+          onPointerMove={(event) => {
+            if (
+              reduced ||
+              event.pointerType !== "mouse" ||
+              !window.matchMedia("(hover: hover) and (pointer: fine)").matches
+            )
+              return;
+            const bounds = surface.current?.getBoundingClientRect();
+            if (!bounds) return;
+            x.set(((event.clientX - bounds.left) / bounds.width - 0.5) * 5);
+            y.set(((event.clientY - bounds.top) / bounds.height - 0.5) * 5);
+          }}
+          onPointerLeave={() => {
+            x.set(0);
+            y.set(0);
+          }}
+        >
+          <div className={styles.chrome} aria-hidden="true">
+            <div className={styles.dots}>
+              <i />
+              <i />
+              <i />
+            </div>
+            <span>
+              <LockKeyhole size={10} /> aashishlabs / {view.id}
+            </span>
+            <ArrowUpRight size={13} />
+          </div>
+          <div
+            className={styles.switcher}
+            role="group"
+            aria-label="Choose a demo view"
+          >
+            {views.map((item, index) => (
+              <button
+                key={item.id}
+                type="button"
+                aria-pressed={selected === index}
+                aria-controls="experience-demo-desktop"
+                onClick={() => setSelected(index)}
+                className="focus-ring"
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+          <div
+            id="experience-demo-desktop"
+            key={view.id}
+            data-view={view.id}
+            className={styles.canvas}
+          >
+            <div className={styles.demoHeader}>
+              <span>
+                <span className={styles.miniMark} /> {view.heading}
+              </span>
+              <span>{view.context}</span>
+            </div>
+            {view.id === "website" && (
+              <div className={styles.website}>
+                <div>
+                  <span className={styles.overline}>
+                    A BETTER FIRST IMPRESSION
+                  </span>
+                  <p className={styles.demoTitle}>
+                    Make room
+                    <br />
+                    for what’s next<span>.</span>
+                  </p>
+                  <p className={styles.demoCopy}>
+                    A considered digital home for an ambitious idea.
+                  </p>
+                  <span className={styles.mockCta}>
+                    Let’s build something <ArrowUpRight size={13} />
+                  </span>
+                </div>
+                <div className={styles.composition} aria-hidden="true">
+                  <div className={styles.orbit} />
+                  <div className={styles.tileBack} />
+                  <div className={styles.tileFront}>
+                    <Layers size={32} strokeWidth={1} />
+                    <span>
+                      Clarity
+                      <br />
+                      by design.
+                    </span>
+                    <i />
+                  </div>
+                  <span className={styles.smallTag}>
+                    <Check size={11} /> Thoughtfully connected
+                  </span>
+                </div>
+              </div>
+            )}
+            {view.id === "product" && (
+              <div className={styles.product}>
+                <div className={styles.productHeading}>
+                  <p className={styles.demoTitle}>
+                    A little more
+                    <br />
+                    headspace<span>.</span>
+                  </p>
+                  <span className={styles.overline}>PROJECT WORKSPACE</span>
+                </div>
+                <div className={styles.board}>
+                  {[
+                    {
+                      name: "Discover",
+                      task: "Map the opportunity",
+                      tag: "Direction",
+                    },
+                    {
+                      name: "In progress",
+                      task: "Shape the experience",
+                      tag: "Design",
+                    },
+                    {
+                      name: "Ready",
+                      task: "Review the prototype",
+                      tag: "Feedback",
+                    },
+                  ].map((column, index) => (
+                    <div key={column.name}>
+                      <p className={styles.columnLabel}>
+                        <i />
+                        {column.name}
+                      </p>
+                      <div className={styles.taskCard}>
+                        <span>0{index + 1}</span>
+                        <strong>{column.task}</strong>
+                        <small>{column.tag}</small>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {view.id === "growth" && (
+              <div className={styles.growth}>
+                <span className={styles.overline}>
+                  DESIGNED TO KEEP LEARNING
+                </span>
+                <p className={styles.demoTitle}>
+                  A journey.
+                  <br />
+                  Not a dead end<span>.</span>
+                </p>
+                <div className={styles.journey}>
+                  {["Discover", "Explore", "Enquire"].map((label, index) => (
+                    <div key={label}>
+                      <span>0{index + 1}</span>
+                      <strong>{label}</strong>
+                      <ArrowUpRight size={15} aria-hidden="true" />
+                    </div>
+                  ))}
+                </div>
+                <p className={styles.feedback}>
+                  <span aria-hidden="true">↳</span> Learn from behaviour. Refine
+                  the experience.
+                </p>
+              </div>
+            )}
+          </div>
+          <div className={styles.browserFooter}>
+            <span>
+              <span /> Interactive concept
+            </span>
+            <span>Designed &amp; built by AashishLabs</span>
+          </div>
+        </motion.div>
+        <div
+          className={styles.annotation}
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <MousePointer2 size={15} aria-hidden="true" />
+          <p key={view.id} className={styles.supportMessage}>
+            <strong>{view.caption}</strong>
+            <span>{view.detail}</span>
+          </p>
+        </div>
+      </div>
+    </>
   );
 }
