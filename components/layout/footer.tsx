@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand/brand-logo";
+import { HomeLink } from "@/components/layout/home-link";
 import { siteConfig } from "@/content/site";
 
 export function Footer() {
@@ -7,7 +8,12 @@ export function Footer() {
     <footer className="site-footer border-t border-[hsl(var(--subtle-border))] pb-10 pt-10 sm:pb-12 sm:pt-12">
       <div className="container grid grid-cols-2 gap-6 md:grid-cols-[1.2fr_0.8fr_0.8fr] md:gap-8">
         <div className="col-span-2 md:col-span-1">
-          <BrandLogo />
+          <HomeLink
+            className="focus-ring inline-flex rounded-sm"
+            aria-label={`${siteConfig.brand.name} home`}
+          >
+            <BrandLogo />
+          </HomeLink>
           <p className="mt-3 max-w-md text-[0.9375rem] leading-6 text-muted-foreground">
             {siteConfig.footer.description}
           </p>

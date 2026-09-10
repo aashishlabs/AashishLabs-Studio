@@ -73,30 +73,55 @@ export function LeadForm({ formId = "primary-lead-form" }: LeadFormProps) {
 
   async function onSubmit(values: LeadInput) {
     setServerError(null);
-    const response = await fetch("/api/leads", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    });
-
-    if (!response.ok) {
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
       const data = (await response.json().catch(() => null)) as {
         error?: string;
+        notificationStatus?: "sent" | "skipped" | "failed";
+        warning?: string;
       } | null;
+
+      if (!response.ok) {
+        setServerError(
+          data?.error || "Something went wrong. Please retry or use WhatsApp.",
+        );
+        window.dispatchEvent(
+          new CustomEvent("form_error", {
+            detail: { formId, type: "server" },
+          }),
+        );
+        if (turnstileSiteKey) setTurnstileResetKey((value) => value + 1);
+        return;
+      }
+
+      window.dispatchEvent(
+        new CustomEvent("generate_lead", { detail: { formId } }),
+      );
+
+      if (data?.notificationStatus && data.notificationStatus !== "sent") {
+        setServerError(
+          data.warning ||
+            "Your enquiry was saved, but the notification could not be sent. Please contact us by WhatsApp or email.",
+        );
+        return;
+      }
+
+      router.push("/thank-you");
+    } catch {
       setServerError(
-        data?.error || "Something went wrong. Please retry or use WhatsApp.",
+        "We could not submit your enquiry. Please check your connection and retry, or use WhatsApp.",
       );
       window.dispatchEvent(
-        new CustomEvent("form_error", { detail: { formId, type: "server" } }),
+        new CustomEvent("form_error", {
+          detail: { formId, type: "network" },
+        }),
       );
       if (turnstileSiteKey) setTurnstileResetKey((value) => value + 1);
-      return;
     }
-
-    window.dispatchEvent(
-      new CustomEvent("generate_lead", { detail: { formId } }),
-    );
-    router.push("/thank-you");
   }
 
   const handleTurnstileToken = useCallback(
