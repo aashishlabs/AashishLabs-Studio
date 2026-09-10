@@ -2,11 +2,14 @@
 
 import { useId, useRef, useState } from "react";
 import type { KeyboardEvent } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { ChevronDown } from "lucide-react";
 
 type Step = { title: string; description: string; outcome: string };
 
 export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
   const [active, setActive] = useState(0);
+  const reducedMotion = useReducedMotion();
   const id = useId();
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
@@ -22,11 +25,80 @@ export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
     tabs.current[next]?.focus();
   }
   return (
-    <div className="rounded-xl border border-border bg-card/40 p-4 md:p-6">
+    <div className="process-shell rounded-xl border border-border bg-card/40 p-2 sm:p-4 md:p-6">
+      <div
+        className="process-mobile min-[769px]:hidden"
+        aria-label="Project process"
+      >
+        {steps.map((step, index) => {
+          const isActive = index === active;
+          return (
+            <div
+              key={step.title}
+              className="process-step"
+              data-complete={index < active}
+            >
+              <button
+                type="button"
+                id={`${id}-mobile-trigger-${index}`}
+                aria-expanded={isActive}
+                aria-controls={`${id}-mobile-panel-${index}`}
+                onClick={() => setActive(index)}
+                className="focus-ring process-trigger flex min-h-16 w-full items-center gap-4 rounded-lg px-3 py-3 text-left"
+              >
+                <span
+                  className={`process-number flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-semibold tracking-wider ${isActive ? "border-primary bg-primary text-primary-foreground" : "border-border bg-background text-muted-foreground"}`}
+                >
+                  0{index + 1}
+                </span>
+                <span className="font-display text-base font-semibold">
+                  {step.title}
+                </span>
+                <ChevronDown
+                  className={`ml-auto h-4 w-4 shrink-0 text-primary transition-transform duration-300 motion-reduce:transition-none ${isActive ? "rotate-180" : ""}`}
+                  aria-hidden="true"
+                />
+              </button>
+              <AnimatePresence initial={false}>
+                {isActive && (
+                  <motion.div
+                    id={`${id}-mobile-panel-${index}`}
+                    role="region"
+                    aria-labelledby={`${id}-mobile-trigger-${index}`}
+                    initial={reducedMotion ? false : { height: 0 }}
+                    animate={{ height: "auto" }}
+                    exit={reducedMotion ? undefined : { height: 0 }}
+                    transition={{
+                      duration: reducedMotion ? 0 : 0.28,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="process-panel overflow-hidden"
+                  >
+                    <div className="px-3 pb-5 pl-16">
+                      <p className="text-[0.9375rem] leading-6 text-muted-foreground">
+                        {step.description}
+                      </p>
+                      <div className="mt-4 border-l-2 border-primary/60 pl-4">
+                        <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                          What you leave with
+                        </p>
+                        <p className="mt-2 text-[0.9375rem] leading-6">
+                          {step.outcome}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          );
+        })}
+      </div>
+
       <div
         role="tablist"
         aria-label="Project process"
-        className="relative grid grid-cols-5 gap-1 border-b border-border pb-5 md:gap-4"
+        className="relative hidden grid-cols-5 gap-1 border-b border-border pb-5 min-[769px]:grid md:gap-4"
       >
         {steps.map((step, index) => (
           <button
@@ -51,34 +123,38 @@ export function ProcessSteps({ steps }: { steps: readonly Step[] }) {
           </button>
         ))}
       </div>
-      {steps.map((step, index) => (
-        <div
-          key={step.title}
-          role="tabpanel"
-          id={`${id}-panel-${index}`}
-          aria-labelledby={`${id}-tab-${index}`}
-          hidden={index !== active}
-          tabIndex={0}
-          className="focus-ring mt-5 min-h-52 rounded-md sm:min-h-40 md:min-h-32"
-        >
-          <div className="grid gap-5 md:grid-cols-[1.2fr_1fr] md:gap-12">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary">
-                {step.title}
-              </p>
-              <p className="mt-3 text-[0.9375rem] leading-6 text-muted-foreground">
-                {step.description}
-              </p>
-            </div>
-            <div className="border-t border-border pt-4 md:border-l md:border-t-0 md:pl-8 md:pt-0">
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                What you leave with
-              </p>
-              <p className="mt-3 text-[0.9375rem] leading-6">{step.outcome}</p>
+      <div className="hidden min-[769px]:block">
+        {steps.map((step, index) => (
+          <div
+            key={step.title}
+            role="tabpanel"
+            id={`${id}-panel-${index}`}
+            aria-labelledby={`${id}-tab-${index}`}
+            hidden={index !== active}
+            tabIndex={0}
+            className="focus-ring mt-5 min-h-52 rounded-md sm:min-h-40 md:min-h-32"
+          >
+            <div className="grid gap-5 md:grid-cols-[1.2fr_1fr] md:gap-12">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+                  {step.title}
+                </p>
+                <p className="mt-3 text-[0.9375rem] leading-6 text-muted-foreground">
+                  {step.description}
+                </p>
+              </div>
+              <div className="border-t border-border pt-4 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+                <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+                  What you leave with
+                </p>
+                <p className="mt-3 text-[0.9375rem] leading-6">
+                  {step.outcome}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
       <noscript>
         <div className="mt-6 space-y-4">
           {steps.slice(1).map((step) => (

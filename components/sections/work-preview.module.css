@@ -1,0 +1,195 @@
+.card {
+  position: relative;
+  isolation: isolate;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+
+.mobileCarousel {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileCarousel {
+    display: block;
+    margin-inline: -1.125rem;
+  }
+
+  .track {
+    display: flex;
+    gap: 0.875rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1.125rem;
+    padding: 0.2rem 1.125rem 1rem;
+    scrollbar-width: none;
+    overscroll-behavior-inline: contain;
+  }
+
+  .track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobileCard {
+    width: min(82vw, 22rem);
+    flex: 0 0 auto;
+    overflow: hidden;
+    scroll-snap-align: start;
+    border: 1px solid hsl(var(--border));
+    border-radius: 1.1rem;
+    background: hsl(var(--card) / 0.72);
+    box-shadow: 0 20px 44px -34px hsl(var(--primary) / 0.72);
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .mobileCard:active {
+    transform: scale(0.985);
+    border-color: hsl(var(--primary) / 0.66);
+    box-shadow: 0 12px 30px -25px hsl(var(--primary) / 0.68);
+  }
+
+  .mobileContent {
+    padding: 1rem 1.05rem 1.1rem;
+  }
+
+  .mobileMeta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem;
+    min-width: 0;
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .mobileMeta span:first-child {
+    flex: 0 0 auto;
+    padding: 0.3rem 0.55rem;
+    border-radius: 999px;
+    background: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary));
+    font-weight: 650;
+  }
+
+  .mobileMeta span:last-child {
+    font-size: 0.875rem;
+  }
+
+  .mobileContent h3 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.85rem;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 650;
+    line-height: 1.2;
+  }
+
+  .mobileContent h3 svg {
+    flex: 0 0 auto;
+    color: hsl(var(--primary));
+  }
+
+  .mobileContent > p {
+    margin-top: 0.65rem;
+    color: hsl(var(--muted-foreground));
+    font-size: 0.875rem;
+    line-height: 1.45rem;
+  }
+
+  .mobileCta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
+    margin-top: 0.65rem;
+    color: hsl(var(--primary));
+    font-size: 0.875rem;
+    font-weight: 650;
+  }
+
+  .carouselFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1.125rem;
+  }
+
+  .carouselFooter > span {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: hsl(var(--muted-foreground));
+    font-size: 0.6875rem;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+  }
+
+  .carouselFooter > span i {
+    width: 2rem;
+    height: 1px;
+    background: hsl(var(--border));
+  }
+
+  .carouselFooter > div {
+    display: flex;
+    gap: 0.35rem;
+  }
+
+  .carouselFooter button {
+    width: 2.75rem;
+    height: 2.75rem;
+    position: relative;
+  }
+
+  .carouselFooter button::after {
+    content: "";
+    position: absolute;
+    inset: 1.25rem 0.65rem;
+    border-radius: 999px;
+    background: hsl(var(--border));
+    transition:
+      background-color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .carouselFooter button[aria-current="true"]::after {
+    background: hsl(var(--primary));
+    transform: scaleX(1.25);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+    .mobileCard {
+      animation: work-card-settle linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 24%;
+    }
+
+    @keyframes work-card-settle {
+      from {
+        translate: 0 7px;
+        scale: 0.992;
+      }
+      to {
+        translate: 0 0;
+        scale: 1;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  :global(.dark) .mobileCta,
+  :global(.dark) .mobileMeta span:first-child {
+    color: color-mix(in srgb, hsl(var(--primary)) 70%, white);
+  }
+}

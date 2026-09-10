@@ -176,11 +176,12 @@
 }
 @media (max-width: 479px) {
   .preview {
-    height: 170px;
+    height: 238px;
     padding: 1rem 1rem 0;
   }
   .window {
-    min-height: 210px;
+    min-height: 242px;
+    transform: translateY(2px);
   }
   .studioPage,
   .localPage,
@@ -188,12 +189,58 @@
     padding: 0.8rem;
   }
   .art {
-    min-height: 100px;
+    min-height: 118px;
     padding: 0.7rem;
   }
   .studioContent,
   .localContent {
     gap: 0.6rem;
+  }
+
+  .studioContent p,
+  .localContent p,
+  .founderPage > p {
+    font-size: 1.35rem;
+  }
+
+  .line,
+  .localContent > div > span {
+    font-size: 0.62rem;
+  }
+}
+@media (max-width: 768px) {
+  .compact {
+    height: 184px;
+    padding: 0.8rem 0.8rem 0;
+  }
+  .compact .window {
+    min-height: 192px;
+    transform: translateY(2px);
+  }
+  .compact .chrome {
+    padding: 0.45rem 0.6rem;
+  }
+  .compact .studioPage,
+  .compact .localPage,
+  .compact .founderPage {
+    padding: 0.65rem;
+  }
+  .compact .studioContent,
+  .compact .localContent {
+    margin-top: 0.55rem;
+  }
+  .compact .studioContent p,
+  .compact .localContent p,
+  .compact .founderPage > p {
+    margin-top: 0.35rem;
+    font-size: 1.05rem;
+  }
+  .compact .art {
+    min-height: 88px;
+    padding: 0.55rem;
+  }
+  .compact .release {
+    margin-top: 0.6rem;
   }
 }
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {

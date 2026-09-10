@@ -7,7 +7,11 @@ import styles from "./hero-preview.module.css";
 
 export function HomeHero() {
   return (
-    <section className={styles.hero} aria-labelledby="hero-title">
+    <section
+      className={styles.hero}
+      aria-labelledby="hero-title"
+      data-mobile-action-guard
+    >
       <div className={`container ${styles.heroGrid}`}>
         <div className={styles.copy}>
           <p className={styles.eyebrow}>
@@ -25,7 +29,7 @@ export function HomeHero() {
           <p className={styles.description}>
             {siteConfig.home.hero.description}
           </p>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+          <div className={styles.heroActions}>
             <Button asChild size="lg">
               <Link href="/contact">
                 {siteConfig.home.hero.primaryCta}
@@ -39,7 +43,7 @@ export function HomeHero() {
               </Link>
             </Button>
           </div>
-          <p className="mt-5 text-sm leading-6 text-muted-foreground">
+          <p className={styles.trustNote}>
             Independent digital partner in India. Built for ambitious
             businesses.
           </p>

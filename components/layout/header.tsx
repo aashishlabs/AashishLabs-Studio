@@ -10,7 +10,7 @@ import { DesktopNav } from "@/components/layout/desktop-nav";
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/50 bg-background/95 shadow-[0_4px_24px_rgba(3,8,20,0.04)] backdrop-blur-xl">
-      <div className="mx-auto flex h-20 max-w-[1440px] items-center gap-4 px-4 sm:px-6 lg:h-24 lg:gap-8 lg:px-8 xl:px-10">
+      <div className="mx-auto flex h-[4.5rem] max-w-[1440px] items-center gap-4 px-4 sm:px-6 min-[769px]:h-20 lg:h-24 lg:gap-8 lg:px-8 xl:px-10">
         <Link
           href="/"
           className="focus-ring shrink-0 rounded-sm"

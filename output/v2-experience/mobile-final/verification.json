@@ -1,0 +1,926 @@
+[
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services/web-development",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services/app-development",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services/seo",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services/performance-marketing",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/work",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/work/aashishlabs-studio",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/work/local-services-growth-system",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/work/founder-launch-platform",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/contact",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services/web-development",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services/app-development",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services/seo",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services/performance-marketing",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/work",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/work/aashishlabs-studio",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/work/local-services-growth-system",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/work/founder-launch-platform",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/contact",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services/web-development",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services/app-development",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services/seo",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services/performance-marketing",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/work",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/work/aashishlabs-studio",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/work/local-services-growth-system",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/work/founder-launch-platform",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/contact",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services/web-development",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services/app-development",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services/seo",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services/performance-marketing",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/work",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/work/aashishlabs-studio",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/work/local-services-growth-system",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/work/founder-launch-platform",
+    "status": "passed"
+  },
+  {
+    "width": 375,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/contact",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services/web-development",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services/app-development",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services/seo",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services/performance-marketing",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/work",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/work/aashishlabs-studio",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/work/local-services-growth-system",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/work/founder-launch-platform",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/contact",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services/web-development",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services/app-development",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services/seo",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services/performance-marketing",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/work",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/work/aashishlabs-studio",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/work/local-services-growth-system",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/work/founder-launch-platform",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/contact",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services/web-development",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services/app-development",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services/seo",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services/performance-marketing",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/work",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/work/aashishlabs-studio",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/work/local-services-growth-system",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/work/founder-launch-platform",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/contact",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services/web-development",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services/app-development",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services/seo",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services/performance-marketing",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/work",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/work/aashishlabs-studio",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/work/local-services-growth-system",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/work/founder-launch-platform",
+    "status": "passed"
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/contact",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services/web-development",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services/app-development",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services/seo",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/services/performance-marketing",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/work",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/work/aashishlabs-studio",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/work/local-services-growth-system",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/work/founder-launch-platform",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "no-preference",
+    "route": "/contact",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services/web-development",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services/app-development",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services/seo",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/services/performance-marketing",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/work",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/work/aashishlabs-studio",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/work/local-services-growth-system",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/work/founder-launch-platform",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "dark",
+    "reducedMotion": "reduce",
+    "route": "/contact",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services/web-development",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services/app-development",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services/seo",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/services/performance-marketing",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/work",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/work/aashishlabs-studio",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/work/local-services-growth-system",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/work/founder-launch-platform",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "no-preference",
+    "route": "/contact",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services/web-development",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services/app-development",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services/seo",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/services/performance-marketing",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/work",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/work/aashishlabs-studio",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/work/local-services-growth-system",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/work/founder-launch-platform",
+    "status": "passed"
+  },
+  {
+    "width": 430,
+    "theme": "light",
+    "reducedMotion": "reduce",
+    "route": "/contact",
+    "status": "passed"
+  }
+]
