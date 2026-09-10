@@ -69,7 +69,12 @@ try {
             route + " document overflow",
           );
           if (route === "/") {
-            assert.equal(await page.locator(".mobile-action-cta").count(), 0);
+            assert.equal(
+              await page
+                .locator('.mobile-action-bar[data-visible="true"]')
+                .count(),
+              0,
+            );
             const preview = await page
               .locator("#experience-demo-mobile")
               .boundingBox();
@@ -154,14 +159,12 @@ try {
               e.scrollTo({ left: 0, behavior: "instant" }),
             );
             await page.waitForTimeout(100);
-            await page
-              .locator("#work")
-              .screenshot({
-                path: path.join(
-                  out,
-                  `work-${width}-${theme}-${reducedMotion}.png`,
-                ),
-              });
+            await page.locator("#work").screenshot({
+              path: path.join(
+                out,
+                `work-${width}-${theme}-${reducedMotion}.png`,
+              ),
+            });
             const why = page.locator(".why-summary").first();
             await why.click();
             await page.waitForTimeout(300);
@@ -193,30 +196,77 @@ try {
                 ),
               );
             }
-            await page
-              .locator(".process-mobile")
-              .screenshot({
-                path: path.join(
-                  out,
-                  `process-${width}-${theme}-${reducedMotion}.png`,
-                ),
-              });
-            await page.locator("#services").scrollIntoViewIfNeeded();
-            await page.waitForTimeout(200);
+            await page.locator(".process-mobile").screenshot({
+              path: path.join(
+                out,
+                `process-${width}-${theme}-${reducedMotion}.png`,
+              ),
+            });
+            let sawFloatingCta = false;
+            const contactTop = await page
+              .locator("#contact")
+              .evaluate(
+                (element) =>
+                  element.getBoundingClientRect().top + window.scrollY,
+              );
+            for (let scrollY = 760; scrollY < contactTop - 500; scrollY += 30) {
+              await page.evaluate(
+                (top) => window.scrollTo({ top, behavior: "instant" }),
+                scrollY,
+              );
+              await page.waitForTimeout(30);
+              const actionBar = page.locator(
+                '.mobile-action-bar[data-visible="true"]',
+              );
+              if (!(await actionBar.count())) continue;
+              sawFloatingCta = true;
+              const overlap = await actionBar
+                .locator("a")
+                .evaluate((action) => {
+                  const actionRect = action.getBoundingClientRect();
+                  return Array.from(
+                    document.querySelectorAll(
+                      "main h1, main h2, main h3, main p, main li, main summary, main button, main input, main textarea, main select, main a",
+                    ),
+                  ).some((target) => {
+                    const rect = target.getBoundingClientRect();
+                    return (
+                      rect.width > 0 &&
+                      rect.height > 0 &&
+                      rect.right >= actionRect.left - 10 &&
+                      rect.left <= actionRect.right + 10 &&
+                      rect.bottom >= actionRect.top - 10 &&
+                      rect.top <= actionRect.bottom + 10
+                    );
+                  });
+                });
+              assert.equal(
+                overlap,
+                false,
+                "floating CTA must not cover content or controls",
+              );
+            }
             assert.ok(
-              await page.locator(".mobile-action-cta").isVisible(),
-              "floating CTA past hero",
+              sawFloatingCta,
+              "floating CTA appears in open space past hero",
             );
             await page.locator("#contact").scrollIntoViewIfNeeded();
             await page.waitForTimeout(200);
             assert.equal(
-              await page.locator(".mobile-action-cta").count(),
+              await page
+                .locator('.mobile-action-bar[data-visible="true"]')
+                .count(),
               0,
               "CTA hidden at contact",
             );
             await page.locator("footer").scrollIntoViewIfNeeded();
             await page.waitForTimeout(200);
-            assert.equal(await page.locator(".mobile-action-cta").count(), 0);
+            assert.equal(
+              await page
+                .locator('.mobile-action-bar[data-visible="true"]')
+                .count(),
+              0,
+            );
             await page.getByRole("button", { name: "Open navigation" }).click();
             await page.waitForTimeout(250);
             const dialog = page.getByRole("dialog");
