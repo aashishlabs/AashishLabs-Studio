@@ -65,8 +65,14 @@ export async function POST(request: Request) {
 
   const supabase = createSupabaseAdminClient();
   if (!supabase) {
+    console.error(
+      "Lead storage is unavailable. Check the Supabase URL and server secret configuration.",
+    );
     return NextResponse.json(
-      { error: "Lead storage is not configured yet." },
+      {
+        error:
+          "We cannot submit your enquiry right now. Please retry shortly or use WhatsApp.",
+      },
       { status: 503 },
     );
   }
@@ -111,21 +117,34 @@ export async function POST(request: Request) {
       hint: error?.hint,
     });
     return NextResponse.json(
-      { error: "Unable to save this enquiry right now." },
+      {
+        error:
+          "We cannot submit your enquiry right now. Please retry shortly or use WhatsApp.",
+      },
       { status: 500 },
     );
   }
 
   let notificationStatus = "sent";
+  let notificationWarning: string | undefined;
   try {
     const notification = await sendLeadNotification(lead, data.id);
     notificationStatus = notification.status === "skipped" ? "skipped" : "sent";
+    if (notification.status === "skipped") {
+      console.error("Lead notification skipped", {
+        reason: notification.reason,
+      });
+      notificationWarning =
+        "Your enquiry was saved, but we could not send the email notification. Please contact us by WhatsApp or email so we can respond promptly.";
+    }
   } catch (error) {
     console.error("Lead notification failed", {
       message:
         error instanceof Error ? error.message : "Unknown email delivery error",
     });
     notificationStatus = "failed";
+    notificationWarning =
+      "Your enquiry was saved, but we could not send the email notification. Please contact us by WhatsApp or email so we can respond promptly.";
   }
 
   await supabase
@@ -133,7 +152,15 @@ export async function POST(request: Request) {
     .update({ notification_status: notificationStatus })
     .eq("id", data.id);
 
-  return NextResponse.json({ success: true, leadId: data.id }, { status: 201 });
+  return NextResponse.json(
+    {
+      success: true,
+      leadId: data.id,
+      notificationStatus,
+      ...(notificationWarning ? { warning: notificationWarning } : {}),
+    },
+    { status: notificationStatus === "sent" ? 201 : 202 },
+  );
 }
 
 function checkRateLimit(key: string) {
