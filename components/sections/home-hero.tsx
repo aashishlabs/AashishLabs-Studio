@@ -15,12 +15,15 @@ export function HomeHero() {
       <div className={`container ${styles.heroGrid}`}>
         <div className={styles.copy}>
           <p className={styles.eyebrow}>
-            <span aria-hidden="true" />
-            {siteConfig.brand.tagline}
+            <span className={styles.eyebrowDot} aria-hidden="true" />
+            <span className={styles.eyebrowText}>
+              {siteConfig.brand.tagline}
+            </span>
           </p>
           <h1 id="hero-title" className={styles.title}>
-            <span className={styles.titleGradient}>Digital experiences</span>{" "}
-            &amp; products.
+            <span className={styles.titleGradient}>
+              AI-powered Digital Transformation
+            </span>
             <br />
             <span className={styles.supportingTitle}>
               {siteConfig.home.hero.supportingTitle}
@@ -44,7 +47,7 @@ export function HomeHero() {
             </Button>
           </div>
           <p className={styles.trustNote}>
-            Independent digital partner in India. Built for ambitious
+            AI-enabled digital transformation for ambitious, growing
             businesses.
           </p>
         </div>

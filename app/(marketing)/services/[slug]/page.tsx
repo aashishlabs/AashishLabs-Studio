@@ -125,12 +125,12 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             <CardContent className="flex flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between">
               <div>
                 <h2 className="font-display text-3xl font-semibold">
-                  Ready to shape this into a lead engine?
+                  Ready to move this forward?
                 </h2>
                 <p className="mt-2 max-w-2xl text-primary-foreground/80">
                   Tell us where you are today and what you want to improve. We
-                  will help turn it into a clear, practical plan for launch and
-                  growth.
+                  will help turn it into a clear, practical plan for
+                  implementation and growth.
                 </p>
               </div>
               <Button asChild variant="secondary">

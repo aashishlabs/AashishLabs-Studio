@@ -29,13 +29,15 @@ export function ProjectPreview({
             <span className={styles.brand}>aashishlabs</span>
             <div className={styles.studioContent}>
               <div>
-                <small>STRATEGY · DESIGN · TECHNOLOGY · GROWTH</small>
+                <small>
+                  AI · STRATEGY · SOFTWARE · AUTOMATION · PRODUCTS · GROWTH
+                </small>
                 <p>
-                  Websites &amp;
+                  Digital
                   <br />
-                  digital products.
+                  transformation.
                 </p>
-                <span className={styles.line}>Built to move you forward.</span>
+                <span className={styles.line}>Built around your business.</span>
                 <span className={styles.cta}>Discuss your project ↗</span>
               </div>
               <div className={styles.art}>

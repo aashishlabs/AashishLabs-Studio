@@ -41,7 +41,7 @@
   text-transform: uppercase;
   color: hsl(var(--muted-foreground));
 }
-.eyebrow > span {
+.eyebrowDot {
   width: 0.35rem;
   height: 0.35rem;
   flex-shrink: 0;
@@ -837,10 +837,26 @@
     line-height: 1.09;
   }
   .titleGradient {
-    white-space: nowrap;
+    overflow: visible;
+    padding-bottom: 0.12em;
+    margin-bottom: -0.12em;
+    white-space: normal;
+    overflow-wrap: normal;
+    text-wrap: balance;
   }
   .eyebrow {
     letter-spacing: 0.045em;
+  }
+  .eyebrowText {
+    flex: 1 1 20rem;
+    min-width: 0;
+    max-width: 20rem;
+    white-space: normal;
+    overflow-wrap: normal;
+    text-wrap: balance;
+  }
+  .eyebrowDot {
+    align-self: center;
   }
   .description {
     font-size: 1rem;

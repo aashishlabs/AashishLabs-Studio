@@ -28,8 +28,8 @@ export default function HomePage() {
         <section id="services" className="container page-section">
           <SectionHeading
             eyebrow="What we build"
-            title="Your next step, built with purpose."
-            description="Websites, digital products, search and campaigns. Start with what your business needs now."
+            title="AI, software and transformation—connected."
+            description="Automation, digital products, Product & Technology Consulting and growth services. Start with what your business needs now."
           />
           <div className="mt-7 md:mt-9">
             <ServicesGrid />

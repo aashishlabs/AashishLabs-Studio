@@ -10,7 +10,7 @@ export function WhyAashishLabs() {
           <SectionHeading
             eyebrow="Why AashishLabs"
             title="One team. A connected approach."
-            description="Strategy, design, technology and growth work together—so every decision has a business purpose."
+            description="AI, automation, software, transformation and growth work together—so every technology decision has a business purpose."
           />
           <p className="mt-5 text-[0.9375rem] font-medium text-accent">
             {siteConfig.home.studio.principle}

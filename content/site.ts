@@ -3,35 +3,36 @@ import type { Insight, Service, WorkItem } from "../types/content";
 export const services: Service[] = [
   {
     slug: "web-development",
-    title: "Web Design & Development",
-    homeBenefit: "A fast, credible website that turns interest into enquiries.",
+    title: "AI & Automation",
+    homeBenefit:
+      "Apply AI and automation to reduce manual work and improve decisions.",
     shortDescription:
-      "Fast, credible and conversion-focused websites that communicate your value clearly and give your marketing a stronger foundation.",
+      "Practical AI implementation and workflow automation designed around real business needs, existing systems and measurable outcomes.",
     heroCopy:
-      "Launch a polished marketing website that feels premium on mobile, loads quickly and turns visitor intent into qualified conversations.",
+      "Identify where AI can create real value, automate repetitive work and connect people, data and systems without adding unnecessary complexity.",
     outcomes: [
-      "Clearer positioning",
-      "Higher enquiry quality",
-      "SEO-ready foundations",
+      "Less manual work",
+      "Faster, better-informed decisions",
+      "Scalable automated workflows",
     ],
     includes: [
-      "Information architecture",
-      "Responsive UI build",
-      "CMS/content adapter",
-      "Analytics-ready CTA paths",
+      "AI opportunity mapping",
+      "Workflow automation",
+      "System and data integrations",
+      "Human-in-the-loop safeguards",
     ],
-    process: ["Discover", "Design", "Build", "Launch", "Grow"],
+    process: ["Discover", "Prioritise", "Prototype", "Integrate", "Improve"],
     relatedServices: ["seo", "performance-marketing"],
     faq: [
       {
-        question: "Can the website launch before all brand assets are final?",
+        question: "Where should we start with AI?",
         answer:
-          "Yes. We can establish a flexible visual foundation first, then refine approved brand assets without rebuilding the entire experience.",
+          "Start with a specific workflow, decision or customer journey where time, quality or visibility can improve. We assess feasibility and value before recommending a solution.",
       },
       {
-        question: "Will the site be editable later?",
+        question: "Will automation replace our existing systems?",
         answer:
-          "The content repository is isolated so Supabase or another CMS can power service, work and insight content later.",
+          "Not necessarily. We can often connect and improve the tools you already use, replacing systems only when the business case is clear.",
       },
     ],
     seo: {
@@ -42,30 +43,31 @@ export const services: Service[] = [
   },
   {
     slug: "app-development",
-    title: "Apps & Digital Products",
-    homeBenefit: "Useful portals, PWAs and MVPs built around real workflows.",
+    title: "Software & Digital Products",
+    homeBenefit:
+      "Purpose-built software, portals and products shaped around real workflows.",
     shortDescription:
-      "Thoughtful web applications, PWAs, portals and MVPs shaped around real user needs and clear business goals.",
+      "Useful web applications, portals, PWAs and MVPs built around clear business goals, user needs and operational realities.",
     heroCopy:
-      "Design and build app experiences that validate the workflow first, then scale into a stronger product platform.",
+      "Turn a business need or product idea into reliable software that simplifies work, serves customers and creates a foundation for growth.",
     outcomes: [
       "Sharper MVP scope",
-      "Reusable product UI",
-      "Lower launch friction",
+      "Simpler digital workflows",
+      "Launch-ready foundations",
     ],
     includes: [
-      "Product flow mapping",
-      "PWA-ready frontend",
-      "API integration planning",
+      "Product strategy and flow mapping",
+      "Responsive web app or PWA",
+      "API and system integrations",
       "Launch analytics",
     ],
     process: ["Scope", "Prototype", "Build", "Test", "Release"],
     relatedServices: ["web-development", "performance-marketing"],
     faq: [
       {
-        question: "Is a native mobile app included in V1?",
+        question: "Can we begin with an MVP before a full platform?",
         answer:
-          "No. Native Android/iOS is outside V1; PWA and responsive product experiences are supported.",
+          "Yes. We can define and build a focused first release that validates the core workflow before committing to a larger platform.",
       },
     ],
     seo: {
@@ -76,31 +78,31 @@ export const services: Service[] = [
   },
   {
     slug: "seo",
-    title: "Search Engine Optimisation",
+    title: "Digital Transformation & Consulting",
     homeBenefit:
-      "Help the right customers discover your business through search.",
+      "Product and technology consulting that turns priorities into a practical roadmap.",
     shortDescription:
-      "Technical and content foundations that help search engines understand your business and the right customers discover it.",
+      "Connected product and technology consulting for modernising processes, systems and customer experiences with clear priorities.",
     heroCopy:
-      "Create a search-ready foundation across structure, metadata, performance, internal links and content planning.",
+      "Align people, processes, data and technology around a transformation plan your business can realistically execute and evolve.",
     outcomes: [
-      "Better indexability",
-      "Stronger search intent mapping",
-      "Cleaner content architecture",
+      "Clearer technology priorities",
+      "Better-connected operations",
+      "Lower transformation risk",
     ],
     includes: [
-      "Technical SEO audit",
-      "Metadata framework",
-      "Schema planning",
-      "Content opportunity map",
+      "Digital maturity assessment",
+      "Product and technology roadmap",
+      "Process and system mapping",
+      "Vendor and platform guidance",
     ],
-    process: ["Audit", "Map", "Fix", "Publish", "Measure"],
+    process: ["Assess", "Align", "Roadmap", "Enable", "Evolve"],
     relatedServices: ["web-development", "performance-marketing"],
     faq: [
       {
-        question: "Are rankings guaranteed?",
+        question: "Does digital transformation require replacing everything?",
         answer:
-          "No. The work creates a stronger foundation and measurement loop, but results depend on competition and content investment.",
+          "No. The right plan often improves and connects existing systems first, then replaces only what limits the business or creates unnecessary risk.",
       },
     ],
     seo: {
@@ -111,30 +113,31 @@ export const services: Service[] = [
   },
   {
     slug: "performance-marketing",
-    title: "Performance Marketing",
-    homeBenefit: "Connect campaigns, landing pages and meaningful measurement.",
+    title: "Growth & Technology Services",
+    homeBenefit:
+      "Connect customer journeys, growth systems and meaningful measurement.",
     shortDescription:
-      "Focused campaigns, landing pages and measurement systems built to attract relevant audiences and improve acquisition decisions.",
+      "Integrated growth and technology support that connects digital journeys, platforms, data and experimentation around business outcomes.",
     heroCopy:
-      "Build the conversion paths and campaign measurement needed for Google Ads, Meta Ads and future paid channels.",
+      "Strengthen how your business attracts, converts and learns from customers by connecting growth execution with the technology behind it.",
     outcomes: [
-      "Campaign-ready landing pages",
+      "Connected growth systems",
       "Cleaner attribution",
-      "Faster optimisation cycles",
+      "Faster learning cycles",
     ],
     includes: [
-      "Offer framing",
-      "Landing page build",
-      "Conversion tracking",
-      "Testing backlog",
+      "Growth technology audit",
+      "Landing journeys and CRM handoffs",
+      "Conversion measurement",
+      "Experimentation roadmap",
     ],
-    process: ["Offer", "Launch", "Track", "Optimise", "Scale"],
+    process: ["Align", "Connect", "Launch", "Learn", "Scale"],
     relatedServices: ["web-development", "seo"],
     faq: [
       {
-        question: "Can campaign pages hide the main navigation?",
+        question: "Can you support both growth strategy and implementation?",
         answer:
-          "Yes. Campaign route configuration can use a reduced navigation mode for focused paid traffic journeys.",
+          "Yes. We can shape the priorities, implement the digital journeys and measurement, and support focused campaigns or continuous improvement where needed.",
       },
     ],
     seo: {
@@ -264,7 +267,7 @@ export const siteConfig = {
   brand: {
     name: "aashishlabs",
     logoLabel: "aashishlabs logo",
-    tagline: "Strategy · Design · Experience · Technology · Growth",
+    tagline: "AI · STRATEGY · SOFTWARE · AUTOMATION · PRODUCTS · GROWTH",
   },
   contact: {
     email: "aashishlabs@gmail.com",
@@ -291,10 +294,10 @@ export const siteConfig = {
   },
   home: {
     hero: {
-      title: "Digital experiences & products.",
+      title: "AI-powered Digital Transformation",
       supportingTitle: "Built to move your business forward.",
       description:
-        "AashishLabs helps startups, SMEs and MSMEs turn business ideas and digital challenges into clear, credible and launch-ready experiences.",
+        "AI implementation, automation, software, digital products and technology consulting for startups, SMEs and MSMEs — connected from strategy to execution.",
       primaryCta: "Discuss Your Project",
       secondaryCta: "Explore the Work",
       preview: [
@@ -317,30 +320,30 @@ export const siteConfig = {
       ],
     },
     trust: [
-      "Strategy before screens",
-      "Direct, accountable execution",
-      "Search-ready by design",
-      "Measured after launch",
+      "AI applied to real workflows",
+      "Strategy before technology",
+      "Software built around the business",
+      "Growth connected to execution",
     ],
     difference: {
       title: "Practical digital solutions, shaped around your business.",
       description:
-        "Growing businesses rarely need more complexity. They need the right priorities, dependable execution and a digital foundation that can improve over time. AashishLabs brings strategy, design, development and growth thinking into one connected process.",
+        "Growing businesses need practical transformation, not more complexity. AashishLabs connects AI, automation, software, product thinking and growth execution around clear business priorities.",
       items: [
         {
           title: "Business before buzzwords",
           description:
-            "We begin with your customers, goals and constraints. Technology and design choices follow what the business needs to achieve.",
+            "We begin with your operations, customers, goals and constraints. AI and technology choices follow what the business needs to achieve.",
         },
         {
           title: "Start with what matters",
           description:
-            "We identify the smallest meaningful solution that can be launched, tested and expanded with greater confidence.",
+            "We identify the most valuable place to begin, then shape a focused solution that can be implemented, tested and expanded with confidence.",
         },
         {
           title: "One connected approach",
           description:
-            "Messaging, experience, development, search and measurement are planned together to create a consistent customer journey.",
+            "AI, automation, software, product experience and growth systems are planned together so transformation works from strategy through execution.",
         },
         {
           title: "Clear and collaborative",
@@ -351,11 +354,11 @@ export const siteConfig = {
     },
     studio: {
       title:
-        "A digital product & growth partner for ambitious, growing businesses.",
+        "An AI, digital transformation and software partner for growing businesses.",
       description: [
-        "AashishLabs was created to make thoughtful digital execution more accessible to startups, SMEs and MSMEs in India.",
-        "Our initial focus is websites and digital products—the places where customers understand your business, evaluate your credibility and decide whether to take the next step. From there, we can support search visibility, performance marketing and continuous improvement when the business is ready.",
-        "We combine focused thinking with hands-on execution, keeping the process straightforward and every outcome connected to a real business objective.",
+        "AashishLabs helps startups, SMEs and MSMEs use AI, software and technology to improve how the business works, serves customers and grows.",
+        "Our work spans AI implementation, automation, software and digital products, digital transformation, product and technology consulting, and connected growth services.",
+        "We also bring specialist experience in fintech and BFSI when the work benefits from deeper understanding of regulated products, financial journeys and operational complexity.",
       ],
       principle: "Built for today. Ready for what comes next.",
       cta: "Discuss Your Project",
@@ -418,17 +421,17 @@ export const siteConfig = {
       {
         question: "Who does AashishLabs work with?",
         answer:
-          "We primarily work with startups, SMEs and MSMEs in India that are launching something new, improving an existing digital presence or building a stronger path to growth.",
+          "We primarily work with startups, SMEs and MSMEs that want to apply AI, automate workflows, build software or modernise how the business operates and grows. Fintech and BFSI are areas of specialist expertise, not our only focus.",
       },
       {
         question: "What can you help us build?",
         answer:
-          "Our primary focus is business websites, landing pages, web applications and early-stage digital products. We can also support SEO foundations, analytics, conversion improvement and focused performance campaigns.",
+          "We help implement AI, automate workflows, build software and digital products, plan digital transformation, advise on product and technology decisions, and connect growth execution with the systems behind it.",
       },
       {
         question: "Do we need a complete project brief?",
         answer:
-          "No. You can approach us with an idea, a business problem or an existing website that is not delivering results. The discovery stage helps turn that starting point into a clearer scope.",
+          "No. You can approach us with an idea, a business problem, a manual workflow or an existing system that is not delivering results. The discovery stage helps turn that starting point into a clearer scope.",
       },
       {
         question: "Can we begin with a smaller project?",
@@ -453,10 +456,10 @@ export const siteConfig = {
       {
         question: "What happens after launch?",
         answer:
-          "We can continue with maintenance, SEO, analytics reviews, conversion improvements, content or growth campaigns. You can also take over the project with a clear handover.",
+          "We can continue with maintenance, automation improvements, analytics reviews, product iteration or growth support. You can also take over the solution with a clear handover.",
       },
       {
-        question: "Will we own the final website or product?",
+        question: "Will we own the final software or product?",
         answer:
           "Project ownership and handover terms will be clearly stated in the proposal. Unless a specific third-party licence has its own conditions, approved and paid-for deliverables will be handed over to the client.",
       },
@@ -471,6 +474,6 @@ export const siteConfig = {
   },
   footer: {
     description:
-      "A digital product & growth partner helping startups, SMEs and MSMEs across India build credible experiences, useful technology and stronger paths to growth.",
+      "AI-enabled digital transformation for startups, SMEs and MSMEs — from strategy and automation to software, digital products and growth technology.",
   },
 } as const;
